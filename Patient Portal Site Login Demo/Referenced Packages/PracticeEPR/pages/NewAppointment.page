@@ -1,0 +1,7 @@
+<apex:page standardController="ecare__Appointment__c" extensions="ecare.AppointmentButtonController"  action="{!autoRun}">
+  <apex:sectionHeader title="Auto-Running Apex Code"/>
+  <apex:outputPanel >
+      You tried calling Apex Code from a button.  If you see this page, something went wrong.  You should have
+      been redirected back to the FindAppointments page. Please report this error to your Administrator.
+  </apex:outputPanel>
+</apex:page>

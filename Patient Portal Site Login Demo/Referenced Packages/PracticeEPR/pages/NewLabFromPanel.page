@@ -1,0 +1,6 @@
+<apex:page standardController="ecare__Lab_Test__c" extensions="ecare.LabPanelExtensionController">
+    <apex:form >
+    </apex:form>
+    <apex:listViews type="ecare__Lab_Panel__c"/>
+
+</apex:page>

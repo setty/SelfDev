@@ -1,0 +1,65 @@
+<apex:page id="JavaScriptModularProgramming">
+<html>
+<title>JavaScript Programming Patterns: Module Pattern</title>
+    <script type="text/javascript">
+    // module pattern
+    var anchorChange3 = function () {
+        
+        // private property
+        var config = {
+            colors: [ "#F63", "#CC0", "#CFF" ]   
+        }
+        
+        // this is a private method
+        // can be accessed within anchorChange3
+        // cannot be accessed from outside
+        function alterColor(linkObj, color) {
+            linkObj.style.backgroundColor = color;
+        }
+    
+        return {
+            // public method
+            // can be accessed from outside
+            changeColor: function (linkObj, newColor) {
+                // calls private function to change color
+                alterColor(linkObj, newColor);
+            },
+                        
+            // public method
+            // can be accessed from outside
+            init: function () {
+                var self = this; // assign reference to current object to "self"
+            
+                // get all links on the page
+                var anchors = document.getElementsByTagName("a");
+                var size = anchors.length;
+                
+                for (var i = 0; i < size; i++) {
+                    anchors[i].color = config.colors[i];
+                    
+                    anchors[i].onclick = function () {
+                        self.changeColor(this, this.color); // this is bound to the anchor object
+                        return false;
+                    };
+                }
+            }
+        };
+    }();
+    // () ensures that the function gets called immediately when the page
+    // is loaded and the object becomes available
+    
+    </script>
+</head>
+<body>
+    <h1>Module Pattern</h1>
+    <ul>
+        <li><a href="http://news.bbc.co.uk/">News on BBC website</a></li>
+        <li><a href="http://nytimes.com/">Frontpage of The New York Times</a></li>
+        <li><a href="http://www.guardian.co.uk/">Guardian Unlimited</a></li>
+    </ul>
+    <script type="text/javascript">
+    anchorChange3.init();
+    </script>
+</body>
+</html>
+</apex:page>

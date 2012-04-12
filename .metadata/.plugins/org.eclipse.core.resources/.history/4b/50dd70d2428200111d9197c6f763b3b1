@@ -1,0 +1,18 @@
+public with sharing class RamrodController 
+{
+	public RamrodController()
+	{
+		 Http http = new Http();
+    	 HttpRequest req = new HttpRequest();
+    	 req.setEndpoint('http://www.cheenath.com/tutorial/sample1/build.xml');
+         req.setMethod('GET');
+         Error.DebugLog('req.getBody =======>'+req.getBody());
+         Error.DebugLog('req.getBodyDocument() =======>'+req.getBodyDocument());
+         Error.DebugLog('req.getCompressed() =======>'+req.getCompressed());
+         Error.DebugLog('req.getEndpoint() =======>'+req.getEndpoint());
+         Error.DebugLog('req.getMethod() =======>'+req.getMethod());
+         HttpResponse res = http.send(req);
+         Error.DebugLog('res.getBody() ===========>'+res.getBody());
+         Error.DebugLog('res.getHeaderKeys() ===========>'+res.getHeaderKeys());
+	}
+}

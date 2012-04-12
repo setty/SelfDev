@@ -1,0 +1,12 @@
+The following patient episode has been referred to you:
+
+Patient:   {!Episode__c.Patient__c}
+Episode: {!Episode__c.Name}
+Presentation:  {!Episode__c.Presentation__c}
+Initial Diagnosis:  {!Episode__c.Initial_Diagnosis__c}
+
+Referral Note:
+{!Episode__c.Referral_Note__c}
+
+Please click the link below to access the patient episode, lab tests and vitals history.
+{!Episode__c.Link}

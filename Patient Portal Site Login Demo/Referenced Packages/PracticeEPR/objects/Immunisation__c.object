@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>History of patient immunisations</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Drug_Dosage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Drug Dosage</label>
+        <referenceTo>Drug_Dosage__c</referenceTo>
+        <relationshipLabel>Immunisations</relationshipLabel>
+        <relationshipName>Immunisations</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Drug_Stock__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Drug Stock</label>
+        <referenceTo>Stock__c</referenceTo>
+        <relationshipLabel>Immunisations</relationshipLabel>
+        <relationshipName>Immunisations</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Drug__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Vaccine</label>
+        <referenceTo>Drug__c</referenceTo>
+        <relationshipLabel>Immunisations</relationshipLabel>
+        <relationshipName>Immunisations</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Patient__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Patient immunised</description>
+        <externalId>false</externalId>
+        <label>Patient</label>
+        <referenceTo>Patient__c</referenceTo>
+        <relationshipLabel>Immunisations</relationshipLabel>
+        <relationshipName>Immunisations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Vaccination_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Vaccination Date</label>
+        <required>true</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Vaccine_Target__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Vaccination Target</description>
+        <externalId>false</externalId>
+        <label>Vaccine Target</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Anthrax</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cholera</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diphtheria, Tetanus, Pertussis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Encephalitis (Japanese)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Encephalitis (Tick-borne)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haemophilus influenza type b</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hepatitis A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hepatitis B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Human Papillomavirus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactivated Poliovirus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Influenza</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measles, Mumps, Rubella</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meningococcal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pneumococcal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rabies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rotavirus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Smallpox</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tuberculosis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Varicella</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yellow Fever</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Immunisation</label>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Immunisation Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Immunisations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

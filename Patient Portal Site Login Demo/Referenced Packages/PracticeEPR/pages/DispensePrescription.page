@@ -1,0 +1,14 @@
+<apex:page standardStylesheets="true" standardController="ecare__Prescription__c" extensions="ecare.StockSelectionController">
+<apex:form >
+<apex:pageBlock title="{!$Label.Dispense_Prescription_Title}">
+<apex:outputField value="{!ecare__Prescription__c.ecare__Quantity__c}"/>&nbsp;x&nbsp; 
+<apex:outputField value="{!ecare__Prescription__c.ecare__Drug_Name__c}"/><br/><br/>
+<apex:outputText >{!$ObjectType.ecare__Stock__c.fields.Name.label}:</apex:outputText>
+<!--  apex:inputField required="true" value="{!ecare__Prescription__c.ecare__Stock__c}"/ -->
+<apex:selectList id="stock" value="{!ecare__Prescription__c.ecare__Stock__c}" size="1" title="{!$Label.Stock}">
+                        <apex:selectOptions value="{!stock}"></apex:selectOptions>
+                    </apex:selectList>
+<apex:commandButton action="{!save}" value="{!$Label.Select_Batch}"/>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

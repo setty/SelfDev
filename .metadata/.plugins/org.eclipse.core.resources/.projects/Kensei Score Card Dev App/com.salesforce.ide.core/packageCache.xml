@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<types xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types isSubType="false">
+    <name>AnalyticSnapshot</name>
+  </types>
+  <types isSubType="false">
+    <name>ApexClass</name>
+  </types>
+  <types isSubType="false">
+    <name>ApexComponent</name>
+  </types>
+  <types isSubType="false">
+    <name>ApexPage</name>
+    <members>ScoreCardPage</members>
+    <members>ScoreCardPageView</members>
+  </types>
+  <types isSubType="false">
+    <name>ApexTrigger</name>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>BusinessProcess</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomApplication</name>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>CustomField</name>
+    <members>Account.Active__c</members>
+    <members>Account.CustomerPriority__c</members>
+    <members>Account.NumberofLocations__c</members>
+    <members>Account.SLA__c</members>
+    <members>Account.SLAExpirationDate__c</members>
+    <members>Account.SLASerialNumber__c</members>
+    <members>Account.UpsellOpportunity__c</members>
+    <members>Case.EngineeringReqNumber__c</members>
+    <members>Case.PotentialLiability__c</members>
+    <members>Case.Product__c</members>
+    <members>Case.SLAViolation__c</members>
+    <members>Contact.Languages__c</members>
+    <members>Contact.Level__c</members>
+    <members>Lead.CurrentGenerators__c</members>
+    <members>Lead.NumberofLocations__c</members>
+    <members>Lead.Primary__c</members>
+    <members>Lead.ProductInterest__c</members>
+    <members>Lead.SICCode__c</members>
+    <members>Opportunity.CurrentGenerators__c</members>
+    <members>Opportunity.DeliveryInstallationStatus__c</members>
+    <members>Opportunity.MainCompetitors__c</members>
+    <members>Opportunity.OrderNumber__c</members>
+    <members>Opportunity.TrackingNumber__c</members>
+    <members>Scorecard__c.Agenda_Feedback_3rd_pt_in_3_pt_agenda__c</members>
+    <members>Scorecard__c.Better_Terms_less_than_25_deposit__c</members>
+    <members>Scorecard__c.Better_Terms_Net30__c</members>
+    <members>Scorecard__c.Brief_Training_of_techniques_1_hr__c</members>
+    <members>Scorecard__c.Budget__c</members>
+    <members>Scorecard__c.Case_Study_Testimonial_Logo__c</members>
+    <members>Scorecard__c.Champion__c</members>
+    <members>Scorecard__c.Collateral_Info_White_Paper__c</members>
+    <members>Scorecard__c.Competition_Current_and_Historic__c</members>
+    <members>Scorecard__c.Competitive_Matrix_Differentiators__c</members>
+    <members>Scorecard__c.Competitive_Proposals__c</members>
+    <members>Scorecard__c.Customized_Training__c</members>
+    <members>Scorecard__c.Day_in_the_life__c</members>
+    <members>Scorecard__c.Defined_Need_Compelling_Event__c</members>
+    <members>Scorecard__c.Denied_Agenda_Feedback_3rd_pt_in_3_pt__c</members>
+    <members>Scorecard__c.Denied_Budget__c</members>
+    <members>Scorecard__c.Denied_Case_Study_Testimonial_Logo__c</members>
+    <members>Scorecard__c.Denied_Champion__c</members>
+    <members>Scorecard__c.Denied_Competition_Current_and_Historic__c</members>
+    <members>Scorecard__c.Denied_Competitive_Proposals__c</members>
+    <members>Scorecard__c.Denied_Defined_Need_Compelling_Event__c</members>
+    <members>Scorecard__c.Denied_DM_Timeline_Process__c</members>
+    <members>Scorecard__c.Denied_External_Referral__c</members>
+    <members>Scorecard__c.Denied_Final_Decision_Meeting_with_Power__c</members>
+    <members>Scorecard__c.Denied_Internal_Referral__c</members>
+    <members>Scorecard__c.Denied_Larger_volume_deal__c</members>
+    <members>Scorecard__c.Denied_Long_term_contract_monthly_yearly__c</members>
+    <members>Scorecard__c.Denied_Meeting_with_DMs__c</members>
+    <members>Scorecard__c.Denied_Org_Chart__c</members>
+    <members>Scorecard__c.Denied_Qualification_Meeting_Accept_Inv__c</members>
+    <members>Scorecard__c.Denied_Redline_T_C__c</members>
+    <members>Scorecard__c.Denied_Sales_team_structure_and_s__c</members>
+    <members>Scorecard__c.Denied_Sign_up_for_Kensei_e_mail_list__c</members>
+    <members>Scorecard__c.Denied_Signed_Contract__c</members>
+    <members>Scorecard__c.Denied_Success_criteria_and_committed__c</members>
+    <members>Scorecard__c.Discount_Level1__c</members>
+    <members>Scorecard__c.Discount_Level2__c</members>
+    <members>Scorecard__c.DM_Timeline_Process__c</members>
+    <members>Scorecard__c.Examples_of_Training_Techniques__c</members>
+    <members>Scorecard__c.External_Referral__c</members>
+    <members>Scorecard__c.Final_Decision_Meeting_with_Power__c</members>
+    <members>Scorecard__c.Free_Pilot__c</members>
+    <members>Scorecard__c.Got_Agenda_Feedback_3rd_pt_in_3_pt__c</members>
+    <members>Scorecard__c.Got_Budget__c</members>
+    <members>Scorecard__c.Got_Case_Study_Testimonial_Logo__c</members>
+    <members>Scorecard__c.Got_Champion__c</members>
+    <members>Scorecard__c.Got_Competition_Current_and_Historic__c</members>
+    <members>Scorecard__c.Got_Competitive_Proposals__c</members>
+    <members>Scorecard__c.Got_Defined_Need_Compelling_Event__c</members>
+    <members>Scorecard__c.Got_DM_Timeline_Process__c</members>
+    <members>Scorecard__c.Got_External_Referral__c</members>
+    <members>Scorecard__c.Got_Final_Decision_Meeting_with_Power__c</members>
+    <members>Scorecard__c.Got_Internal_Referral__c</members>
+    <members>Scorecard__c.Got_Larger_volume_deal__c</members>
+    <members>Scorecard__c.Got_Long_term_contract_monthly_yearly__c</members>
+    <members>Scorecard__c.Got_Meeting_with_DMs__c</members>
+    <members>Scorecard__c.Got_Org_Chart__c</members>
+    <members>Scorecard__c.Got_Qualification_Meeting_Accept_Inv__c</members>
+    <members>Scorecard__c.Got_Redline_T_C__c</members>
+    <members>Scorecard__c.Got_Sales_team_structure_and_s__c</members>
+    <members>Scorecard__c.Got_Sign_up_for_Kensei_e_mail_list__c</members>
+    <members>Scorecard__c.Got_Signed_Contract__c</members>
+    <members>Scorecard__c.Got_Success_criteria_and_committed__c</members>
+    <members>Scorecard__c.Hold_Date__c</members>
+    <members>Scorecard__c.Internal_Referral__c</members>
+    <members>Scorecard__c.International_Travel__c</members>
+    <members>Scorecard__c.Larger_volume_deal__c</members>
+    <members>Scorecard__c.Long_term_contract_monthly_yearly__c</members>
+    <members>Scorecard__c.Meeting_Non_Decision_Makers__c</members>
+    <members>Scorecard__c.Meeting_with_DMs__c</members>
+    <members>Scorecard__c.More_time_to_make_a_decision_30_days__c</members>
+    <members>Scorecard__c.Names_of_clients_we_do_business_with__c</members>
+    <members>Scorecard__c.Num_Better_Terms_less_than_25_deposit__c</members>
+    <members>Scorecard__c.Num_Better_Terms_Net30__c</members>
+    <members>Scorecard__c.Num_Brief_Training_of_techniques_1_hr__c</members>
+    <members>Scorecard__c.Num_Collateral_Info_White_Paper__c</members>
+    <members>Scorecard__c.Num_Competitive_Matrix_Differentiators__c</members>
+    <members>Scorecard__c.Num_Customized_Training__c</members>
+    <members>Scorecard__c.Num_Day_in_the_life__c</members>
+    <members>Scorecard__c.Num_Discount_Level1__c</members>
+    <members>Scorecard__c.Num_Discount_Level2__c</members>
+    <members>Scorecard__c.Num_Examples_of_Training_Techniques__c</members>
+    <members>Scorecard__c.Num_Free_Pilot__c</members>
+    <members>Scorecard__c.Num_Hold_Date__c</members>
+    <members>Scorecard__c.Num_International_Travel__c</members>
+    <members>Scorecard__c.Num_Meeting_Non_Decision_Makers__c</members>
+    <members>Scorecard__c.Num_More_time_to_make_a_decision_30_days__c</members>
+    <members>Scorecard__c.Num_Names_of_clients_we_do_business_with__c</members>
+    <members>Scorecard__c.Num_Pricing_General__c</members>
+    <members>Scorecard__c.Num_Proposal_with_Plan_Outline__c</members>
+    <members>Scorecard__c.Num_References_people_they_can_call__c</members>
+    <members>Scorecard__c.Num_SOW_Final_Pricing__c</members>
+    <members>Scorecard__c.Num_Web_Presentation__c</members>
+    <members>Scorecard__c.Opportunity__c</members>
+    <members>Scorecard__c.Org_Chart__c</members>
+    <members>Scorecard__c.Pricing_General__c</members>
+    <members>Scorecard__c.Proposal_with_Plan_Outline__c</members>
+    <members>Scorecard__c.Qualification_Meeting_Accept_Invite__c</members>
+    <members>Scorecard__c.Redline_T_C__c</members>
+    <members>Scorecard__c.References_people_they_can_call__c</members>
+    <members>Scorecard__c.Sales_team_structure_and_s__c</members>
+    <members>Scorecard__c.Sign_up_for_Kensei_e_mail_list__c</members>
+    <members>Scorecard__c.Signed_Contract__c</members>
+    <members>Scorecard__c.SOW_Final_Pricing__c</members>
+    <members>Scorecard__c.Success_criteria_and_committed_next_step__c</members>
+    <members>Scorecard__c.Sum_Agenda_Feedback_3rd_pt_in_3_pt__c</members>
+    <members>Scorecard__c.Sum_Better_Terms_less_than_25_deposit__c</members>
+    <members>Scorecard__c.Sum_Better_Terms_Net30__c</members>
+    <members>Scorecard__c.Sum_Brief_Training_of_techniques_1_hr__c</members>
+    <members>Scorecard__c.Sum_Budget__c</members>
+    <members>Scorecard__c.Sum_Case_Study_Testimonial_Logo__c</members>
+    <members>Scorecard__c.Sum_Champion__c</members>
+    <members>Scorecard__c.Sum_Collateral_Info_White_Paper__c</members>
+    <members>Scorecard__c.Sum_Competition_Current_and_Historic__c</members>
+    <members>Scorecard__c.Sum_Competitive_Matrix_Differentiators__c</members>
+    <members>Scorecard__c.Sum_Competitive_Proposals__c</members>
+    <members>Scorecard__c.Sum_Customized_Training__c</members>
+    <members>Scorecard__c.Sum_Day_in_the_life__c</members>
+    <members>Scorecard__c.Sum_Defined_Need_Compelling_Event__c</members>
+    <members>Scorecard__c.Sum_Discount_Level1__c</members>
+    <members>Scorecard__c.Sum_Discount_Level2__c</members>
+    <members>Scorecard__c.Sum_DM_Timeline_Process__c</members>
+    <members>Scorecard__c.Sum_Examples_of_Training_Techniques__c</members>
+    <members>Scorecard__c.Sum_External_Referral__c</members>
+    <members>Scorecard__c.Sum_Final_Decision_Meeting_with_Power__c</members>
+    <members>Scorecard__c.Sum_Free_Pilot__c</members>
+    <members>Scorecard__c.Sum_Hold_Date__c</members>
+    <members>Scorecard__c.Sum_Internal_Referral__c</members>
+    <members>Scorecard__c.Sum_International_Travel__c</members>
+    <members>Scorecard__c.Sum_Larger_volume_deal__c</members>
+    <members>Scorecard__c.Sum_Long_term_contract_monthly_yearly__c</members>
+    <members>Scorecard__c.Sum_Meeting_Non_Decision_Makers__c</members>
+    <members>Scorecard__c.Sum_Meeting_with_DMs__c</members>
+    <members>Scorecard__c.Sum_More_time_to_make_a_decision_30_days__c</members>
+    <members>Scorecard__c.Sum_Names_of_clients_we_do_business_with__c</members>
+    <members>Scorecard__c.Sum_Org_Chart__c</members>
+    <members>Scorecard__c.Sum_Pricing_General__c</members>
+    <members>Scorecard__c.Sum_Proposal_with_Plan_Outline__c</members>
+    <members>Scorecard__c.Sum_Qualification_Meeting_Accept_Inv__c</members>
+    <members>Scorecard__c.Sum_Redline_T_C__c</members>
+    <members>Scorecard__c.Sum_References_people_they_can_call__c</members>
+    <members>Scorecard__c.Sum_Sales_team_structure_and_s__c</members>
+    <members>Scorecard__c.Sum_Sign_up_for_Kensei_e_mail_list__c</members>
+    <members>Scorecard__c.Sum_Signed_Contract__c</members>
+    <members>Scorecard__c.Sum_SOW_Final_Pricing__c</members>
+    <members>Scorecard__c.Sum_Success_criteria_and_committed__c</members>
+    <members>Scorecard__c.Sum_Web_Presentation__c</members>
+    <members>Scorecard__c.SumGets__c</members>
+    <members>Scorecard__c.SumGives__c</members>
+    <members>Scorecard__c.Web_Presentation__c</members>
+  </types>
+  <types isSubType="true" parent="CustomLabels">
+    <name>CustomLabel</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomLabels</name>
+    <members>CustomLabels</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomObject</name>
+    <members>Scorecard__c</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomObjectTranslation</name>
+    <members>Scorecard__c-en_US</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomPageWebLink</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomSite</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomTab</name>
+    <members>Scorecard__c</members>
+  </types>
+  <types isSubType="false">
+    <name>Dashboard</name>
+  </types>
+  <types isSubType="false">
+    <name>DataCategoryGroup</name>
+  </types>
+  <types isSubType="false">
+    <name>Document</name>
+  </types>
+  <types isSubType="false">
+    <name>EmailTemplate</name>
+    <members>unfiled$public</members>
+    <members>unfiled$public/MarketingProductInquiryResponse</members>
+    <members>unfiled$public/SalesNewCustomerEmail</members>
+    <members>unfiled$public/SupportCaseAssignmentNotification</members>
+    <members>unfiled$public/SupportCaseCreatedPhoneInquiries</members>
+    <members>unfiled$public/SupportCaseCreatedWebInquiries</members>
+    <members>unfiled$public/SupportCaseResponse</members>
+    <members>unfiled$public/SupportEscalatedCaseNotification</members>
+    <members>unfiled$public/SupportEscalatedCaseReassignment</members>
+    <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
+    <members>unfiled$public/SupportSelfServiceNewLoginandPassword</members>
+    <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
+    <members>unfiled$public/SupportSelfServiceResetPassword</members>
+    <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE</members>
+  </types>
+  <types isSubType="false">
+    <name>HomePageComponent</name>
+  </types>
+  <types isSubType="false">
+    <name>HomePageLayout</name>
+    <members>DE Default</members>
+  </types>
+  <types isSubType="false">
+    <name>Layout</name>
+    <members>Account-Account %28Marketing%29 Layout</members>
+    <members>Account-Account %28Sales%29 Layout</members>
+    <members>Account-Account %28Support%29 Layout</members>
+    <members>Account-Account Layout</members>
+    <members>Asset-Asset Layout</members>
+    <members>Campaign-Campaign Layout</members>
+    <members>CampaignMember-Campaign Member Page Layout</members>
+    <members>Case-Case %28Marketing%29 Layout</members>
+    <members>Case-Case %28Sales%29 Layout</members>
+    <members>Case-Case %28Support%29 Layout</members>
+    <members>Case-Case Layout</members>
+    <members>CaseClose-Close Case Layout</members>
+    <members>Contact-Contact %28Marketing%29 Layout</members>
+    <members>Contact-Contact %28Sales%29 Layout</members>
+    <members>Contact-Contact %28Support%29 Layout</members>
+    <members>Contact-Contact Layout</members>
+    <members>Contract-Contract Layout</members>
+    <members>Event-Event Layout</members>
+    <members>Idea-Idea Layout</members>
+    <members>Lead-Lead %28Marketing%29 Layout</members>
+    <members>Lead-Lead %28Sales%29 Layout</members>
+    <members>Lead-Lead %28Support%29 Layout</members>
+    <members>Lead-Lead Layout</members>
+    <members>Opportunity-Opportunity %28Marketing%29 Layout</members>
+    <members>Opportunity-Opportunity %28Sales%29 Layout</members>
+    <members>Opportunity-Opportunity %28Support%29 Layout</members>
+    <members>Opportunity-Opportunity Layout</members>
+    <members>OpportunityLineItem-Opportunity Product Layout</members>
+    <members>Product2-Product Layout</members>
+    <members>Scorecard__c-Scorecard Layout</members>
+    <members>SocialPersona-Social Persona Layout</members>
+    <members>Solution-Solution Layout</members>
+    <members>Task-Task Layout</members>
+    <members>User-User Layout</members>
+  </types>
+  <types isSubType="false">
+    <name>Letterhead</name>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>ListView</name>
+    <members>Account.AllAccounts</members>
+    <members>Account.MyAccounts</members>
+    <members>Account.NewLastWeek</members>
+    <members>Account.NewThisWeek</members>
+    <members>Account.PlatinumandGoldSLACustomers</members>
+    <members>Activity.AllActivities</members>
+    <members>Activity.MyActivities</members>
+    <members>Activity.TodaysTasks</members>
+    <members>Activity.UpcomingEvents</members>
+    <members>Asset.AllAssets</members>
+    <members>Campaign.AllActiveCampaigns</members>
+    <members>Campaign.MyActiveCampaigns</members>
+    <members>Case.AllClosedCases</members>
+    <members>Case.AllOpenCases</members>
+    <members>Case.InternationalEscalations</members>
+    <members>Case.InternationalPlatinumGold</members>
+    <members>Case.InternationalSilverBronze</members>
+    <members>Case.MyCases</members>
+    <members>Case.MyOpenCases</members>
+    <members>Case.PartnerRelations</members>
+    <members>Case.USEscalations</members>
+    <members>Case.USPlatinumGold</members>
+    <members>Case.USSilverBronze</members>
+    <members>Contact.AllContacts</members>
+    <members>Contact.BirthdaysThisMonth</members>
+    <members>Contact.MyContacts</members>
+    <members>Contact.NewLastWeek</members>
+    <members>Contact.NewThisWeek</members>
+    <members>Contract.AllActivatedContracts</members>
+    <members>Contract.AllContracts</members>
+    <members>Contract.AllDraftContracts</members>
+    <members>Contract.AllInApprovalContracts</members>
+    <members>Contract.MyActivatedContracts</members>
+    <members>Contract.MyDraftContracts</members>
+    <members>Contract.MyInApprovalContracts</members>
+    <members>Lead.AllOpenLeads</members>
+    <members>Lead.InternationalLeads</members>
+    <members>Lead.MyUnreadLeads</members>
+    <members>Lead.TodaysLeads</members>
+    <members>Lead.USLeads</members>
+    <members>Lead.ViewCustom1</members>
+    <members>Lead.ViewCustom2</members>
+    <members>Opportunity.AllOpportunities</members>
+    <members>Opportunity.ClosingNextMonth</members>
+    <members>Opportunity.ClosingThisMonth</members>
+    <members>Opportunity.MyOpportunities</members>
+    <members>Opportunity.NewLastWeek</members>
+    <members>Opportunity.NewThisWeek</members>
+    <members>Opportunity.Private</members>
+    <members>Opportunity.Won</members>
+    <members>Product2.AllProducts</members>
+    <members>Scorecard__c.All</members>
+    <members>Solution.AllReviewedSolutions</members>
+    <members>Solution.AllUnreviewedSolutions</members>
+    <members>User.ActiveUsers</members>
+    <members>User.AdminUsers</members>
+    <members>User.AllUsers</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>NamedFilter</name>
+  </types>
+  <types isSubType="false">
+    <name>Profile</name>
+    <members>Admin</members>
+    <members>Chatter External User</members>
+    <members>Chatter Free User</members>
+    <members>Chatter Moderator User</members>
+    <members>ContractManager</members>
+    <members>Custom%3A Marketing Profile</members>
+    <members>Custom%3A Sales Profile</members>
+    <members>Custom%3A Support Profile</members>
+    <members>Customer Portal Manager Custom</members>
+    <members>Customer Portal Manager Standard</members>
+    <members>Force%2Ecom - Free User</members>
+    <members>Gold Partner User</members>
+    <members>HighVolumePortal</members>
+    <members>MarketingProfile</members>
+    <members>PlatformPortal</members>
+    <members>ReadOnly</members>
+    <members>Silver Partner User</members>
+    <members>SolutionManager</members>
+    <members>Standard</members>
+    <members>StandardAul</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>RecordType</name>
+  </types>
+  <types isSubType="false">
+    <name>RemoteSiteSetting</name>
+    <members>ApexDevNet</members>
+  </types>
+  <types isSubType="false">
+    <name>Report</name>
+    <members>unfiled$public</members>
+  </types>
+  <types isSubType="false">
+    <name>ReportType</name>
+  </types>
+  <types isSubType="false">
+    <name>Scontrol</name>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>SharingReason</name>
+  </types>
+  <types isSubType="false">
+    <name>StandardObject</name>
+    <members>Account</members>
+    <members>AccountContactRole</members>
+    <members>Activity</members>
+    <members>Asset</members>
+    <members>Campaign</members>
+    <members>CampaignMember</members>
+    <members>Case</members>
+    <members>CaseContactRole</members>
+    <members>Contact</members>
+    <members>ContentVersion</members>
+    <members>Contract</members>
+    <members>ContractContactRole</members>
+    <members>Event</members>
+    <members>Idea</members>
+    <members>JigsawSavedSearch</members>
+    <members>Lead</members>
+    <members>Opportunity</members>
+    <members>OpportunityContactRole</members>
+    <members>OpportunityLineItem</members>
+    <members>PartnerRole</members>
+    <members>Product2</members>
+    <members>Site</members>
+    <members>SocialPersona</members>
+    <members>Solution</members>
+    <members>Task</members>
+    <members>User</members>
+    <members>UserLicense</members>
+  </types>
+  <types isSubType="false">
+    <name>StaticResource</name>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>ValidationRule</name>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>WebLink</name>
+    <members>Account.Billing</members>
+    <members>Campaign.ViewCampaignInfluenceReport</members>
+    <members>Case.UpsellCrosssellOpportunity</members>
+    <members>Opportunity.DeliveryStatus</members>
+  </types>
+  <types isSubType="false">
+    <name>Workflow</name>
+    <members>Account</members>
+    <members>Asset</members>
+    <members>Campaign</members>
+    <members>CampaignMember</members>
+    <members>Case</members>
+    <members>Contact</members>
+    <members>Contract</members>
+    <members>Event</members>
+    <members>Idea</members>
+    <members>Lead</members>
+    <members>Opportunity</members>
+    <members>OpportunityLineItem</members>
+    <members>Organization</members>
+    <members>Product2</members>
+    <members>Scorecard__c</members>
+    <members>Site</members>
+    <members>Solution</members>
+    <members>Task</members>
+    <members>UserLicense</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowAlert</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowFieldUpdate</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowOutboundMessage</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowRule</name>
+    <members>Case.Standard</members>
+    <members>Case.Standard</members>
+    <members>Lead.Standard</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowTask</name>
+  </types>
+</types>

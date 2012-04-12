@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Appointment__c.Type__c</field>
+    </columns>
+    <columns>
+        <field>Appointment__c.Patient__c</field>
+    </columns>
+    <columns>
+        <field>Appointment__c.Chargeable__c</field>
+    </columns>
+    <description>Historical appointment and walk-ins by calendar week</description>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Appointment__c.Triage__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>Appointment__c.Appointment_Date_Time__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Appointments per Week</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Appointment__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Appointment__c.Appointment_Date_Time__c</dateColumn>
+        <interval>INTERVAL_CURPREVQ</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Invoice for a designated bill payer. This can be automatically generated or manually created by a user, normally  in the case of providing credit notes.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account2__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Invoices</relationshipLabel>
+        <relationshipName>Invoices1</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BP_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Bill_Payer__r.Name  + &apos;, &apos; +  Bill_Payer__r.Billing_Address__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>BP Address</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Balance__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Balance</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Bill_Payer__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Bill Payer</label>
+        <referenceTo>Bill_Payer__c</referenceTo>
+        <relationshipLabel>Invoices</relationshipLabel>
+        <relationshipName>Invoices</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Due_Date_DDMMYYYY__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(DAY( Due_Date__c )) &amp; &apos;/&apos; &amp; LPAD(TEXT(MONTH(Due_Date__c )), 2, &apos;0&apos;) &amp; &apos;/&apos; &amp; TEXT(YEAR(Due_Date__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Due Date (DD/MM/YYYY)</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Invoice_Date__c +  
+IF(NOT(ISNULL( Bill_Payer__r.Payment_Days__c )), 
+     Bill_Payer__r.Payment_Days__c,  
+    $Setup.Billing_Parameters__c.Payment_Days__c 
+  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Due Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Diagnosis__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Final Diagnosis</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initial_Diagnosis__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Initial Diagnosis</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inv_Date_DDMMYYYY__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(DAY( Invoice_Date__c )) &amp; &apos;/&apos; &amp; LPAD(TEXT(MONTH(Invoice_Date__c )), 2, &apos;0&apos;) &amp; &apos;/&apos; &amp; TEXT(YEAR(Invoice_Date__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inv Date (DD/MM/YYYY)</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Invoice Amount</label>
+        <summarizedField>Invoice_Item__c.Price__c</summarizedField>
+        <summaryForeignKey>Invoice_Item__c.Invoice__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <defaultValue>$System.OriginDateTime</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Date invoice generated</description>
+        <externalId>false</externalId>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Received__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the amount received for this invoice</inlineHelpText>
+        <label>Payment Received</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Invoiced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overdue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Written Off</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tax__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CEILING(100*Invoice_Amount__c *  $Setup.Billing_Parameters__c.Tax_Rate__c)/100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Invoice_Amount__c +  Tax__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Transaction_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Transaction Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Invoice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit Note</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Invoice</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000000000}</displayFormat>
+        <label>Invoice No</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Invoices</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Invoice_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Due_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>Invoice_Run</listViewButtons>
+        <lookupDialogsAdditionalFields>Transaction_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account2__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Transaction_Type__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchFilterFields>Account2__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Due_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Amount__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <fullName>Invoice_Run</fullName>
+        <availability>online</availability>
+        <description>When clicked will prompt for the date to invoice up to for the selected accounts.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Invoice Run</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>alert(&quot;Invoice process to go here&quot;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Print_Invoice</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>768</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Print Invoice</masterLabel>
+        <openType>newWindow</openType>
+        <page>PrintInvoice</page>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <width>1024</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_Claim</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit Claim</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>alert(&quot;Claim submitted&quot;);</url>
+    </webLinks>
+</CustomObject>

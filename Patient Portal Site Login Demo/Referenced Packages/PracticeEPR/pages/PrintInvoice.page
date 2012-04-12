@@ -1,0 +1,79 @@
+<!-- NO STYLING APPLIED - PRINT PREVIEW PAGE -->
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false" standardController="ecare__Invoice__c" extensions="ecare.PrintInvoiceController" renderAs="pdf">
+
+<!-- Images need to be spaced appropriately --> 
+
+<!-- Can the logo be in a unmanaged static resource that is separately loaded to the Trialforce org? -->
+
+
+    <table>
+    <tr>
+    <td align="left" width="215px" valign="top"><img src="{!URLFOR($Resource.YourLogos,'yourlogo.jpg')}" alt="" width="215" height="55" align="right" valign="top" /></td>
+    <td align="center" width="300px" valign="top">
+        <b>{!$Organization.Name}</b><br/>
+        {!$Organization.Street}, {!$Organization.State}, {!$Organization.PostalCode}<br/> 
+        Tel:&nbsp;{!$Organization.Phone}&nbsp;&nbsp;Fax: {!$Organization.Fax}
+    </td>
+    <td align="right" width="215px" valign="top"><img src="{!URLFOR($Resource.CliniCloudSRB1,'images/logo.png')}" alt="" width="215" height="55" align="right" valign="top" /></td>
+    </tr>
+    </table>
+
+    <apex:pageBlock id="Print">
+
+    <apex:pageBlockSection title="{!InvoiceData.ecare__Transaction_Type__c}" columns="2"> 
+    
+        <apex:outputLabel value="{!$ObjectType.ecare__Invoice__c.fields.Name.label}:" style="font-weight: bold;" />
+        <apex:outputText value="{!InvoiceData.Name}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Invoice__c.fields.ecare__Invoice_Date__c.label}:" style="font-weight: bold;" />
+        <apex:outputText value="{!InvoiceData.ecare__Inv_Date_DDMMYYYY__c}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Invoice__c.fields.ecare__Due_Date__c.label}:" style="font-weight: bold;" />
+        <apex:outputText value="{!InvoiceData.ecare__Due_Date_DDMMYYYY__c}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Patient__c.fields.ecare__Bill_Payer2__c.label}:" style="font-weight: bold;" />
+        <apex:outputText value=" {!InvoiceData.ecare__BP_Address__c}" />
+        <!--  
+        <apex:outputText value=" {!InvoiceData.Account__r.Name}"/>
+        <apex:outputText value=" "/>
+        <apex:outputText value=" {!InvoiceData.Account__r.BillingStreet}"/>
+        <apex:outputText value=" "/>
+        <apex:outputText value=" {!InvoiceData.Account__r.BillingCity}"/>
+        <apex:outputText value=" "/>
+        <apex:outputText value=" {!InvoiceData.Account__r.BillingPostalCode}"/>
+        -->
+     </apex:pageBlockSection>
+    <br/> 
+    <table border="1" cellpadding="5" width="95%" cellspacing="0" cols="3" bordercolor="black" align="center">
+        <tr>
+            <th>Date</th>
+            <th>Patient</th>
+            <th>Description</th>
+            <th>Charge</th>
+        </tr>    
+        
+        <apex:repeat value="{!InvoiceData.ecare__Invoice_Items__r}" var="lineItem" >
+          <tr>
+                <td><apex:outputfield value="{!lineItem.ecare__Item_Date__c}"/></td>
+                <td><apex:outputfield value="{!lineItem.ecare__Patient_Name__c}"/></td>
+                <td><apex:outputfield value="{!lineItem.ecare__Note__c}"/></td>
+                <td align="right"><apex:outputfield value="{!lineItem.ecare__Price__c}"/></td>
+          </tr> 
+         </apex:repeat>
+         <tr>
+                <td colspan="3" align="right">SUB-TOTAL:</td>
+                <td align="right"><apex:outputField value="{!InvoiceData.ecare__Invoice_Amount__c}"/></td>
+         </tr>
+         <tr>
+                <td colspan="3" align="right">TAX:</td>
+                <td align="right"><apex:outputField value="{!InvoiceData.ecare__Tax__c}"/></td>
+         </tr>
+         <tr>
+                <td colspan="3" align="right"><b>TOTAL DUE:</b></td>
+                <td align="right"><b><apex:outputField value="{!InvoiceData.ecare__Total_Amount__c}"/></b></td>
+         </tr>
+    </table>
+    <br/>
+    <b>Payment Terms:</b> 
+    <apex:pageBlockTable value="{!TsAndCs}" var="Terms"> 
+    <apex:column value="{!Terms}" style="white-space:pre;"/>
+    </apex:pageBlockTable> 
+ </apex:pageBlock>
+</apex:page>

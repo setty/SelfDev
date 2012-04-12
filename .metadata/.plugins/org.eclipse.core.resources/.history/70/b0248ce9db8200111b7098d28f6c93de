@@ -1,0 +1,43 @@
+<apex:page id="JavaScriptPattern">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+	
+	<!--  Java Script Old Pattermn -->
+	<script>
+		function changeColor1(linkObj, newColor) {
+		    linkObj.style.backgroundColor = newColor;
+		}
+		
+		function anchorChange1() {
+		    // set configuration
+		    var config = {
+		        colors: [ "#F63", "#CC0", "#CFF" ]
+		    };
+		
+		    // get all links on page
+		    var anchors = document.getElementsByTagName("a");
+		    var size = anchors.length;
+		
+		    // loop through anchors and attach events
+		    for (var i = 0; i < size; i++) {
+		        anchors[i].color = config.colors[i];
+		
+		        anchors[i].onclick = function () {
+		            changeColor1(this, this.color);
+		            return false;
+		        };
+		    }
+		}
+	</script>
+	
+	<body>
+	<ul>
+	    <li><a href="http://news.bbc.co.uk/">News on BBC website</a></li>
+	    <li><a href="http://nytimes.com/">Frontpage of The New York Times</a></li>
+	    <li><a href="http://www.guardian.co.uk/">Guardian Unlimited</a></li>
+	</ul>
+	<script type="text/javascript">    
+    	anchorChange1();
+    </script>
+	</body>
+</apex:page>

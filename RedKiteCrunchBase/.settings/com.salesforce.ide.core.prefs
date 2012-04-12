@@ -1,0 +1,13 @@
+#Wed Sep 28 18:52:35 IST 2011
+eclipse.preferences.version=1
+endpointApiVersion=20.0
+endpointEnvironment=Production/Developer Edition
+endpointServer=www.salesforce.com
+httpsProtocol=true
+ideVersion=20.0
+keependpoint=false
+metadataFormatVersion=20.0
+namespacePrefix=
+packageName=unpackaged
+readTimeout=400
+username=cbdev@redkitetechnologies.com

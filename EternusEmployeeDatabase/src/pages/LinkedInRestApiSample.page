@@ -1,0 +1,13 @@
+<apex:page controller="LinkedInRestApiCtl">
+	
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockButtons location="TOP">
+				<apex:commandButton value="Post on LinkedIn" action="{!connectToLinkedIn}" />
+			</apex:pageBlockButtons>
+			
+			<apex:outputLabel value="{!LinkedInResponse}"/> 
+		</apex:pageBlock>
+	</apex:form>
+	
+</apex:page>

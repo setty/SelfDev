@@ -1,0 +1,6 @@
+<apex:page controller="MyGoogleContoller" > <!-- renderAs="Pdf" -->
+<html>
+<apex:PageMessages ></apex:PageMessages>
+<apex:Image Url="{!ChartData}"></apex:Image>
+</html>
+</apex:page>

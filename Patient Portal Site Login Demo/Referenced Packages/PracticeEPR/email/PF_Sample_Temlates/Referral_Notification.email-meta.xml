@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <attachedDocuments>PracticeForce_Migration/CliniCloud_Logo.png</attachedDocuments>
+    <available>true</available>
+    <description>Notification of a new patient episode referral</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Referral Notification</name>
+    <style>none</style>
+    <subject>Patient Referral Notification: {!Episode__c.Patient__c}</subject>
+    <type>text</type>
+</EmailTemplate>

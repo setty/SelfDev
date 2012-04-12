@@ -1,0 +1,52 @@
+<apex:page standardController="Investment_Option__c" recordSetVar="unused" sidebar="false">
+
+<!-- for this page to work with a specific custom object, change standController="entityname" to custom object api name  
+    For example, if custom object name is Warehouse__c, change first part of the first line to standardController="warehouse__c" -->
+
+    
+<apex:includeScript value="{!$Resource.UtilJS}" />
+<apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlock >
+Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+</apex:pageBlock>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+<apex:commandButton value="Return" action="{!cancel}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!selected}" var="a" id="table">
+<apex:column headerValue="Name">
+<apex:inputField value="{!a.name}"/>
+</apex:column>
+<apex:column headerValue="Plan Name">
+<apex:inputField value="{!a.Plan_Account_Name__c}"/>
+</apex:column>
+<apex:column headerValue="Ticker">
+<apex:inputField value="{!a.Ticker_Symbol_Formula__c}"/>
+</apex:column>
+<apex:column headerValue="Corrected Plan">
+<apex:inputField value="{!a.Correct_Plan__c}"/>
+</apex:column>
+<apex:column headerValue="Fund/Product Name">
+<apex:inputField value="{!a.Product__c}"/>
+</apex:column>
+<apex:column headerValue="$ of Assets in Fund (AUM)">
+<apex:inputField value="{!a.of_Assets_in_Fund_AUM__c}"/>
+</apex:column>
+<apex:column headerValue="Fund Status">
+<apex:inputField value="{!a.Fund_Status__c}"/>
+</apex:column>
+<apex:column headerValue="# Balances">
+<apex:inputField value="{!a.Balances__c}"/>
+</apex:column>
+<apex:column headerValue="Contributions">
+<apex:inputField value="{!a.Contributions__c}"/>
+</apex:column>
+<apex:column headerValue="Unique RK Identifier">
+<apex:inputField value="{!a.Unique_RK_Identifier__c}"/>
+</apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

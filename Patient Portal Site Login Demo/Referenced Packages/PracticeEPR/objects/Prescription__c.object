@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>A Drug Prescription for a single patient script. Scripts can be cloned for repeat prescriptions.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Approved_By__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Approved By</label>
+        <referenceTo>Clinician__c</referenceTo>
+        <relationshipLabel>Prescriptions</relationshipLabel>
+        <relationshipName>Prescriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Controlled_Drug_Flag__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(Drug__r.Approval_Required__c, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Controlled Drug Flag</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dispense_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL( Status__c, &apos;Collected&apos; ),
+    DATEVALUE( LastModifiedDate ),
+    null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Dispense Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Dosage_Note__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL(Drug_Dosage__c) || ISBLANK(Drug_Dosage__c), 
+TEXT(Dosage__c) &amp; &quot; x &quot; &amp; Drug__r.Dose__c &amp; &quot; to be taken &quot; &amp; TEXT(Drug__r.Route__c) &amp;  &quot;, &quot; &amp;   TEXT(Frequency_Unit__c)  &amp; &quot; &quot; &amp; TEXT(Frequency_Period__c) &amp; IF(!ISBLANK( Duration__c ), &quot; for &quot; &amp; TEXT(Duration__c) &amp; &quot; days&quot;, &quot; &quot;),
+ Drug_Dosage__r.Dosage_Note__c)</formula>
+        <label>Dosage Note</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dosage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of units to be taken each time frequency</description>
+        <externalId>false</externalId>
+        <label>Dosage</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drug_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Drug__r.Summary__c</formula>
+        <label>Drug Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drug_Dosage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Either select a standard dosage or enter the individual details below</inlineHelpText>
+        <label>Drug Dosage</label>
+        <referenceTo>Drug_Dosage__c</referenceTo>
+        <relationshipLabel>Prescriptions</relationshipLabel>
+        <relationshipName>Prescriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Drug_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Drug__r.Name + &apos; (&apos; + Drug__r.Pack_Description__c + &apos;) &apos;</formula>
+        <label>Drug Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drug__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Drug</label>
+        <referenceTo>Drug__c</referenceTo>
+        <relationshipLabel>Prescriptions</relationshipLabel>
+        <relationshipName>Prescriptions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of days medication prescribed, combined with the frequency and dose, this defines the pharmacy stock used.</description>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Frequency_Period__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Frequency Period</label>
+        <picklist>
+            <picklistValues>
+                <fullName>times per day</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>times per hour</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Frequency_Unit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of times per Frequency Period the prescription is to be taken</description>
+        <externalId>false</externalId>
+        <label>Frequency Unit</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoiced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Invoiced</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Patient_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Patient__r.Patient_Address__c</formula>
+        <label>Patient Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_Age_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Patient__r.Age__c</formula>
+        <label>Patient Age</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_Age__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Patient__r.Age_Years__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Patient Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Patient</label>
+        <referenceTo>Patient__c</referenceTo>
+        <relationshipLabel>Prescriptions</relationshipLabel>
+        <relationshipName>Prescriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Quantity__c *  Drug__r.Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of units of the drug item to be dispensed by the pharmacist. Check the pack size is correct for the prescription duration, frequency and dosage.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Repeat__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if the prescription is intended to be a repeat prescription</description>
+        <externalId>false</externalId>
+        <label>Repeat</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approval Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prescribed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Collected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Stock__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When dispensing the drug the pharmacist must select the stock batch from which the drug has been taken to maintan an accurate stock and expiry count.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When dispensing the drug the pharmacist must select the stock batch from which the drug has been taken to maintan an accurate stock and expiry count.</inlineHelpText>
+        <label>Stock</label>
+        <referenceTo>Stock__c</referenceTo>
+        <relationshipLabel>Prescriptions</relationshipLabel>
+        <relationshipName>Prescriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <label>Prescription</label>
+    <nameField>
+        <displayFormat>P-{0000000000}</displayFormat>
+        <label>Prescription No</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Prescriptions</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Drug_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Dosage_Note__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Approved_By__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Stock_batch_mandatory</fullName>
+        <active>true</active>
+        <description>Stock batch mandatory when a prescription is collected</description>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c , &apos;Collected&apos;), ISBLANK( Stock__c ) )</errorConditionFormula>
+        <errorDisplayField>Stock__c</errorDisplayField>
+        <errorMessage>Please select a stock item when the prescription is collected</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Dispense_Prescription</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Dispense Prescription</masterLabel>
+        <openType>sidebar</openType>
+        <page>DispensePrescription</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Drug_Interaction_Checker</fullName>
+        <availability>online</availability>
+        <description>Launch Drug Interaction Checker Tool</description>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>800</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Interaction Checker</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.medscape.com/druginfo/druginterchecker</url>
+        <width>800</width>
+    </webLinks>
+    <webLinks>
+        <fullName>List_Interaction_Checker</fullName>
+        <availability>online</availability>
+        <description>Drug Interaction Checker list button</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Interaction Checker</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>http://www.medscape.com/druginfo/druginterchecker</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Print_Prescription2</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Print Prescriptions</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>window.open(&quot;apex/PrescriptionPrint?id={!Patient__c.Id}&quot;, &quot;_new&quot;, &quot;height=600,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1&quot;);</url>
+    </webLinks>
+</CustomObject>

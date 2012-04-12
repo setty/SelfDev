@@ -1,0 +1,9 @@
+<apex:page sidebar="false" showHeader="false" controller="Logincontrol">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Sushant Patil is</h1>
+   <apex:form >
+  <apex:inputText value="{!Name}"/>
+  <apex:commandButton value="Login" action="{!welcome}"/>
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

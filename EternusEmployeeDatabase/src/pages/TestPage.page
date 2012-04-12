@@ -1,0 +1,70 @@
+<apex:page >
+ <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+  api_key:Q9fhiEmgF0SusfsHCF8rGqv8qJ9J97pfTY9RdMdkHdD5aF0id19jT-ruMwejURx2
+   onLoad: onLinkedInLoad
+  authorize: true
+ </script>
+  
+<script type="IN/Login"/>
+
+<script type="text/javascript">
+ function onLinkedInLoad() {
+     // Listen for an auth event to occur
+     
+     IN.Event.on(IN, "auth", onLinkedInAuth);
+ } 
+
+ function onLinkedInAuth() {
+     /* After they signed-in, print a form to enable keyword searching */
+     IN.API.Profile("me").result(displayProfiles);
+     div = document.getElementById("sendMessageForm");
+     div.innerHTML = '<h2>Send a Message To Yourself</h2><br/>';
+     div.innerHTML += '<input id="message" size="30" value="You are awesome!" type="text">' +
+                      '<input type="submit" value="Send Message!" onclick="javascript:SendMessage();" />';
+ }
+ 
+ function SendMessage(keywords) {
+     // Call the Message sending API with the viewers message
+     // On success, call displayMessageSent(); On failure, do nothing.
+     var message = document.getElementById('message').value;
+     var BODY = {
+        "recipients": {
+           "values": [{
+             "person": {
+                "_path": "/people/~",
+             }
+           }]
+         },
+       "subject": "JSON POST from JSAPI",
+       "body": message
+     }
+
+     IN.API.Raw("/people/~/mailbox")
+            .method("POST")
+            .body(JSON.stringify(BODY)) 
+            .result(displayMessageSent)
+            .error(function error(e) { alert ("No dice") });
+
+
+ }
+
+ function displayMessageSent() {
+      var div = document.getElementById("sendMessageResult");
+      div.innerHTML += "Yay!";
+ }
+ function displayProfiles(profiles) {
+ 
+     var member = profiles.values[0];
+ 
+     document.getElementById("profiles").innerHTML = 
+          "<p id=\"" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + "</p>";}
+
+ </script>
+
+<apex:form >
+    <div id="profiles"></div>
+
+    <div id="sendMessageForm"></div>
+    <div id="sendMessageResult"></div>
+</apex:form>
+</apex:page>

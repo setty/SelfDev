@@ -1,0 +1,10 @@
+<apex:page controller="VfSupportingMapAndList" id="VfSupportingMapAndList">
+<h3>Getting Value from List </h3>
+<apex:repeat value="{!iter}" var="pos">
+<apex:outputText value="{!people[pos]}" /><br/>
+</apex:repeat>
+<h3>Getting Value from Map </h3>
+<apex:repeat value="{!keys}" var="director">
+<apex:outputText value="{!directorsToCountry [director]}" /><br/>
+</apex:repeat>
+</apex:page>

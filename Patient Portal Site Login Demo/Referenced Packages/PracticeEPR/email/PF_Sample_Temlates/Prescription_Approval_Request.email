@@ -1,0 +1,8 @@
+Please approve the following request on PracticeEPR:
+
+Patient Age:  {!Prescription__c.Patient_Age__c}
+Drug: {!Prescription__c.Drug__c}
+Dosage: {!ecare__Prescription__c.ecare__Drug_Dosage_Note__c}
+Duration: {!Prescription__c.Duration__c}
+
+Click here {!Prescription__c.Link} to view the request.

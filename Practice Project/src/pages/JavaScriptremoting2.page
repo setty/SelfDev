@@ -1,0 +1,46 @@
+<apex:page id="JavaScriptremoting2" controller="JavaScriptremoting2Controller" sidebar="true" showheader="true">
+	<head>
+	
+		<title> JavaScript remoting Search functionality </title>
+			<link rel="stylesheet" type="text/css" href="/apex/gi_css?core.apexpages.devmode.url=1" />
+		
+<!-- 		<script language="javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>  -->
+<!-- 		<script language="javascript" src="http://www.mikage.to/jquery/jquery.history.js"></script>  -->
+<!-- 		<script language="javascript" src="http://www.stephenrhoades.com/demos/js/plugins/showResults.2.0.6.js"></script>  -->
+<!-- 		<script language="javascript" src="http://www.stephenrhoades.com/demos/js/plugins/showResults.2.0.6.min.js"></script> -->
+			<script type="text/javascript" src="/apex/gi_js?core.apexpages.devmode.url=1"> </script>
+	<script type="text/javascript">
+		function doSearch(q)
+		{
+			//mark();
+			alert('value -===>'+q);
+			JavaScriptremoting2Controller.getResultJSR(q, function(results) {
+			if(results)
+			{
+				var ul = document.createElement('ul');
+				for(var i=0; i<results.lenght;i++)
+				{
+					var r = results[i]; 
+					var li = document.createElement('li');
+					
+					li.innerHtml = '<span class="r1">'+ r.FirstName +' '+r.LastName +</span> +
+									'<div class=r2> ' + r.email 	+'</div>';
+					ul.appendChild(li);
+				}	
+				
+				document.getElementById('results').appendChild(ul);
+				
+			}
+				
+				measure();
+			})
+		}
+		
+	</script>
+	</head>
+	<body>
+		<input type="text" value="" onkeyup="doSearch(this.value);" />
+		<div id="time"></div>
+		<ul id="results"></ul>
+	</body>
+</apex:page>

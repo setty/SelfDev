@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Parameters relating to default values used for billing</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Appointment_GL_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>General Ledger code for Appointment charges</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If integrating with your accounting package enter the GL code for patient appointment charges</inlineHelpText>
+        <label>Appointment GL Code</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Terms__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice Terms to appear on the Printed Invoice</description>
+        <externalId>false</externalId>
+        <label>Invoice Terms</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Lab_Test_GL_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>General Ledger code for Lab Test charges</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If integrating with your accounting package enter the GL code for patient lab test charges</inlineHelpText>
+        <label>Lab Test GL Code</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Days__c</fullName>
+        <defaultValue>30</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The default number of payment days after invoice for payment</description>
+        <externalId>false</externalId>
+        <label>Payment Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prescription_GL_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>General Ledger code for Prescription charges</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If integrating with your accounting package enter the GL code for patient prescription charges</inlineHelpText>
+        <label>Prescription GL Code</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Separate_Invoices_per_Patient__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether patients are grouped together by bill payer or have separate invoices to the bill payer. Superseded on the Bill Payer</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Deprecated feature. This is now controlled on each Bill Payer.</inlineHelpText>
+        <label>Separate Invoices per Patient</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Rate__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The default tax rate for invoices</description>
+        <externalId>false</externalId>
+        <label>Tax Rate</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Treatment_GL_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>General Ledger code for Treatment charges</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If integrating with your accounting package enter the GL code for patient treatment charges</inlineHelpText>
+        <label>Treatment GL Code</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Billing Parameters</label>
+</CustomObject>

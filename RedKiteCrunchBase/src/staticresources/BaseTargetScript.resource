@@ -1,0 +1,1 @@
+document.write('<base target="_blank" />');

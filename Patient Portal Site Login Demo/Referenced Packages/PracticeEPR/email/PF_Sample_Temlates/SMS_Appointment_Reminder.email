@@ -1,0 +1,9 @@
+user:enthUK 
+password:5M5Demo
+api_id:3271706
+to:{!Appointment__c.PatientMobile__c}
+text:Dear {!Appointment__c.Patient__c}
+text:This is an SMS appointment reminder for the following appointment 
+text:When {!Appointment__c.Appointment_Date_Time__c}
+text:With {!Appointment__c.OwnerFullName}
+text:Where PracticeForce Medical Centre

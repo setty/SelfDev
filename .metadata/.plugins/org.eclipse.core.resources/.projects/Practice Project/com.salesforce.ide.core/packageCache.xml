@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<types xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types isSubType="false">
+    <name>AnalyticSnapshot</name>
+  </types>
+  <types isSubType="false">
+    <members>RamrodController</members>
+    <name>ApexClass</name>
+    <members>AccessingAllsObjects</members>
+    <members>ActionFunctionVersionController</members>
+    <members>AdvancedDev_DataTypes</members>
+    <members>ApexInAjax</members>
+    <members>AssetTriggerClass</members>
+    <members>batchClassUsingIterator</members>
+    <members>ChangePasswordController</members>
+    <members>CommanTagController</members>
+    <members>CommanTagPage</members>
+    <members>CustomLookUpController</members>
+    <members>CutomSettingComponent</members>
+    <members>DemoSFDragDropList</members>
+    <members>Error</members>
+    <members>eventItem</members>
+    <members>facebookController</members>
+    <members>Field</members>
+    <members>ForgotPasswordController</members>
+    <members>HttpHandlerController</members>
+    <members>IndexController</members>
+    <members>IteratorConceptApex</members>
+    <members>IterratorUsingClass</members>
+    <members>JavaScriptRemoting</members>
+    <members>JavaScriptremoting2Controller</members>
+    <members>LetsStart</members>
+    <members>Logincontrol</members>
+    <members>LoginResult</members>
+    <members>Month</members>
+    <members>MyGoogleContoller</members>
+    <members>MyProfilePageController</members>
+    <members>nestedqueryexample</members>
+    <members>NewVfCharting</members>
+    <members>OnOppUpdateSendForApprovalProcess</members>
+    <members>Record</members>
+    <members>recurring_event_close</members>
+    <members>repeatCon</members>
+    <members>Response</members>
+    <members>Result</members>
+    <members>SchedularPractice</members>
+    <members>SelectList</members>
+    <members>SendEmail</members>
+    <members>SendSms</members>
+    <members>SFConnectionController</members>
+    <members>SFConnectionDemoController</members>
+    <members>SFConnectionUtility</members>
+    <members>SFDragDropListController</members>
+    <members>SFemailhandler</members>
+    <members>SFXMLDom</members>
+    <members>SFXmlParser</members>
+    <members>SiteLoginController</members>
+    <members>SiteRegisterController</members>
+    <members>smsPostmasterCoIn</members>
+    <members>startHereController</members>
+    <members>TestSFConnectionToolkit</members>
+    <members>VfSupportingMapAndList</members>
+    <members>WelcomeController</members>
+    <members>wwwHogeComHogeObject</members>
+    <members>XMLDom</members>
+  </types>
+  <types isSubType="false">
+    <name>ApexComponent</name>
+    <members>BaseDragDropComponent</members>
+    <members>CustomSettingComponent</members>
+    <members>GoogleMap</members>
+    <members>SFDragDropList</members>
+    <members>SiteFooter</members>
+    <members>SiteHeader</members>
+    <members>SiteLogin</members>
+    <members>SitePoweredBy</members>
+  </types>
+  <types isSubType="false">
+    <members>Ramrod</members>
+    <members>JavaScriptPattern</members>
+    <members>JavaScriptModularProgramming</members>
+    <name>ApexPage</name>
+    <members>AccessingAllsObjects</members>
+    <members>ActionFunctionVersion</members>
+    <members>AdvancedDev_DataTypes</members>
+    <members>AnswersHome</members>
+    <members>apexcomposition</members>
+    <members>apexCompositionPage</members>
+    <members>apexenhancedList</members>
+    <members>ApexPageContentType</members>
+    <members>apexpanelBar</members>
+    <members>apexpanelGrid</members>
+    <members>apextab</members>
+    <members>apextoolbar</members>
+    <members>BandwidthExceeded</members>
+    <members>calendarPage</members>
+    <members>calendarSmallPage</members>
+    <members>ChangePassword</members>
+    <members>CommanTagPage</members>
+    <members>CustomLookUp</members>
+    <members>DemoSFDragDropList</members>
+    <members>Exception</members>
+    <members>Facebooklogin</members>
+    <members>FileNotFound</members>
+    <members>ForgotPassword</members>
+    <members>ForgotPasswordConfirm</members>
+    <members>GettingQueryStringParameters</members>
+    <members>Google_Search</members>
+    <members>IdeasHome</members>
+    <members>Index</members>
+    <members>InMaintenance</members>
+    <members>JavaScript</members>
+    <members>JavaScriptRemoting</members>
+    <members>JavaScriptremoting2</members>
+    <members>jQueryDragDrop</members>
+    <members>JqueryMenu</members>
+    <members>JQueryPaging</members>
+    <members>LeadHomePage</members>
+    <members>LetsStart</members>
+    <members>Login</members>
+    <members>MyGoogle</members>
+    <members>MyGoogleMapView</members>
+    <members>MyProfilePage</members>
+    <members>nestedqueryexample</members>
+    <members>NewVfCharting</members>
+    <members>RedHotNews</members>
+    <members>SelectListPage</members>
+    <members>SendEmail</members>
+    <members>SendSms</members>
+    <members>SettingthetabIndexonComponents</members>
+    <members>SFConnectionDemo</members>
+    <members>SiteLogin</members>
+    <members>SiteRegister</members>
+    <members>SiteRegisterConfirm</members>
+    <members>SiteTemplate</members>
+    <members>StandardObjectListPage</members>
+    <members>StandardObjectListPage2</members>
+    <members>Start_Here</members>
+    <members>StdExceptionTemplate</members>
+    <members>Toggle</members>
+    <members>Unauthorized</members>
+    <members>UnderConstruction</members>
+    <members>VFJSON</members>
+    <members>VfSupportingMapAndList</members>
+    <members>Web_Call</members>
+    <members>welcome</members>
+  </types>
+  <types isSubType="false">
+    <name>ApexTrigger</name>
+    <members>AccountTrigger</members>
+    <members>AssetTrigger</members>
+    <members>ContactTrigger</members>
+    <members>DeleteEvent</members>
+    <members>OnAccountUpdate</members>
+    <members>OnOppUpdateSendForApprovalProcess</members>
+    <members>OpportunityTrigger</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>BusinessProcess</name>
+    <members>Case.Deal</members>
+    <members>Opportunity.Deal</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomApplication</name>
+    <members>Apex_Toolkit_Salesforce</members>
+    <members>BLND_SnapShot</members>
+    <members>Force_com</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>CustomField</name>
+    <members>Account.Active__c</members>
+    <members>Account.CustomerPriority__c</members>
+    <members>Account.DOB__c</members>
+    <members>Account.FacebookPassword__c</members>
+    <members>Account.FacebookUserName__c</members>
+    <members>Account.NumberofLocations__c</members>
+    <members>Account.SLA__c</members>
+    <members>Account.SLAExpirationDate__c</members>
+    <members>Account.SLASerialNumber__c</members>
+    <members>Account.Status__c</members>
+    <members>Account.UpsellOpportunity__c</members>
+    <members>BLND_DFAC_Shared_View__c.BLND_Application__c</members>
+    <members>BLND_DFAC_Shared_View__c.BLND_Data__c</members>
+    <members>BLND_DFAC_Shared_View__c.BLND_Description__c</members>
+    <members>BLND_DFAC_Shared_View__c.BLND_Expansion__c</members>
+    <members>BLND_DFAC_Shared_View__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFAC_Shared_View__c.BLND_Owner__c</members>
+    <members>BLND_DFAC_Shared_View__c.BLND_Private__c</members>
+    <members>BLND_DFAC_Shared_View__c.BLND_Version__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Bookmark__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Data__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Description__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Expansion__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Flag1__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Flag2__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Flag3__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Flag4__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Height__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Lastopen__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Locked__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Over1__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Over2__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Over3__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Private__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Type__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Version__c</members>
+    <members>BLND_DFCS_Carousel__c.BLND_Width__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Carousel__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Data__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Description__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Expansion__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Flag1__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Flag2__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Flag3__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Flag4__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Index__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Keywords__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Locked__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Over1__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Over2__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Over3__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Private__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Type__c</members>
+    <members>BLND_DFCS_Slide__c.BLND_Version__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Action_Owner__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Description__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Due__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Expansion__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Include_in_Report__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Issue_Link__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Project_Link__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Status__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Task_Link__c</members>
+    <members>BLND_DFDT_Action_Item__c.BLND_Version__c</members>
+    <members>BLND_DFDT_Discussion__c.BLND_Attachment_Link__c</members>
+    <members>BLND_DFDT_Discussion__c.BLND_Body__c</members>
+    <members>BLND_DFDT_Discussion__c.BLND_Expansion__c</members>
+    <members>BLND_DFDT_Discussion__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFDT_Discussion__c.BLND_Purpose__c</members>
+    <members>BLND_DFDT_Discussion__c.BLND_Version__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Date__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Description__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Expansion__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Highlight_Owner__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Include_in_Report__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Include_in_Weekly_Dashboard__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Priority__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Project_Link__c</members>
+    <members>BLND_DFDT_Highlight__c.BLND_Version__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Description__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Expansion__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Impact__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Include_in_Report__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Issue_Owner__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Issue_Raised_On__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Priority__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Project_Link__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Resolution__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Resolve_By__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Severity__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Status__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Task_Link__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Type__c</members>
+    <members>BLND_DFDT_Issue__c.BLND_Version__c</members>
+    <members>BLND_DFDT_Linker__c.BLND_Destination_Link__c</members>
+    <members>BLND_DFDT_Linker__c.BLND_Expansion__c</members>
+    <members>BLND_DFDT_Linker__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFDT_Linker__c.BLND_Purpose__c</members>
+    <members>BLND_DFDT_Linker__c.BLND_Source_Link__c</members>
+    <members>BLND_DFDT_Linker__c.BLND_Version__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Account_Link__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Archive__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Complete__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Complete_Tasks__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Cost__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Cost_Baseline__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Description__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Duration_In_Business_Days__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Duration_In_Calendar_Days__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Expansion__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Finish__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Finish_Baseline__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Folder_Link__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Opportunity_Link__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Priority__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Revenue__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Revenue_Baseline__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Schedule__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Schedule_Override__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Start__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Start_Baseline__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Type__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Vacation_List__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Version__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Weight__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Work_In_Actual_Hours__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Work_In_Planned_Hours__c</members>
+    <members>BLND_DFDT_Project__c.BLND_Workday_List__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Approval__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Archive__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Attachment_Link__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Billing_Cost_Per_Day__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Billing_Cost_Per_Use__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Billing_Hourly_Rate__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Billing_Overtime_Rate__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Cost_Per_Day__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Cost_Per_Use__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Description__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Expansion__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Hourly_Rate__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Overtime_Rate__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Project_Link__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Purpose__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Skill_Certification__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Skill_Level__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Skill_Set__c</members>
+    <members>BLND_DFDT_Resource__c.BLND_Version__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Approval__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Archive__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Billable_Task__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Complete__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Constraint_Date__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Constraint_Type__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Cost__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Cost_Baseline__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Dependent__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Description__c</members>
+    <members>BLND_DFDT_Task__c.BLND_DreamFactory__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Duration__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Duration_In_Business_Days__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Duration_In_Calendar_Days__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Expansion__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Finish__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Finish_Baseline__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Index__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Link__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Project_Link__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Resources__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Revenue__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Revenue_Baseline__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Schedule__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Start__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Start_Baseline__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Subtask__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Tabs__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Type__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Version__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Work__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Work_In_Actual_Hours__c</members>
+    <members>BLND_DFDT_Task__c.BLND_Work_In_Planned_Hours__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Bookmark__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Data__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Description__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Expansion__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Flag1__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Flag2__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Flag3__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Flag4__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Height__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Lastopen__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Locked__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Over1__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Over2__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Over3__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Private__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Type__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Version__c</members>
+    <members>BLND_DFFF_Form__c.BLND_Width__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Data__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Description__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Expansion__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Flag1__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Flag2__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Flag3__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Flag4__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Form__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Index__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Keywords__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Locked__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Over1__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Over2__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Over3__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Private__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Type__c</members>
+    <members>BLND_DFFF_Page__c.BLND_Version__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Account_Link__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Amount__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Attachment_Link__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Billable__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Billed_Flag__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Case_Link__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Contact_Link__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Date__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Description__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Expansion__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Note__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Opportunity_Link__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Project_Link__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Status__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Submitted__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Task_Link__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Type__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_User_Link__c</members>
+    <members>BLND_DFTE_Expense__c.BLND_Version__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Account_Link__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Attachment_Link__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Billable__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Billed_Flag__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Case_Link__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Contact_Link__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Date__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Description__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Expansion__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Note__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Opportunity_Link__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Project_Link__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Status__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Submitted__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Task_Link__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Time__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Time_Units__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Type__c</members>
+    <members>BLND_DFTE_Time__c.BLND_User_Link__c</members>
+    <members>BLND_DFTE_Time__c.BLND_Version__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Data__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Expansion__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Flag1__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Flag2__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Flag3__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Flag4__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Folder_Link__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Over1__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Over2__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Over3__c</members>
+    <members>BLND_DFTT_Document__c.BLND_Type__c</members>
+    <members>BLND_DFTT_Entity_Info__c.BLND_Data__c</members>
+    <members>BLND_DFTT_Entity_Info__c.BLND_Expansion__c</members>
+    <members>BLND_DFTT_Entity_Info__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFTT_Entity_Info__c.BLND_Flag1__c</members>
+    <members>BLND_DFTT_Entity_Info__c.BLND_Flag2__c</members>
+    <members>BLND_DFTT_Entity_Info__c.BLND_Flag3__c</members>
+    <members>BLND_DFTT_Entity_Info__c.BLND_Flag4__c</members>
+    <members>BLND_DFTT_Entity_Info__c.BLND_Type__c</members>
+    <members>BLND_DFTT_Folder__c.BLND_Access_List__c</members>
+    <members>BLND_DFTT_Folder__c.BLND_Expansion__c</members>
+    <members>BLND_DFTT_Folder__c.BLND_Extra_Field__c</members>
+    <members>BLND_DFTT_Folder__c.BLND_Flag1__c</members>
+    <members>BLND_DFTT_Folder__c.BLND_Flag2__c</members>
+    <members>BLND_DFTT_Folder__c.BLND_Flag3__c</members>
+    <members>BLND_DFTT_Folder__c.BLND_Flag4__c</members>
+    <members>BLND_DFTT_Folder__c.BLND_Folder_Link__c</members>
+    <members>Case.EngineeringReqNumber__c</members>
+    <members>Case.My_field__c</members>
+    <members>Case.PotentialLiability__c</members>
+    <members>Case.Product__c</members>
+    <members>Case.SLAViolation__c</members>
+    <members>Child__c.Papa__c</members>
+    <members>Chinku__c.Child__c</members>
+    <members>Configuration__c.Address__c</members>
+    <members>Configuration__c.height__c</members>
+    <members>Configuration__c.Indian__c</members>
+    <members>Configuration__c.width__c</members>
+    <members>Contact.Languages__c</members>
+    <members>Contact.Level__c</members>
+    <members>Contact.Opportunity__c</members>
+    <members>Contact.status__c</members>
+    <members>CustomerPortal__c.Password__c</members>
+    <members>DFSS_Permissions__c.Data__c</members>
+    <members>DFSS_Permissions__c.Expansion__c</members>
+    <members>DFSS_Permissions__c.Extra_Field__c</members>
+    <members>DFSS_Permissions__c.Over__c</members>
+    <members>DFSS_Permissions__c.User_Link__c</members>
+    <members>DFSS_Permissions__c.Version__c</members>
+    <members>DFSS_SnapShot_Item__c.Asset__c</members>
+    <members>DFSS_SnapShot_Item__c.Changed__c</members>
+    <members>DFSS_SnapShot_Item__c.Created__c</members>
+    <members>DFSS_SnapShot_Item__c.Deleted__c</members>
+    <members>DFSS_SnapShot_Item__c.Deployed__c</members>
+    <members>DFSS_SnapShot_Item__c.Expansion__c</members>
+    <members>DFSS_SnapShot_Item__c.Extra_Field__c</members>
+    <members>DFSS_SnapShot_Item__c.Field__c</members>
+    <members>DFSS_SnapShot_Item__c.Flag1__c</members>
+    <members>DFSS_SnapShot_Item__c.Flag2__c</members>
+    <members>DFSS_SnapShot_Item__c.Flag3__c</members>
+    <members>DFSS_SnapShot_Item__c.Flag4__c</members>
+    <members>DFSS_SnapShot_Item__c.Object__c</members>
+    <members>DFSS_SnapShot_Item__c.Package__c</members>
+    <members>DFSS_SnapShot_Item__c.Parent__c</members>
+    <members>DFSS_SnapShot_Item__c.Problem__c</members>
+    <members>DFSS_SnapShot_Item__c.Success__c</members>
+    <members>DFSS_SnapShot_Item__c.Version__c</members>
+    <members>DFSS_SnapShot_Push__c.Expansion__c</members>
+    <members>DFSS_SnapShot_Push__c.Extra_Field__c</members>
+    <members>DFSS_SnapShot_Push__c.Result__c</members>
+    <members>DFSS_SnapShot_Push__c.SnapShot__c</members>
+    <members>DFSS_SnapShot_Push__c.Source__c</members>
+    <members>DFSS_SnapShot_Push__c.Success__c</members>
+    <members>DFSS_SnapShot_Push__c.Type__c</members>
+    <members>DFSS_SnapShot_Push__c.Version__c</members>
+    <members>HomeComponent__c.height__c</members>
+    <members>HomeComponent__c.width__c</members>
+    <members>Lead.Accept_Disclaimer__c</members>
+    <members>Lead.Competition__c</members>
+    <members>Lead.Competitive_Deal__c</members>
+    <members>Lead.Contact_City__c</members>
+    <members>Lead.Contact_Company__c</members>
+    <members>Lead.Contact_Country__c</members>
+    <members>Lead.Contact_Email__c</members>
+    <members>Lead.Contact_Name__c</members>
+    <members>Lead.Contact_Phone__c</members>
+    <members>Lead.Contact_Postal_Code__c</members>
+    <members>Lead.Contact_State_Province__c</members>
+    <members>Lead.Contact_Title__c</members>
+    <members>Lead.Copy_End_Cust_Email__c</members>
+    <members>Lead.CurrentGenerators__c</members>
+    <members>Lead.Days_Left_Until_Expiry__c</members>
+    <members>Lead.Deal_Approved_Date__c</members>
+    <members>Lead.Deal_Forward__c</members>
+    <members>Lead.Deal_Source__c</members>
+    <members>Lead.Decision_Role__c</members>
+    <members>Lead.Distributor__c</members>
+    <members>Lead.Email_New_Owner__c</members>
+    <members>Lead.Estimated_Close_Date__c</members>
+    <members>Lead.Lead_Age__c</members>
+    <members>Lead.NumberofLocations__c</members>
+    <members>Lead.Primary__c</members>
+    <members>Lead.Product__c</members>
+    <members>Lead.ProductInterest__c</members>
+    <members>Lead.Project_Budget_Amount__c</members>
+    <members>Lead.Project_Budgeted__c</members>
+    <members>Lead.Project_Description__c</members>
+    <members>Lead.Project_Name__c</members>
+    <members>Lead.Registration_Expiration__c</members>
+    <members>Lead.Reseller_Company_Name__c</members>
+    <members>Lead.Reseller_Email__c</members>
+    <members>Lead.Reseller_First_Name__c</members>
+    <members>Lead.Reseller_Last_Name__c</members>
+    <members>Lead.Reseller_Phone__c</members>
+    <members>Lead.SICCode__c</members>
+    <members>Lead.View_Guidelines__c</members>
+    <members>LinkedInTest__c.Contact__c</members>
+    <members>LinkedInTest__c.IsUnsubscribe__c</members>
+    <members>LinkedInTest__c.Lead__c</members>
+    <members>Opportunity.Competition__c</members>
+    <members>Opportunity.Competitive_Deal__c</members>
+    <members>Opportunity.Contact__c</members>
+    <members>Opportunity.Contact_City__c</members>
+    <members>Opportunity.Contact_Company__c</members>
+    <members>Opportunity.Contact_Country__c</members>
+    <members>Opportunity.Contact_Email__c</members>
+    <members>Opportunity.Contact_Name__c</members>
+    <members>Opportunity.Contact_Phone__c</members>
+    <members>Opportunity.Contact_Postal_Code__c</members>
+    <members>Opportunity.Contact_State_Province__c</members>
+    <members>Opportunity.Contact_Title__c</members>
+    <members>Opportunity.CurrentGenerators__c</members>
+    <members>Opportunity.Days_Left_Until_Expire__c</members>
+    <members>Opportunity.Deal_Approved_Date__c</members>
+    <members>Opportunity.Deal_Forward__c</members>
+    <members>Opportunity.Deal_ID__c</members>
+    <members>Opportunity.Deal_Source__c</members>
+    <members>Opportunity.Decision_Role__c</members>
+    <members>Opportunity.DeliveryInstallationStatus__c</members>
+    <members>Opportunity.Distributor__c</members>
+    <members>Opportunity.Forwarded_Lead_ID__c</members>
+    <members>Opportunity.Intial_Estimated_Close_Date__c</members>
+    <members>Opportunity.MainCompetitors__c</members>
+    <members>Opportunity.OrderNumber__c</members>
+    <members>Opportunity.Products__c</members>
+    <members>Opportunity.Project_Budget__c</members>
+    <members>Opportunity.Project_Budgeted__c</members>
+    <members>Opportunity.Project_Description__c</members>
+    <members>Opportunity.Project_Name__c</members>
+    <members>Opportunity.Registration_Expiration__c</members>
+    <members>Opportunity.TrackingNumber__c</members>
+    <members>Opportunity.View_Forwarded_Lead__c</members>
+    <members>Patient__c.CustomerPortal__c</members>
+    <members>Patient__c.Date_of_Birth__c</members>
+    <members>Product_Information__c.Opportunity__c</members>
+    <members>Setting__c.height__c</members>
+    <members>Setting__c.Name__c</members>
+    <members>Setting__c.width__c</members>
+  </types>
+  <types isSubType="true" parent="CustomLabels">
+    <name>CustomLabel</name>
+    <members>Language_Support</members>
+    <members>lblUserAdminName</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomLabels</name>
+    <members>CustomLabels</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomObject</name>
+    <members>BLND_DFAC_Shared_View__c</members>
+    <members>BLND_DFCS_Carousel__c</members>
+    <members>BLND_DFCS_Slide__c</members>
+    <members>BLND_DFDT_Action_Item__c</members>
+    <members>BLND_DFDT_Discussion__c</members>
+    <members>BLND_DFDT_Highlight__c</members>
+    <members>BLND_DFDT_Issue__c</members>
+    <members>BLND_DFDT_Linker__c</members>
+    <members>BLND_DFDT_Project__c</members>
+    <members>BLND_DFDT_Resource__c</members>
+    <members>BLND_DFDT_Task__c</members>
+    <members>BLND_DFFF_Form__c</members>
+    <members>BLND_DFFF_Page__c</members>
+    <members>BLND_DFTE_Expense__c</members>
+    <members>BLND_DFTE_Time__c</members>
+    <members>BLND_DFTT_Document__c</members>
+    <members>BLND_DFTT_Entity_Info__c</members>
+    <members>BLND_DFTT_Folder__c</members>
+    <members>BugTraker__c</members>
+    <members>Child__c</members>
+    <members>Chinku__c</members>
+    <members>Configuration__c</members>
+    <members>CustomerPortal__c</members>
+    <members>DFSS_Permissions__c</members>
+    <members>DFSS_SnapShot_Item__c</members>
+    <members>DFSS_SnapShot_Push__c</members>
+    <members>GandFather__c</members>
+    <members>HomeComponent__c</members>
+    <members>LinkedInTest__c</members>
+    <members>LinkedXrefObject__c</members>
+    <members>Patient__c</members>
+    <members>Personal_Information__kav</members>
+    <members>Product_Information__c</members>
+    <members>Setting__c</members>
+    <members>Tinku__c</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomObjectTranslation</name>
+    <members>BLND_DFAC_Shared_View__c-en_US</members>
+    <members>BLND_DFCS_Carousel__c-en_US</members>
+    <members>BLND_DFCS_Slide__c-en_US</members>
+    <members>BLND_DFDT_Action_Item__c-en_US</members>
+    <members>BLND_DFDT_Discussion__c-en_US</members>
+    <members>BLND_DFDT_Highlight__c-en_US</members>
+    <members>BLND_DFDT_Issue__c-en_US</members>
+    <members>BLND_DFDT_Linker__c-en_US</members>
+    <members>BLND_DFDT_Project__c-en_US</members>
+    <members>BLND_DFDT_Resource__c-en_US</members>
+    <members>BLND_DFDT_Task__c-en_US</members>
+    <members>BLND_DFFF_Form__c-en_US</members>
+    <members>BLND_DFFF_Page__c-en_US</members>
+    <members>BLND_DFTE_Expense__c-en_US</members>
+    <members>BLND_DFTE_Time__c-en_US</members>
+    <members>BLND_DFTT_Document__c-en_US</members>
+    <members>BLND_DFTT_Entity_Info__c-en_US</members>
+    <members>BLND_DFTT_Folder__c-en_US</members>
+    <members>BugTraker__c-en_US</members>
+    <members>Child__c-en_US</members>
+    <members>Chinku__c-en_US</members>
+    <members>Configuration__c-en_US</members>
+    <members>CustomerPortal__c-en_US</members>
+    <members>DFSS_Permissions__c-en_US</members>
+    <members>DFSS_SnapShot_Item__c-en_US</members>
+    <members>DFSS_SnapShot_Push__c-en_US</members>
+    <members>GandFather__c-en_US</members>
+    <members>HomeComponent__c-en_US</members>
+    <members>LinkedInTest__c-en_US</members>
+    <members>LinkedXrefObject__c-en_US</members>
+    <members>Patient__c-en_US</members>
+    <members>Personal_Information__kav-en_US</members>
+    <members>Product_Information__c-en_US</members>
+    <members>RK_LinkedIn__LinkedIn_Contact_xRef__c-en_US</members>
+    <members>RK_LinkedIn__LinkedInConnector__c-en_US</members>
+    <members>RK_LinkedIn__LinkedInConnectorPreferences__c-en_US</members>
+    <members>Setting__c-en_US</members>
+    <members>sfLma__License__c-en_US</members>
+    <members>sfLma__Package__c-en_US</members>
+    <members>sfLma__Package_Version__c-en_US</members>
+    <members>Tinku__c-en_US</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomPageWebLink</name>
+    <members>News_Search_Override</members>
+    <members>VFJSON</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomSite</name>
+    <members>niksApplication</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomTab</name>
+    <members>Apex_Toolkit_Demo</members>
+    <members>BLND_Snapshot</members>
+    <members>CustomerPortal__c</members>
+    <members>DFSS_SnapShot_Push__c</members>
+    <members>Start_Here</members>
+  </types>
+  <types isSubType="false">
+    <name>Dashboard</name>
+    <members>Snapshot_Push_Actions_Dashboard04t40000000Fuso</members>
+    <members>CompanyDashboards</members>
+    <members>CompanyDashboards/DealRegistrationAgingandExpirations</members>
+    <members>CompanyDashboards/DealRegistrationMarketTrends</members>
+    <members>CompanyDashboards/DealRegistrationProgramPerformance</members>
+    <members>Snapshot_Push_Actions_Dashboard04t40000000Fuso/Snapshot_Pushes04t40000000Fuso</members>
+  </types>
+  <types isSubType="false">
+    <name>DataCategoryGroup</name>
+    <members>Data_Test</members>
+  </types>
+  <types isSubType="false">
+    <name>Document</name>
+    <members>BLND_Logos_Identity</members>
+    <members>DealRegistrationWeb2Lead</members>
+    <members>SharedDocuments</members>
+    <members>BLND_Logos_Identity/BLND_DreamFactory_Logo.gif</members>
+    <members>DealRegistrationWeb2Lead/DisclaimerPlaceholder.gif</members>
+    <members>DealRegistrationWeb2Lead/mainjs.js</members>
+    <members>DealRegistrationWeb2Lead/validatePartnerWebToLeadjs.js</members>
+    <members>DealRegistrationWeb2Lead/Web2Leadhtml.html</members>
+    <members>SharedDocuments/Apex_Toolkit_Salesforce.gif</members>
+  </types>
+  <types isSubType="false">
+    <name>EmailTemplate</name>
+    <members>Personal</members>
+    <members>unfiled$public</members>
+    <members>DealRegistrations</members>
+    <members>DealRegistrations/DealRegistrationAcknowledged</members>
+    <members>DealRegistrations/DealRegistrationApproved</members>
+    <members>DealRegistrations/DealRegistrationClosedWon</members>
+    <members>DealRegistrations/DealRegistrationRejected</members>
+    <members>DealRegistrations/DealRegistrationSubmitted</members>
+    <members>DealRegistrations/LeadChangedtoDealRegistration</members>
+    <members>Personal/Ffundamental_News_Letter</members>
+    <members>Personal/SalesNewCustomerEmail</members>
+    <members>Personal/SupportCaseCreatedPhoneInquiries</members>
+    <members>Personal/SupportCaseCreatedWebInquiries</members>
+    <members>Personal/SUPPORTSelfServiceResetPasswordSAMPLE</members>
+    <members>unfiled$public/ChangePwdEmail</members>
+    <members>unfiled$public/MarketingProductInquiryResponse</members>
+    <members>unfiled$public/NewUserEmail</members>
+    <members>unfiled$public/SelfRegUserEmail</members>
+    <members>unfiled$public/SupportCaseAssignmentNotification</members>
+    <members>unfiled$public/SupportCaseResponse</members>
+    <members>unfiled$public/SupportEscalatedCaseNotification</members>
+    <members>unfiled$public/SupportEscalatedCaseReassignment</members>
+    <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
+    <members>unfiled$public/SupportSelfServiceNewLoginandPassword</members>
+    <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
+    <members>unfiled$public/SupportSelfServiceResetPassword</members>
+  </types>
+  <types isSubType="false">
+    <name>HomePageComponent</name>
+    <members>GeneralHomeComponent</members>
+    <members>GeneralHomeComponent2</members>
+    <members>GoogleHome</members>
+  </types>
+  <types isSubType="false">
+    <name>HomePageLayout</name>
+    <members>DE Default</members>
+    <members>GeneralHomeComponent2</members>
+  </types>
+  <types isSubType="false">
+    <name>Layout</name>
+    <members>Account-Account %28Marketing%29 Layout</members>
+    <members>Account-Account %28Sales%29 Layout</members>
+    <members>Account-Account %28Support%29 Layout</members>
+    <members>Account-Account Layout</members>
+    <members>Asset-Asset Layout</members>
+    <members>BLND_DFAC_Shared_View__c-DreamFactory Shared View Layout</members>
+    <members>BLND_DFCS_Carousel__c-Carousel Layout</members>
+    <members>BLND_DFCS_Slide__c-Slide Layout</members>
+    <members>BLND_DFDT_Action_Item__c-DreamTeam Action Item Layout</members>
+    <members>BLND_DFDT_Discussion__c-DreamTeam Discussion Layout</members>
+    <members>BLND_DFDT_Highlight__c-DreamTeam Highlight Layout</members>
+    <members>BLND_DFDT_Issue__c-DreamTeam Issue Layout</members>
+    <members>BLND_DFDT_Linker__c-DreamTeam Linker Layout</members>
+    <members>BLND_DFDT_Project__c-DreamTeam Project Layout</members>
+    <members>BLND_DFDT_Resource__c-DreamTeam Resource Layout</members>
+    <members>BLND_DFDT_Task__c-DreamTeam Task Layout</members>
+    <members>BLND_DFFF_Form__c-Form Layout</members>
+    <members>BLND_DFFF_Page__c-Page Layout</members>
+    <members>BLND_DFTE_Expense__c-DreamTeam Expense Layout</members>
+    <members>BLND_DFTE_Time__c-DreamTeam Time Layout</members>
+    <members>BLND_DFTT_Document__c-TableTop Document Layout</members>
+    <members>BLND_DFTT_Entity_Info__c-TableTop Entity Info Layout</members>
+    <members>BLND_DFTT_Folder__c-TableTop Folder Layout</members>
+    <members>BugTraker__c-Bug Tracker Layout</members>
+    <members>Campaign-Campaign Layout</members>
+    <members>CampaignMember-Campaign Member Page Layout</members>
+    <members>Case-Case %28Marketing%29 Layout</members>
+    <members>Case-Case %28Sales%29 Layout</members>
+    <members>Case-Case %28Support%29 Layout</members>
+    <members>Case-Case Layout</members>
+    <members>CaseClose-Close Case Layout</members>
+    <members>Child__c-Child Layout</members>
+    <members>Chinku__c-Chinku Layout</members>
+    <members>Contact-Contact %28Marketing%29 Layout</members>
+    <members>Contact-Contact %28Sales%29 Layout</members>
+    <members>Contact-Contact %28Support%29 Layout</members>
+    <members>Contact-Contact Layout</members>
+    <members>ContentVersion-General</members>
+    <members>Contract-Contract Layout</members>
+    <members>CustomerPortal__c-CustomerPortal Layout</members>
+    <members>DFSS_Permissions__c-SnapShot Permissions Layout</members>
+    <members>DFSS_SnapShot_Item__c-SnapShot Action Layout</members>
+    <members>DFSS_SnapShot_Push__c-SnapShot Push Layout</members>
+    <members>Event-Event Layout</members>
+    <members>GandFather__c-GandFather Layout</members>
+    <members>Idea-Idea Layout</members>
+    <members>Lead-Lead %28Marketing%29 Layout</members>
+    <members>Lead-Lead %28Sales%29 Layout</members>
+    <members>Lead-Lead %28Support%29 Layout</members>
+    <members>Lead-Lead Layout</members>
+    <members>LinkedInTest__c-LinkedInTest Layout</members>
+    <members>LinkedXrefObject__c-LinkedXrefObject Layout</members>
+    <members>Opportunity-Opportunity %28Marketing%29 Layout</members>
+    <members>Opportunity-Opportunity %28Sales%29 Layout</members>
+    <members>Opportunity-Opportunity %28Support%29 Layout</members>
+    <members>Opportunity-Opportunity Layout</members>
+    <members>OpportunityLineItem-Opportunity Product Layout</members>
+    <members>Patient__c-Papa Layout</members>
+    <members>Personal_Information__kav-Personal Information Layout</members>
+    <members>Product2-Product Layout</members>
+    <members>Product_Information__c-Product Information Layout</members>
+    <members>SocialPersona-Social Persona Layout</members>
+    <members>Solution-Solution Layout</members>
+    <members>Task-Task Layout</members>
+    <members>Tinku__c-Tinku Layout</members>
+    <members>User-User Layout</members>
+  </types>
+  <types isSubType="false">
+    <name>Letterhead</name>
+    <members>Ffundamental_News_Headder</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>ListView</name>
+    <members>Account.AllAccounts</members>
+    <members>Account.MyAccounts</members>
+    <members>Account.NewLastWeek</members>
+    <members>Account.NewThisWeek</members>
+    <members>Account.PlatinumandGoldSLACustomers</members>
+    <members>Activity.AllActivities</members>
+    <members>Activity.MyActivities</members>
+    <members>Activity.TodaysTasks</members>
+    <members>Activity.UpcomingEvents</members>
+    <members>Asset.AllAssets</members>
+    <members>Campaign.AllActiveCampaigns</members>
+    <members>Campaign.MyActiveCampaigns</members>
+    <members>Case.AllClosedCases</members>
+    <members>Case.AllOpenCases</members>
+    <members>Case.InternationalEscalations</members>
+    <members>Case.InternationalPlatinumGold</members>
+    <members>Case.InternationalSilverBronze</members>
+    <members>Case.MyCases</members>
+    <members>Case.MyOpenCases</members>
+    <members>Case.PartnerRelations</members>
+    <members>Case.USEscalations</members>
+    <members>Case.USPlatinumGold</members>
+    <members>Case.USSilverBronze</members>
+    <members>Contact.AllContacts</members>
+    <members>Contact.BirthdaysThisMonth</members>
+    <members>Contact.MyContacts</members>
+    <members>Contact.NewLastWeek</members>
+    <members>Contact.NewThisWeek</members>
+    <members>Contract.AllActivatedContracts</members>
+    <members>Contract.AllContracts</members>
+    <members>Contract.AllDraftContracts</members>
+    <members>Contract.AllInApprovalContracts</members>
+    <members>Contract.MyActivatedContracts</members>
+    <members>Contract.MyDraftContracts</members>
+    <members>Contract.MyInApprovalContracts</members>
+    <members>CustomerPortal__c.All</members>
+    <members>DFSS_Permissions__c.All</members>
+    <members>DFSS_SnapShot_Push__c.All_Pushes</members>
+    <members>DFSS_SnapShot_Push__c.All_Successful_Pushes</members>
+    <members>DFSS_SnapShot_Push__c.All_Unsuccessful_Pushes</members>
+    <members>DFSS_SnapShot_Push__c.LastWeek_s_Changes</members>
+    <members>DFSS_SnapShot_Push__c.ThisWeek_s_Changes</members>
+    <members>DFSS_SnapShot_Push__c.Today_s_Changes</members>
+    <members>DFSS_SnapShot_Push__c.Today_s_Successful_Changes</members>
+    <members>DFSS_SnapShot_Push__c.Today_s_Unsuccessful_Changes</members>
+    <members>Lead.AllOpenLeads</members>
+    <members>Lead.InternationalLeads</members>
+    <members>Lead.MyUnreadLeads</members>
+    <members>Lead.TodaysLeads</members>
+    <members>Lead.USLeads</members>
+    <members>Lead.ViewCustom1</members>
+    <members>Lead.ViewCustom2</members>
+    <members>Opportunity.AllOpportunities</members>
+    <members>Opportunity.ClosingNextMonth</members>
+    <members>Opportunity.ClosingThisMonth</members>
+    <members>Opportunity.MyOpportunities</members>
+    <members>Opportunity.NewLastWeek</members>
+    <members>Opportunity.NewThisWeek</members>
+    <members>Opportunity.Private</members>
+    <members>Opportunity.Won</members>
+    <members>Product2.AllProducts</members>
+    <members>Solution.AllReviewedSolutions</members>
+    <members>Solution.AllUnreviewedSolutions</members>
+    <members>User.ActiveUsers</members>
+    <members>User.AdminUsers</members>
+    <members>User.AllUsers</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>NamedFilter</name>
+  </types>
+  <types isSubType="false">
+    <name>Portal</name>
+    <members>Customer Portal</members>
+  </types>
+  <types isSubType="false">
+    <name>Profile</name>
+    <members>Admin</members>
+    <members>Chatter External User</members>
+    <members>Chatter Free User</members>
+    <members>Chatter Moderator User</members>
+    <members>ContractManager</members>
+    <members>Custom%3A Marketing Profile</members>
+    <members>Custom%3A Sales Profile</members>
+    <members>Custom%3A Support Profile</members>
+    <members>CustomerManager</members>
+    <members>Force%2Ecom - Free User</members>
+    <members>Guest</members>
+    <members>HighVolumePortal</members>
+    <members>MarketingProfile</members>
+    <members>niksApplication Profile</members>
+    <members>Partner</members>
+    <members>PlatformPortal</members>
+    <members>ReadOnly</members>
+    <members>SolutionManager</members>
+    <members>Standard</members>
+    <members>StandardAul</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>RecordType</name>
+    <members>Account.Add</members>
+    <members>Opportunity.Deal</members>
+    <members>Product_Information__c.Lender_Development_Program</members>
+  </types>
+  <types isSubType="false">
+    <name>RemoteSiteSetting</name>
+    <members>ApexDevNet</members>
+    <members>Facebook</members>
+    <members>Google</members>
+    <members>NA1</members>
+    <members>NA2</members>
+    <members>NA3</members>
+    <members>NA4</members>
+    <members>NA5</members>
+    <members>NA6</members>
+    <members>NA7</members>
+    <members>SFConnectionProdUrl</members>
+    <members>Sms</members>
+  </types>
+  <types isSubType="false">
+    <name>Report</name>
+    <members>Snapshot_Push_Actions</members>
+    <members>DealRegistration</members>
+    <members>unfiled$public</members>
+    <members>DealRegistration/ApprovedDeals</members>
+    <members>DealRegistration/ApprovedDealsByCountryValue</members>
+    <members>DealRegistration/ApprovedDealsByDealSourceValue</members>
+    <members>DealRegistration/ApprovedDealsByDistributorValue</members>
+    <members>DealRegistration/ApprovedDealsByIndustryValue</members>
+    <members>DealRegistration/ApprovedDealsByPartnerAccountValue</members>
+    <members>DealRegistration/ApprovedDealsByProductValue</members>
+    <members>DealRegistration/ApprovedtoConvertedRatio</members>
+    <members>DealRegistration/ClosedDealsByPartnerValue</members>
+    <members>DealRegistration/DealRegistrationAgingReport</members>
+    <members>DealRegistration/DealRegistrationClosedValue</members>
+    <members>DealRegistration/DealRegistrationCloseRate</members>
+    <members>DealRegistration/DealRegistrationList</members>
+    <members>DealRegistration/DealRegistrationTrend</members>
+    <members>DealRegistration/DealsByStage</members>
+    <members>DealRegistration/DealsExpiringThisMonth</members>
+    <members>DealRegistration/ExpiredRegistrations</members>
+    <members>DealRegistration/InDraft</members>
+    <members>DealRegistration/PendingApproval</members>
+    <members>DealRegistration/PendingApprovedRegsToConvert</members>
+    <members>DealRegistration/RegistrationsExpiringin7Days</members>
+    <members>DealRegistration/RejectedDeals</members>
+    <members>Snapshot_Push_Actions/All_Changes_Made_Today</members>
+    <members>Snapshot_Push_Actions/All_Changes_Made_Today_By_User</members>
+    <members>Snapshot_Push_Actions/All_Successful_Changes_Made_Today</members>
+    <members>Snapshot_Push_Actions/All_Successful_Changes_Today_By_User</members>
+    <members>Snapshot_Push_Actions/All_Unsuccessful_Changes_Made_Today</members>
+    <members>Snapshot_Push_Actions/All_Unsuccessful_Changes_Today_By_User</members>
+    <members>Snapshot_Push_Actions/Asset_Pushes_This_Month_By_Success</members>
+    <members>Snapshot_Push_Actions/Num_pushes_this_mnth_by_wk_by_usr</members>
+    <members>Snapshot_Push_Actions/Today_s_Changes_by_Type</members>
+    <members>Snapshot_Push_Actions/Today_s_Changes_With_Details</members>
+    <members>Snapshot_Push_Actions/Usage_Assets_pushed_this_month_by_week</members>
+    <members>Snapshot_Push_Actions/Usage_of_pushes_this_month_by_week</members>
+    <members>Snapshot_Push_Actions/Usage_Pushes_This_Month_By_Success</members>
+    <members>Snapshot_Push_Actions/Usage_Pushes_This_Month_By_Type</members>
+    <members>Snapshot_Push_Actions/Usage_pushes_this_month_by_week_by_src</members>
+  </types>
+  <types isSubType="false">
+    <name>ReportType</name>
+  </types>
+  <types isSubType="false">
+    <name>Scontrol</name>
+    <members>Forward_Lead</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>SharingReason</name>
+  </types>
+  <types isSubType="false">
+    <name>StandardObject</name>
+    <members>Account</members>
+    <members>AccountContactRole</members>
+    <members>Activity</members>
+    <members>Asset</members>
+    <members>Campaign</members>
+    <members>CampaignMember</members>
+    <members>Case</members>
+    <members>CaseContactRole</members>
+    <members>Contact</members>
+    <members>ContentVersion</members>
+    <members>Contract</members>
+    <members>ContractContactRole</members>
+    <members>Event</members>
+    <members>Idea</members>
+    <members>JigsawSavedSearch</members>
+    <members>Lead</members>
+    <members>Opportunity</members>
+    <members>OpportunityContactRole</members>
+    <members>OpportunityLineItem</members>
+    <members>PartnerRole</members>
+    <members>Product2</members>
+    <members>Site</members>
+    <members>SocialPersona</members>
+    <members>Solution</members>
+    <members>Task</members>
+    <members>User</members>
+    <members>UserLicense</members>
+  </types>
+  <types isSubType="false">
+    <name>StaticResource</name>
+    <members>JSON</members>
+    <members>Minus_image</members>
+    <members>Plus_Image</members>
+    <members>SiteSamples</members>
+    <members>thumbnail</members>
+    <members>Toggle</members>
+    <members>toggle_block_btm</members>
+    <members>toggle_block_stretch</members>
+  </types>
+  <types isSubType="false">
+    <name>Translations</name>
+    <members>es</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>ValidationRule</name>
+    <members>Account.Name</members>
+  </types>
+  <types isSubType="true" parent="StandardObject">
+    <name>WebLink</name>
+    <members>Account.Billing</members>
+    <members>Account.BLND_FormFactoryAccountLink</members>
+    <members>Campaign.ViewCampaignInfluenceReport</members>
+    <members>Case.UpsellCrosssellOpportunity</members>
+    <members>Contact.BLND_FormFactoryContactLink</members>
+    <members>Lead.BLND_FormFactoryLeadLink</members>
+    <members>Lead.Custom_Lead_Home_button</members>
+    <members>Lead.Test</members>
+    <members>Opportunity.BLND_FormFactory_Opportunity_Link</members>
+    <members>Opportunity.DeliveryStatus</members>
+  </types>
+  <types isSubType="false">
+    <name>Workflow</name>
+    <members>Account</members>
+    <members>Asset</members>
+    <members>BLND_DFAC_Shared_View__c</members>
+    <members>BLND_DFCS_Carousel__c</members>
+    <members>BLND_DFCS_Slide__c</members>
+    <members>BLND_DFDT_Action_Item__c</members>
+    <members>BLND_DFDT_Discussion__c</members>
+    <members>BLND_DFDT_Highlight__c</members>
+    <members>BLND_DFDT_Issue__c</members>
+    <members>BLND_DFDT_Linker__c</members>
+    <members>BLND_DFDT_Project__c</members>
+    <members>BLND_DFDT_Resource__c</members>
+    <members>BLND_DFDT_Task__c</members>
+    <members>BLND_DFFF_Form__c</members>
+    <members>BLND_DFFF_Page__c</members>
+    <members>BLND_DFTE_Expense__c</members>
+    <members>BLND_DFTE_Time__c</members>
+    <members>BLND_DFTT_Document__c</members>
+    <members>BLND_DFTT_Entity_Info__c</members>
+    <members>BLND_DFTT_Folder__c</members>
+    <members>BugTraker__c</members>
+    <members>Campaign</members>
+    <members>CampaignMember</members>
+    <members>Case</members>
+    <members>Child__c</members>
+    <members>Chinku__c</members>
+    <members>Configuration__c</members>
+    <members>Contact</members>
+    <members>Contract</members>
+    <members>CustomerPortal__c</members>
+    <members>DFSS_Permissions__c</members>
+    <members>DFSS_SnapShot_Item__c</members>
+    <members>DFSS_SnapShot_Push__c</members>
+    <members>Event</members>
+    <members>GandFather__c</members>
+    <members>HomeComponent__c</members>
+    <members>Idea</members>
+    <members>Lead</members>
+    <members>LinkedInTest__c</members>
+    <members>LinkedXrefObject__c</members>
+    <members>Opportunity</members>
+    <members>OpportunityLineItem</members>
+    <members>Organization</members>
+    <members>Patient__c</members>
+    <members>Personal_Information__kav</members>
+    <members>Product2</members>
+    <members>Product_Information__c</members>
+    <members>Question</members>
+    <members>Reply</members>
+    <members>Setting__c</members>
+    <members>Site</members>
+    <members>Solution</members>
+    <members>Task</members>
+    <members>Tinku__c</members>
+    <members>UserLicense</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowAlert</name>
+    <members>Account.test</members>
+    <members>Account.Test_Points_Calculator_Report</members>
+    <members>Opportunity.Send_Tribal_Activity_Email_For_Account</members>
+    <members>Opportunity.SendTribal</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowFieldUpdate</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowOutboundMessage</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowRule</name>
+    <members>Account.Home_WorkFLow</members>
+    <members>Case.Standard</members>
+    <members>Case.Standard</members>
+    <members>Lead.Standard</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowTask</name>
+  </types>
+</types>

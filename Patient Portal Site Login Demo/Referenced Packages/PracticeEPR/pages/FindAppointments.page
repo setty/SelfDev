@@ -1,0 +1,71 @@
+<apex:page standardController="ecare__Treatment__c" extensions="ecare.AppointmentExtController" sidebar="false">
+<script type="text/javascript">
+    
+    window.onload=function() {
+        focus('{!$Component.mainPage.mainForm.clinicianPicker}');          
+    }
+    
+    function focus(id){
+        document.getElementById(id).focus();
+    }
+  </script>
+    <apex:form id="mainForm"> 
+    <apex:pageBlock title="{!$Label.TreatmentSummary}">
+        <apex:pageBlockSection columns="2">
+            <apex:outputField value="{!patient.Name}" />
+            <apex:outputField value="{!ecare__Treatment__c.ecare__Due_Date__c}" />
+            <apex:outputField value="{!ecare__Treatment__c.ecare__Episode__c}" />
+            <apex:outputField value="{!ecare__Treatment__c.ecare__Care_Activity__c}" />
+        </apex:pageBlockSection>
+        &nbsp;
+    </apex:pageBlock>
+    <apex:pageBlock title="{!$Label.SelectClinician}" mode="Edit">
+                <apex:messages />
+                <apex:pageBlockButtons >
+                <apex:commandButton value="{!$Label.Search}" />
+                </apex:pageBlockButtons>
+        <apex:panelGrid columns="5" width="800">
+                <apex:outputLabel style="font-weight: bold;">{!$Label.SelClinician}</apex:outputLabel>
+                <apex:selectList value="{!userId}" multiselect="false" size="2" id="clinicianPicker">
+                    <apex:selectOptions value="{!clinicianList}"/>
+                </apex:selectList>
+                <apex:outputLabel style="font-weight: bold;">{!$Label.BookingFrom}:</apex:outputLabel>
+                <apex:inputField value="{!ProxyObject.ecare__Appointment_Date_Time__c}"/>
+                <!-- apex:outputLink value="/00U/c">
+                    <apex:param name="cType" value="2"/>
+                    <apex:param name="md0" value="{!YEAR(startDate)}"/>
+                    <apex:param name="md2" value="{!DAY(startDate)}"/>
+                    Check Availability
+                </apex:outputLink -->
+                <apex:outputLink value="/00U/c" target="_blank">
+                    <apex:param value="{!ProxyObject.ecare__Appointment_Date_Time__c}"/>
+                    <apex:param name="cType" value="2"/>
+                    <apex:param name="md0" value="{0,date,YYYY}"/>
+                    <apex:param name="md3" value="{0,date,w}"/>
+                    {!$Label.View_Clinician_Diaries}
+                </apex:outputLink>
+       </apex:panelGrid>
+        </apex:pageBlock>
+        <apex:pageBlock >
+        <apex:pageBlockTable value="{!Appointments}" var="appts" width="600" id="apptResults">
+            <apex:column value="{!appts.ecare__SysApptIndex__c}" headerValue="Row" rendered="false"/>
+            <apex:column headerValue="{!$Label.Create_Appointment}" width="100">
+                <apex:commandLink value="{!$Label.Book}" action="{!bookAppointment}" id="mybutt">
+                    <!-- apex:param name="appDtm" value="{!appts.ecare__Appointment_Date_Time__c}" assignTo="{!appointmentDtm}"/ -->
+                    <apex:param name="appUser" value="{!userId}" assignTo="{!userId}"/>
+                    <apex:param name="selectedRow" value="{!appts.ecare__SysApptIndex__c}" assignTo="{!selectedRow}"/>
+                </apex:commandLink>
+            </apex:column>
+            <apex:column value="{!appts.ownerId}" headerValue="{!$Label.Clinician}" />
+            <!-- apex:column value="{!appts.ecare__Appointment_Date_Time__c}" headerValue="Free Appointments Starting From"/ -->
+            <apex:column headerValue="{!$Label.Free_Appointments}">
+                <apex:outputText value="{0,date,E dd MMM yyyy' at 'HH:mm}">
+                    <apex:param value="{!appts.ecare__Appointment_Date_Time__c}" /> 
+                </apex:outputText>
+            </apex:column>
+            <apex:column value="{!appts.ecare__Duration__c}" headerValue="{!$Label.Free_Time}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock> 
+    <apex:pageBlock id="hiddenBlock" rendered="false"></apex:pageBlock> 
+    </apex:form>    
+</apex:page>

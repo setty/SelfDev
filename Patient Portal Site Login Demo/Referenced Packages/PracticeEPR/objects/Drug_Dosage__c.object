@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Standard drug dosages for quick prescription entry</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Dosage_Note__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(Dosage__c) &amp; &quot; x &quot; &amp; Drug__r.Dose__c &amp; &quot; to be taken &quot; &amp; TEXT(Drug__r.Route__c) &amp;  &quot;, &quot; &amp;   TEXT(Frequency_Unit__c)  &amp; &quot; &quot; &amp; TEXT(Frequency_Period__c) &amp; IF(!ISBLANK( Duration__c ), &quot; for &quot; &amp; TEXT(Duration__c) &amp; &quot; days&quot;, &quot; &quot;)</formula>
+        <label>Dosage Note</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dosage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of units to be taken each time frequency</description>
+        <externalId>false</externalId>
+        <label>Dosage</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drug__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Drug to which this dosage relates</description>
+        <externalId>false</externalId>
+        <label>Drug</label>
+        <referenceTo>Drug__c</referenceTo>
+        <relationshipLabel>Drug Dosages</relationshipLabel>
+        <relationshipName>Drug_Dosages</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of days medication prescribed, combined with the frequency and dose, this defines the pharmacy stock used.</description>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Frequency_Period__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Frequency Period</label>
+        <picklist>
+            <picklistValues>
+                <fullName>times per day</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>times per hour</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Frequency_Unit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of times per Frequency Period the prescription is to be taken</description>
+        <externalId>false</externalId>
+        <label>Frequency Unit</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Minimum_Age__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If applicable, enter the minimum age this dosage relates to. This can be used to restrict adult dosages being prescribed to children.</inlineHelpText>
+        <label>Minimum Age</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Drug Dosage</label>
+    <nameField>
+        <label>Drug Dosage Name</label>
+        <type>Text</type>
+    </nameField>
+    <namedFilters>
+        <fullName>nf_01IA0000000Gb1iMAC_00NA0000005vNITMA2</fullName>
+        <active>true</active>
+        <field>Prescription__c.Drug_Dosage__c</field>
+        <filterItems>
+            <field>Drug_Dosage__c.Drug__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Drug__c</valueField>
+        </filterItems>
+        <infoMessage>Select a dosage from the list below, or enter the details manually on the main page.</infoMessage>
+        <isOptional>false</isOptional>
+        <name>Prescription_Drug Dosage</name>
+        <sourceObject>Prescription__c</sourceObject>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01IA0000001J0cqMAC_00NA0000005wWbVMAU</fullName>
+        <active>true</active>
+        <field>Immunisation__c.Drug_Dosage__c</field>
+        <filterItems>
+            <field>Drug_Dosage__c.Drug__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Drug__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Immunisation_Drug Dosage</name>
+        <sourceObject>Immunisation__c</sourceObject>
+    </namedFilters>
+    <pluralLabel>Drug Dosages</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Minimum_Age__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Dosage_Note__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

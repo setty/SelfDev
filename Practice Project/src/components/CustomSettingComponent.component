@@ -1,0 +1,8 @@
+<apex:component id="CustomSettingComponent" controller="CutomSettingComponent">
+	
+	<apex:attribute name="Config" assignTo="{!config}" type="Configuration__c" description="Config of component"></apex:attribute>
+	<apex:form >
+	<apex:OutputLabel value="{!$ObjectType.Configuration__c.Fields.Address__c.Label}"></apex:OutputLabel>
+	<apex:InputText value="{!config.Address__c}"></apex:InputText>
+	</apex:form>
+</apex:component>

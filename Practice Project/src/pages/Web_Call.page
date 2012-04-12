@@ -1,0 +1,4 @@
+<apex:page controller="HttpHandlerController">
+<apex:PageMessages ></apex:PageMessages>
+<apex:outputLabel value="{!HttpUrl}"></apex:outputLabel>
+</apex:page>

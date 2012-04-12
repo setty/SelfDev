@@ -1,0 +1,22 @@
+<apex:page controller="ActionPollerCtl">
+
+<apex:form >
+	<apex:pageBlock >
+		<apex:pageBlockButtons location="top">
+	    	<apex:commandButton action="{!enablePoller}" value="Start Counter"/>
+	        <apex:commandButton action="{!disablePoller}" value="Stop Counter" rendered="false"/>
+	    </apex:pageBlockButtons>
+	    
+	    <apex:outputPanel id="pnlCnt">
+	    	Counter Value: &nbsp;&nbsp; <apex:outputLabel value="{!Counter}"/>
+	    </apex:outputPanel>&nbsp;&nbsp;&nbsp;&nbsp;
+	    
+	    <apex:outputPanel id="pnlProcessing">
+	    	<apex:outputLabel value="Processing.." rendered="{!IF(AND(Counter > 0, Counter < 5), True, False)}"/>
+	    </apex:outputPanel>	 
+	    
+	    <apex:actionPoller id="poller" action="{!incrementCounter}" enabled="{!IsPollerEnabled}" interval="5" rerender="pnlCnt, pnlProcessing" />
+	</apex:pageBlock>
+</apex:form>
+
+</apex:page>

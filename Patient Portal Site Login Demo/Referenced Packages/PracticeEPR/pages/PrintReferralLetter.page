@@ -1,0 +1,80 @@
+<!-- NO STYLING APPLIED - PRINT PREVIEW PAGE -->
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false" standardController="ecare__Episode__c" extensions="ecare.PrintReferralController" renderAs="pdf">
+
+    <table>
+    <tr>
+    <td align="left" width="215px" valign="top"><img src="{!URLFOR($Resource.YourLogos,'yourlogo.jpg')}" alt="" width="215" height="55" align="right" valign="top" /></td>
+    <td align="center" width="300px" valign="top">
+        <b>{!$Organization.Name}</b><br/>
+        {!$Organization.Street}, {!$Organization.State}, {!$Organization.PostalCode}<br/> 
+        Tel:&nbsp;{!$Organization.Phone}&nbsp;&nbsp;Fax: {!$Organization.Fax}
+    </td>
+    <td align="right" width="215px" valign="top"><img src="{!URLFOR($Resource.CliniCloudSRB1,'images/logo.png')}" alt="" width="215" height="55" align="right" valign="top" /></td>
+    </tr>
+    </table>
+
+    <apex:pageBlock id="Print"> 
+    <!--  Patient Details -->
+    <apex:pageBlockSection title="{!PatientData.Name}" columns="2"> 
+        <apex:outputLabel value="{!$ObjectType.ecare__Patient__c.fields.ecare__Patient_ID__c.label}: " style="font-weight: bold;" />
+        <apex:outputText value="{!PatientData.ecare__Patient_ID__c}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Patient__c.fields.ecare__Gender__c.label}: " style="font-weight: bold;" />
+        <apex:outputText value="{!PatientData.ecare__Gender__c}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Patient__c.fields.ecare__Age__c.label}: " style="font-weight: bold;" />
+        <apex:outputText value="{!PatientData.ecare__Age__c}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Patient__c.fields.ecare__Patient_Address__c.label}: " style="font-weight: bold;" />
+        <apex:outputText value=" {!PatientData.ecare__Patient_Address__c}"/>
+    </apex:pageBlockSection>
+    <br/> 
+    <!--  Episode Details -->
+    <apex:pageBlockSection title="{!$Label.Referral_Print_Title}" columns="2"> 
+        <apex:outputLabel value="{!$ObjectType.ecare__Episode__c.fields.ecare__Referral_Note__c.label}:" style="font-weight: bold;" />
+        <apex:outputText value="{!EpisodeData.ecare__Referral_Note__c}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Episode__c.fields.Name.label}:" style="font-weight: bold;" />
+        <apex:outputText value="{!EpisodeData.Name}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Episode__c.fields.ecare__Episode_Start_Date__c.label}:" style="font-weight: bold;" />
+        <apex:outputText value="{!EpisodeData.ecare__Episode_Start_Date__c}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Episode__c.fields.ecare__Presentation__c.label}:" style="font-weight: bold;" />
+        <apex:outputText value="{!EpisodeData.ecare__Presentation__c}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Episode__c.fields.ecare__Initial_Diagnosis__c.label}:" style="font-weight: bold;" />
+        <apex:outputText value=" {!EpisodeData.ecare__Initial_Diagnosis__c}"/>
+        <apex:outputLabel value="{!$ObjectType.ecare__Episode__c.fields.ecare__Secondary_Diagnosis__c.label}:" style="font-weight: bold;" />
+        <apex:outputText value=" {!EpisodeData.ecare__Secondary_Diagnosis__c}"/>
+     </apex:pageBlockSection>
+    <br/> 
+    <!-- Print the Details of Treatment Administered -->
+    <table border="0" cellpadding="5" width="95%" cellspacing="0" cols="3" bordercolor="gray" align="center">
+        <tr>
+            <th>Date</th>
+            <th>Treatment</th>
+            <th>Completed?</th>
+        </tr>    
+        <apex:repeat value="{!TreatmentData}" var="treatment" >
+          <tr>
+                <td><apex:outputfield value="{!treatment.LastModifiedDate}"/></td>
+                <td><apex:outputfield value="{!treatment.Name}"/></td>
+                <td><apex:outputfield value="{!treatment.ecare__Completed__c}"/></td>
+          </tr> 
+        </apex:repeat>
+        <tr><td colspan="3">&nbsp;</td></tr>
+    <!-- Print the Details of Lab Results Obtained -->
+        <tr>
+            <th>Date</th>
+            <th>Lab Test</th>
+            <th>Results</th>
+        </tr>    
+        <apex:repeat value="{!LabData}" var="lab" >
+          <tr>
+                <td><apex:outputfield value="{!lab.LastModifiedDate}"/></td>
+                <td><apex:outputfield value="{!lab.ecare__Test_Name__c}"/></td>
+                <td>
+                    <apex:outputfield value="{!lab.ecare__Integer_Result__c}"/>&nbsp;(
+                    <apex:outputfield value="{!lab.ecare__Pcnt_Result__c}"/>)&nbsp;
+                    <apex:outputfield value="{!lab.ecare__Text_Result__c}"/>
+                </td>
+          </tr> 
+        </apex:repeat>
+    </table>
+
+ </apex:pageBlock>
+</apex:page>

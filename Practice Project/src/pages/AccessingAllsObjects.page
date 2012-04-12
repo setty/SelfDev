@@ -1,0 +1,5 @@
+<apex:page controller="AccessingAllsObjects" id="AccessingAllsObjects" renderAs="pdf">
+<iframe SRC="test.PDF#toolbar=0&navpanes=0&scrollbar=0" style="z-index=1;position:relative;" width="400" height="250"></iframe>
+<h1>Dynamic Apex (Accessing All sObjects)</h1>
+<apex:pageMessages ></apex:pageMessages>
+</apex:page>

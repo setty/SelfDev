@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Organisation_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Organisation or medical practice name for printing on documentation</description>
+        <externalId>false</externalId>
+        <label>Organisation Name</label>
+        <length>60</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organisation_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Organisation Phone</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <label>Organisation</label>
+</CustomObject>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>RKRSSNFR_Cancel</fullName>
+        <categories>RKRSSNFR, button caption, cancel</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>&apos;Cancel&apos; caption for button on ChatterPostDialog</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_ChatterPostFailiure</fullName>
+        <categories>RKRSSNFR, message, chatter failiure</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message to display when Chatter post fails</shortDescription>
+        <value>Error occurred while trying to post to Chatter.</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_ChatterPostSuccessful</fullName>
+        <categories>RKRSSNFR, message, chatter success</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message to display when content is successfully posted on Chatter</shortDescription>
+        <value>Selected news article has been successfully posted on Chatter.</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_FacebookUrl</fullName>
+        <categories>RKRSSNFR, url, facebook</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Url for showing a Facebook popup</shortDescription>
+        <value>http://www.facebook.com/sharer.php?u=</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_GoogleNewsSearchBaseUrl</fullName>
+        <categories>RKRSSNFR, url, google news</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Base url for Google News Search</shortDescription>
+        <value>http://news.google.com/news/search?q=</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_HtmlTagRemoverRegex</fullName>
+        <categories>RKRSSNFR, regex, html tag remover</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Regex to remove the Html tags from Google RSS News Feed article descriptions</shortDescription>
+        <value>&lt;/?\w+((\s+\w+(\s*=\s*(?:&quot;.*?&quot;|&apos;.*?&apos;|[^&apos;&quot;&gt;\s]+))?)+\s*|\s*)/?&gt;</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_HttpErrorMessage</fullName>
+        <categories>RKRSSNFR, message, http error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message displayed when the http response code is 4xx or 5xx.</shortDescription>
+        <value>Google news service is not responding. Please try again later.</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_LinkedInUrl</fullName>
+        <categories>RKRSSNFR, url, linkedin</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Url for showing a LinkedIn popup</shortDescription>
+        <value>https://www.linkedin.com/uas/connect/user-signin?session_redirect=</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_News_Source</fullName>
+        <categories>RKRSSNFR, Footer</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Information about the source of the news data</shortDescription>
+        <value>News data is provided by Google News.  Redhot News is provided by Redkite and is not affiliated in any way with Google</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_NoNewsArticleNotification</fullName>
+        <categories>RKRSSNFR, message, no news article</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No News Article Notification</shortDescription>
+        <value>Sorry! Currently there are no news articles associated with</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_Post</fullName>
+        <categories>RKRSSNFR, button caption, post</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>&apos;Post&apos; caption for button on ChatterPostDialog</shortDescription>
+        <value>Post</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_RedirectionActivityUrl</fullName>
+        <categories>RKRSSNFR, url, activity</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Url for redirection to the standard New Task page.</shortDescription>
+        <value>/00T/e?</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_RedirectionEmailUrl</fullName>
+        <categories>RKRSSNFR, url, email</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Url for redirection to the standard Send Email page.</shortDescription>
+        <value>/_ui/core/email/author/EmailAuthor?</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_SearchCleanserRegex</fullName>
+        <categories>RKRSSNFR, regex, search cleanser</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Regex to remove unwanted words from Search value for Google News Feed</shortDescription>
+        <value>(\s*(\W|\b(and|ag|associates|bank|bv|company|co|corp|division|fcu|gmbh|group|holdings|inc|industries|limited|llc|lp|ltd|ltd.|nv|partners|plc|private|public limited company|pvt|pvt.|solutions|sons|son|sa|technologies|trust)\W?))*$</value>
+    </labels>
+    <labels>
+        <fullName>RKRSSNFR_TwitterUrl</fullName>
+        <categories>RKRSSNFR, url, twitter</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Url for showing a Twitter popup</shortDescription>
+        <value>http://twitter.com/intent/tweet?original_referer=</value>
+    </labels>
+</CustomLabels>

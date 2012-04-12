@@ -1,0 +1,112 @@
+<apex:page controller="SampleApiController" action="{!getAllSFDCObjects}">
+   
+   <apex:pageMessages />
+   
+   <style>
+       .even{
+       background-color: rgb(240,240,240);  /* Even row color - Light Grey */
+       }
+       .odd{
+       background-color: rgb(255,255,255);  /* Odd row color - White */
+       }
+       .tableHeader{
+       background-color: rgb(182,182,182);  /* Dark Grey */
+       text-align: center; 
+       font-family: 'Verdana';
+       font-size: 8pt;
+       font-weight: bold;
+       }
+       .columnFontCenter{
+       text-align : center; 
+       font-family: 'Verdana';
+       font-size: 8pt;
+       }
+       .columnFontLeft{
+       text-align : left; 
+       font-family: 'Verdana';
+       font-size: 8pt;
+       padding: 2px;
+       }
+       .generalNormal{  
+       font-family: 'Verdana';
+       font-size: 8pt;
+       }
+       .generalBold{                
+       font-family: 'Verdana';      /* General style for Button */
+       font-size: 8pt;
+       font-weight: bold;
+       }
+       .fldCategory{  
+       font-family: 'Verdana';
+       font-size: 9pt;
+       }
+       .statusStyle{  
+       font-family: 'Verdana';
+       font-size: 8pt;
+       color: rgb(170,170,170);
+       vertical-align: top;
+       }
+   </style>
+    
+   <apex:outputPanel id="pnlHeader">
+   		<apex:sectionHeader id="header" title="Metadata Information" subTitle="{!SelectedObjectLabel}"/>
+   </apex:outputPanel>
+	
+   <apex:form styleclass="generalNormal">
+   
+   	 <apex:outputPanel id="pnlInput">
+        <apex:pageBlock >
+        	<apex:pageBlockButtons location="top"> 
+        		<apex:commandButton action="{!getAllFields}" value="Search" rerender="pnlDisplayAllFieldDetails, pnlHeader" styleClass="generalBold" 
+                status="tableStatus"/>
+                <apex:commandButton value="Reset" styleClass="generalBold" action="{!ResetAll}"/>
+        	</apex:pageBlockButtons>
+        	
+            <apex:outputLabel value="Select Object:" styleClass="generalBold"/>&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:selectList id="selectObject" value="{!SelectedObjectName}" size="1" styleClass="generalNormal" multiselect="false" required="true">
+                <apex:selectOptions value="{!SFDCObjectsList}"/>
+            </apex:selectList>&nbsp;&nbsp;
+            
+            <p><apex:outputLabel value="Select Field Category:" styleClass="generalBold" for="selectCategory"/>
+   			<apex:selectRadio id="selectCategory" layout="linedirection" value="{!SelectedFieldCategory}" styleClass="fldCategory">
+      			<apex:selectOptions value="{!FieldCategoryLabels}"/>
+      		</apex:selectRadio></p>
+        </apex:pageBlock>
+      </apex:outputPanel>
+        
+   </apex:form>
+   
+   <apex:actionStatus id="tableStatus" onstart="document.body.style.cursor='wait';return true;" onStop="document.body.style.cursor='default';return true;" startStyleClass="statusStyle">
+	      <apex:facet name="start" >                
+	          <center>
+	          		<img src="{!URLFOR($Resource.ApiResources, '/ApiCallResources/img/processing2.gif')}"/>&nbsp;PROCESSING...
+	          </center>                
+	      </apex:facet>
+	      <apex:facet name="stop"/>             
+   	</apex:actionStatus>
+    
+   <apex:outputPanel id="pnlDisplayAllFieldDetails"> 
+       <apex:dataTable value="{!FieldTypeList}" var="ft" cellspacing="1" rowClasses="odd,even" align="left">    
+            <apex:column headerValue="SR NO." width="10%" dir="LTR" rowspan="1" headerClass="tableHeader" styleClass="columnFontCenter">
+                <apex:outputText value="{!ft.Index}"/>
+            </apex:column>
+             
+            <apex:column headerValue="LABEL" width="22.5%" dir="LTR" rowspan="1" headerClass="tableHeader" styleClass="columnFontLeft">
+                <apex:outputText value="{!ft.FieldLabel}"/>
+            </apex:column>
+             
+            <apex:column headerValue="API NAME" width="22.5%" dir="LTR" headerClass="tableHeader" styleClass="columnFontLeft">
+                <apex:outputText value="{!ft.FieldName}"/>
+            </apex:column>
+            
+            <apex:column headerValue="DATA TYPE" width="22.5%" dir="LTR" headerClass="tableHeader" styleClass="columnFontLeft">
+                <apex:outputText value="{!ft.FieldDataType}"/>
+            </apex:column>
+            
+            <apex:column headerValue="DETAILS" width="22.5%" dir="LTR" headerClass="tableHeader" styleClass="columnFontLeft">
+                <apex:outputText value="{!ft.FieldDetails}"/>
+            </apex:column>
+       </apex:dataTable>
+   </apex:outputPanel>
+   
+</apex:page>

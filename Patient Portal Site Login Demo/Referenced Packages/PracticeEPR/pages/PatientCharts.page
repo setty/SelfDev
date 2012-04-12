@@ -1,0 +1,32 @@
+<apex:page standardController="ecare__Patient__c" extensions="ecare.PatientChartsController" showheader="false">
+    <apex:pageblock title="{!$Label.HeightWeightChart}">
+        <apex:outputText rendered="{!!hasVitals}">{!$Label.NoVitals}</apex:outputText>
+        <c:LineChart jsondata="{!HeightWeight2}" 
+                width="600" height="300" 
+                title="{!ecare__Patient__c.Name} {!$Label.HeightWeightChart}"
+                enableTooltip="true"
+                legend="none"
+                showCategories="true"
+                titleX="Date"
+                titleY="kg/cm" 
+                rendered="{!hasVitals}"/>  
+    </apex:pageblock> 
+    <apex:pageblock title="{!$Label.HeightWeightVsEpisodes}">
+        <c:TimeLine jsondata="{!HeightWeight}" 
+                    width="800px" height="300px" 
+                    zoomStartTime="{!zoomStart}" 
+                    zoomEndTime="{!zoomEnd}" 
+                    displayZoomButtons="true"
+                    colors="'#C2CD23'" 
+                    rendered="{!hasVitals}"/>
+    </apex:pageblock>
+    <apex:pageblock title="{!$Label.BPAndPulsox}">
+        <c:TimeLine jsondata="{!BPOx}" 
+                    width="800px" height="300px" 
+                    zoomStartTime="{!zoomStart}" 
+                    zoomEndTime="{!zoomEnd}" 
+                    displayZoomButtons="true"
+                    colors="'#C2CD23'"
+                    rendered="{!hasVitals}" />
+    </apex:pageblock>
+</apex:page>

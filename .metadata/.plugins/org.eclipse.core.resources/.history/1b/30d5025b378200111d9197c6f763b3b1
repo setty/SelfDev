@@ -1,0 +1,11 @@
+public with sharing class RamrodController 
+{
+	public RamrodController()
+	{
+		 Http http = new Http();
+    	 HttpRequest req = new HttpRequest();
+    	 req.setEndpoint('http://www.cheenath.com/tutorial/sample1/build.xml');
+         req.setMethod('GET');
+         HttpResponse res = http.send(req);
+	}
+}

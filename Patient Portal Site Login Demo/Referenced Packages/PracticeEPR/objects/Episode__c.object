@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Patient Episode of Care for a specific illness in a specific period of time</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Authorisation_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Insurer&apos;s authorisation code for carrying out treatment on this Episode.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the Insurer&apos;s authorisation code, if required.</inlineHelpText>
+        <label>Authorisation Code</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Diagnosis_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Diagnosis (e.g. ICD Code)</description>
+        <externalId>false</externalId>
+        <formula>Final_Diagnosis__r.Diagnosis_Code__c</formula>
+        <label>Diagnosis Code</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Episode_Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>DATEVALUE( CreatedDate )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Episode Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Diagnosis__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Final Diagnosis</label>
+        <referenceTo>Diagnosis_Code__c</referenceTo>
+        <relationshipLabel>Episodes</relationshipLabel>
+        <relationshipName>Episodes</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Diagnosis__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Initial Diagnosis</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initial_Plan__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Initial Care Plan for treatment following results of any tests</description>
+        <externalId>false</externalId>
+        <label>Initial Plan</label>
+        <referenceTo>Care_Plan__c</referenceTo>
+        <relationshipLabel>Episodes</relationshipLabel>
+        <relationshipName>Episodes</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Outcome__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Outcome</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Patient</label>
+        <referenceTo>Patient__c</referenceTo>
+        <relationshipLabel>Episodes</relationshipLabel>
+        <relationshipName>Episodes</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Presentation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Initial presentation symptoms</description>
+        <externalId>false</externalId>
+        <label>Presentation</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Referral_Clinician_Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Referral Clinician Email address. Populated automatically on change of refererring clinician.</description>
+        <externalId>false</externalId>
+        <label>Referral Clinician Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Referral_Clinician__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Referral clinician for this Episode</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select a registerd Clinician for referring the patient episode and the clinician will automatically receive an email notification of the case. Alternatively, use the Print Referral Letter for producing a paper copy.</inlineHelpText>
+        <label>Referral Clinician</label>
+        <referenceTo>Clinician__c</referenceTo>
+        <relationshipLabel>Patient Referrals</relationshipLabel>
+        <relationshipName>Episodes</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Referral_Note__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Referral Note</label>
+        <length>4000</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Secondary_Diagnosis__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Secondary Diagnosis</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Treatment_Charge__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total cost of treatments for this episode, excludng labour charges and prescriptions</description>
+        <externalId>false</externalId>
+        <label>Treatment Charge</label>
+        <summarizedField>Treatment__c.Charge__c</summarizedField>
+        <summaryForeignKey>Treatment__c.Episode__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <label>Episode</label>
+    <nameField>
+        <label>Episode Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Episodes</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Initial_Diagnosis__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Episode_Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Final_Diagnosis__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Print_Referral_Letter</fullName>
+        <availability>online</availability>
+        <description>For printing a referral instead of sending via email</description>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Print Referral Letter</masterLabel>
+        <openType>newWindow</openType>
+        <page>PrintReferralLetter</page>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <width>800</width>
+    </webLinks>
+</CustomObject>

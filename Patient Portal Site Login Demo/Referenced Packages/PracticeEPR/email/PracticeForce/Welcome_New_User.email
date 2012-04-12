@@ -1,0 +1,13 @@
+Dear {!User.FirstName},
+
+You have been registered as a new user of {!Organization.Name}'s implmentation of PracticeEPR, the patient records and practice management system from PracticeForce.
+
+PracticeEPR is built on the Salesforce.com enterprise class Cloud platform, allowing you to access patient details from any browser equipped device.
+
+In the next few minutes you should  receive an email from Salesforce.com with details of your login.  Please follow the directions in this email to activate your account and set your password. 
+
+For training and information on using the system please contact your local administrator.
+
+Regards,
+
+PracticeForce

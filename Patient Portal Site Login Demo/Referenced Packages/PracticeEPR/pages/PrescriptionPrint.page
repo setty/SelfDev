@@ -1,0 +1,71 @@
+<!-- NO STYLING APPLIED - PRINT PREVIEW PAGE -->
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false" standardController="ecare__Patient__c" extensions="ecare.PrintPrescriptionController" renderAs="pdf">
+
+<!-- Images need to be spaced appropriately -->  
+
+<!-- Can the logo be in a unmanaged static resource that is separately loaded to the Trialforce org? -->
+
+
+    <table>
+    <tr>
+    <td align="left" width="215px"><img src="{!URLFOR($Resource.CliniCloudSRB1,'images/rx.jpg')}" alt="Rx" align="left" /></td>
+    <td align="center" width="215px" valign="top">
+        <b>{!$Organization.Name}</b><br/>
+        {!$Organization.Street}, {!$Organization.State}, {!$Organization.PostalCode}<br/> 
+        Tel:&nbsp;{!$Organization.Phone}&nbsp;&nbsp;Fax: {!$Organization.Fax}
+    </td>
+    <td align="right" width="300px" valign="top"><img src="{!URLFOR($Resource.CliniCloudSRB1,'images/logo.png')}" alt="" width="300" height="55" align="right" valign="top" /></td>
+    </tr>
+    </table>
+    <!--  c:PrescriptionPrintComponent EpisodeID="{!$CurrentPage.parameters.EPid}" PatientID="{!$CurrentPage.parameters.patientId}"/ -->
+    <apex:pageBlock id="Print">
+
+    <apex:pageBlockSection title="{!$Label.Prescription_Print_Title}" columns="2"> 
+    <!--  Some details of the Medical Practice to go here, from Custom or Org Settings -->
+    
+        <apex:outputLabel value="{!$ObjectType.ecare__Patient__c.fields.Name.label}: " style="font-weight: bold;" />
+        <apex:outputText value=" {!PatientScripts.name}"/>
+        
+        <apex:outputLabel value="{!$ObjectType.ecare__Patient__c.fields.ecare__Patient_ID__c.label}: " style="font-weight: bold;"/>
+        <apex:outputText value=" {!PatientScripts.ecare__Patient_ID__c}"/>
+        
+        <apex:outputLabel value="{!$ObjectType.ecare__Patient__c.fields.ecare__DOB_Text__c.label}: " style="font-weight: bold;"/>
+        <apex:outputText value=" {!PatientScripts.ecare__DOB_Text__c}"/>
+                
+        <apex:outputLabel value="{!$ObjectType.ecare__Patient__c.fields.ecare__Patient_Address__c.label}: " style="font-weight: bold;"/>
+        <apex:outputText value=" {!PatientScripts.ecare__Patient_Address__c}"/>
+     </apex:pageBlockSection>
+    <br/> 
+    <table border="1" cellpadding="5" width="95%" cellspacing="0" cols="3" bordercolor="black" align="center">
+        <tr>
+            <th>{!$Label.ecare__Issue_Date_Label}</th>
+            <th>{!$ObjectType.ecare__Prescription__c.fields.ecare__Drug_Description__c.label}</th>
+            <th>{!$Label.ecare__Issued}</th>
+        </tr>    
+        
+        <apex:repeat value="{!PatientScripts.ecare__Prescriptions__r}" var="scriptPrint" >
+          <tr>
+                <td><apex:outputfield value="{!scriptPrint.CreatedDate}"/></td>
+                <td>{!scriptPrint.ecare__Quantity__c}&nbsp;x&nbsp;{!scriptPrint.ecare__Drug_Name__c}<br/>
+                {!scriptPrint.ecare__Dosage_Note__c}</td>
+                <td>&nbsp;</td>  
+          </tr> 
+         </apex:repeat>
+    </table>
+    <br/>
+    <h4>{!$Label.Issued_By}:&nbsp;{!$User.Title}&nbsp;{!$User.FirstName}&nbsp;{!$User.LastName}&nbsp;-- Reg No &nbsp;[Reg Body]</h4>
+    <br/>
+    <br/>
+    <b>{!$Label.Remarks}:&nbsp;</b>
+    <br/>
+    <hr/>
+    <br/>
+    <hr/>
+    <br/>
+    <hr/>
+    <br/>
+    <hr/>
+    <br/>
+  
+ </apex:pageBlock>
+</apex:page>

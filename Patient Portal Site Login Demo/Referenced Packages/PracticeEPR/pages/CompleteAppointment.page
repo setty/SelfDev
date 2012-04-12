@@ -1,0 +1,48 @@
+<!-- This page is for completing Appointments via a button on the Event page
+     For appointments related to Treatments it marks the treatment as complete,
+     for appointments not yet related to a treatment it provides the option to select
+     an existing Episode and Activity to create a treatment, or create a new Episode -->
+<apex:page standardController="Event" extensions="ecare.CompleteAppExtController" tabStyle="ecare__Appointment__c">
+	<!-- Show a summary of the Event -->
+	<apex:pageBlock mode="mainDetail" >
+		<apex:pageBlockSection columns="2" title="{!$Label.Appointment_Summary}">
+			<apex:outputField value="{!Event.Subject}" />
+			<apex:outputField value="{!Event.StartDateTime}"/>
+			<apex:outputField value="{!Event.WhatId}" label="Patient"/>
+			<apex:outputField value="{!Event.EndDateTime}"/>
+			<apex:outputField value="{!Event.Description}"/>
+			<apex:outputField value="{!Event.ecare__AppointmentId__c}" rendered="false"/>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+	<!-- Form for completion of the Episode/Activity -->
+	<apex:form >
+		<apex:pageBlock mode="Edit">
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!Save}" value="{!$Label.Save}"/>
+				<apex:commandButton action="{!Cancel}" value="{!$Label.Cancel}"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection columns="2" title="{!$Label.Complete_Appointment}">
+				<apex:pageBlockSectionItem >	
+					<apex:outputLabel value="{!$Label.Create_New_Episode}"/>
+					<apex:inputCheckbox value="{!createEpisode}" disabled="{!IF(treatment.ecare__Episode__c != null, true, false)}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >	
+					<apex:outputLabel value="{!$Label.Select_Existing_Episode}"/>
+					<apex:selectList value="{!treatment.ecare__Episode__c}" multiselect="false" size="1">
+            			<apex:selectOptions value="{!epiList}"/>
+        			</apex:selectList>
+					<!-- apex:inputField value="{!treatment.ecare__Episode__c}"/ -->
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >	
+					<apex:outputLabel value="{!$Label.Select_Activity}"/>
+					<apex:inputField value="{!treatment.ecare__Care_Activity__c}" required="true"/>
+				</apex:pageBlockSectionItem>
+				<!-- apex:inputField value="{!treatment.Charge__c}"/ -->
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="{$Label.Treatment_Notes}" columns="1">
+				<apex:inputTextArea value="{!treatment.ecare__Description__c}" cols="100" rows="6"/>
+			</apex:pageBlockSection>
+		</apex:pageBlock> 
+	</apex:form>
+
+</apex:page>

@@ -1,0 +1,42 @@
+<apex:page standardController="Contract" recordSetVar="unused" sidebar="false">
+<apex:includeScript value="{!$Resource.UtilJS}" />
+<apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlock >
+Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+</apex:pageBlock>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+<apex:commandButton value="Return" action="{!cancel}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!selected}" var="a" id="table">
+<apex:column headerValue="Contract Number">
+<apex:inputField value="{!a.ContractNumber}"/>
+</apex:column>
+<apex:column headerValue="Plan/Name">
+<apex:inputField value="{!a.Plan_Name__c}"/>
+</apex:column>
+<apex:column headerValue="Provider Account #">
+<apex:inputField value="{!a.Provider_Acct__c}"/>
+</apex:column>
+<apex:column headerValue="Current Balance">
+<apex:inputField value="{!a.Year_2_Total_Assets__c}"/>
+</apex:column>
+<apex:column headerValue="Estimated Annual Deposits">
+<apex:inputField value="{!a.Est_Year_2_Contributions__c}"/>
+</apex:column>
+<apex:column headerValue="Plan Distributions">
+<apex:inputField value="{!a.Plan_Distributions__c}"/>
+</apex:column>
+<apex:column headerValue="IDD Results">
+<apex:inputField value="{!a.IDD_Results__c}"/>
+</apex:column>
+<apex:column headerValue="IDD Actions">
+<apex:inputField value="{!a.IDD_Actions__c}"/>
+</apex:column>
+
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,6 @@
+<!-- action="{!AccessingsObjectFieldsThroughRelationships}" -->
+<apex:page controller="AdvancedDev_DataTypes" sidebar="false" >
+<apex:Pagemessages ></apex:Pagemessages>
+<apex:form >
+</apex:form>
+</apex:page>

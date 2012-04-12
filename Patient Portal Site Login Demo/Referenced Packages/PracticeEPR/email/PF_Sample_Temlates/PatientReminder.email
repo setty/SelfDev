@@ -1,0 +1,11 @@
+Dear {!Appointment__c.Patient__c}
+
+Please remember to attend your Appointment with {!Appointment__c.OwnerFullName} on {!Appointment__c.Appointment_Date_Time__c}.
+
+Please arrive 15 mins prior to your appointment and report to the main reception.
+
+Regards,
+
+PracticeForce 
+
+*** This is an automated email, please do not reply ***

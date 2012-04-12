@@ -1,0 +1,8 @@
+<apex:page >
+	<apex:flash src="http://www.adobe.com/devnet/flash/samples/drawing_1/1_coordinates.swf"
+		height="300" width="100%" />
+	<apex:enhancedList type="Account" height="300" rowsPerPage="10"
+		id="AccountList" />
+	<apex:enhancedList type="Lead" height="300" rowsPerPage="25"
+		id="LeadList" customizable="False" />
+</apex:page>

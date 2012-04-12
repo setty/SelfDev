@@ -1,0 +1,2115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Pharmaceutical drugs and consumable items for which the practice will prescribe and optionally hold stock</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Additional_Info__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional information such as drug side effects and interactions</inlineHelpText>
+        <label>Additional Info</label>
+        <length>4000</length>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Alternate_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Alternate/Trade Name</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check the box if the drug requires approval from an authorised clinician</inlineHelpText>
+        <label>Approval Required</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Class__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Class</label>
+        <picklist>
+            <picklistValues>
+                <fullName>5-alpha-reductase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5-aminosalicylates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5HT3 receptor antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>adamantane antivirals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>adrenal cortical steroids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>adrenal corticosteroid inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>adrenergic bronchodilators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>agents for hypertensive emergencies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>agents for pulmonary hypertension</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>aldosterone receptor antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>alkylating agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>alpha-adrenoreceptor antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>alpha-glucosidase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>alternative medicines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>amebicides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>aminoglycosides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>aminopenicillins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>aminosalicylates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>amylin analogs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Analgesic Combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Analgesics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>androgens and anabolic steroids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>angiotensin converting enzyme inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>angiotensin II inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anorectal preparations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anorexiants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antacids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anthelmintics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiadrenergic agents, centrally acting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiadrenergic agents, peripherally acting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiandrogens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antianginal agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anti-angiogenic ophthalmic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiarrhythmic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiasthmatic combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antibiotics/antineoplastics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anticholinergic antiemetics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anticholinergic antiparkinson agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anticholinergic bronchodilators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anticholinergic chronotropic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anticholinergics/antispasmodics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anticoagulants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anti-CTLA-4 monoclonal antibodies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antidepressants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antidiabetic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antidiabetic combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antidiarrheals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antidiuretic hormones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antidotes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiemetic/antivertigo agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antifungals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antigonadotropic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antigout agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antihistamines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antihyperlipidemic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antihyperlipidemic combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antihypertensive combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antihyperuricemic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antimalarial agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antimalarial combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antimalarial quinolines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antimetabolites</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antimigraine agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antineoplastic detoxifying agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antineoplastic interferons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antineoplastic monoclonal antibodies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antineoplastics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiparkinson agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiplatelet agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antipseudomonal penicillins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antipsoriatics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antipsychotics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antirheumatics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiseptic and germicides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antithyroid agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antitoxins and antivenins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antituberculosis agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antituberculosis combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antitussives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiviral agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiviral combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>antiviral interferons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>anxiolytics, sedatives, and hypnotics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>aromatase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>atypical antipsychotics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>azole antifungals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>bacterial vaccines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>barbiturate anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>barbiturates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BCR-ABL tyrosine kinase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>benzodiazepine anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>benzodiazepines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>beta-adrenergic blocking agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>beta-lactamase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>bile acid sequestrants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>biologicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>bisphosphonates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>bone resorption inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>bronchodilator combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>bronchodilators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>calcitonin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>calcium channel blocking agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>carbamate anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>carbapenems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>carbonic anhydrase inhibitor anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>carbonic anhydrase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cardiac stressing agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cardioselective beta blockers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cardiovascular agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>catecholamines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CD20 monoclonal antibodies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CD33 monoclonal antibodies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CD52 monoclonal antibodies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>central nervous system agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cephalosporins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cerumenolytics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>chelating agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>chemokine receptor antagonist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>chloride channel activators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cholesterol absorption inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cholinergic agonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cholinergic muscle stimulants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cholinesterase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CNS stimulants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>coagulation modifiers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>colony stimulating factors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>contraceptives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>corticotropin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>coumarins and indandiones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cox-2 inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>decongestants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>dermatological agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>diagnostic radiopharmaceuticals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>dibenzazepine anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>digestive enzymes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>dipeptidyl peptidase 4 inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>diuretics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>dopaminergic antiparkinsonism agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>drugs used in alcohol dependence</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>echinocandins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EGFR inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>estrogen receptor antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>estrogens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>expectorants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>factor Xa inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>fatty acid derivative anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>fibric acid derivatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>first generation cephalosporins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>fourth generation cephalosporins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>functional bowel disorder agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>gallstone solubilizing agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>gamma-aminobutyric acid analogs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>gamma-aminobutyric acid reuptake inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>gamma-aminobutyric acid transaminase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>gastrointestinal agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>general anesthetics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>genitourinary tract agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GI stimulants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>glucocorticoids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>glucose elevating agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>glycopeptide antibiotics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>glycoprotein platelet inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>glycylcyclines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>gonadotropin-releasing hormone antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>gonadotropin releasing hormones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>gonadotropins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>group I antiarrhythmics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>group II antiarrhythmics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>group III antiarrhythmics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>group IV antiarrhythmics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>group V antiarrhythmics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>growth hormone receptor blockers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>growth hormones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H. pylori eradication agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H2 antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>hematopoietic stem cell mobilizer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>heparin antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>heparins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HER2 inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>herbal products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>histone deacetylase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>hormone replacement therapy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>hormones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>hormones/antineoplastics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>hydantoin anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>illicit (street) drugs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>immune globulins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>immunologic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>immunosuppressive agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>impotence agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>incretin mimetics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>inhaled anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>inhaled corticosteroids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>inotropic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>insulin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>insulin-like growth factor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>integrase strand transfer inhibitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>interferons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>intravenous nutritional products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>in vivo diagnostic biologicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iodinated contrast media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ionic iodinated contrast media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iron products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ketolides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>laxatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>leprostatics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>leukotriene modifiers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>lincomycin derivatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>lipoglycopeptides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>local injectable anesthetics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>loop diuretics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>lung surfactants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>lymphatic staining agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>lysosomal enzymes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>macrolide derivatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>macrolides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>magnetic resonance imaging contrast media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mast cell stabilizers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>medical gas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>meglitinides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>metabolic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>methylxanthines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mineralocorticoids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>minerals and electrolytes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous analgesics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antibiotics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antidepressants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antidiabetic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antiemetics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antifungals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antihyperlipidemic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antimalarials</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antineoplastics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antiparkinson agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antipsychotic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antituberculosis agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous antivirals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous anxiolytics, sedatives and hypnotics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous biologicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous bone resorption inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous cardiovascular agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous central nervous system agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous coagulation modifiers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous diuretics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous genitourinary tract agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous GI agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous hormones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous metabolic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous ophthalmic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous otic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous respiratory agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous sex hormones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous topical agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous uncategorized agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>miscellaneous vaginal agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mitotic inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>monoamine oxidase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>monoclonal antibodies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mouth and throat products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mTOR inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mTOR kinase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mucolytics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>multikinase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>muscle relaxants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mydriatics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>narcotic analgesic combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>narcotic analgesics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nasal antihistamines and decongestants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nasal anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nasal lubricants and irrigations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nasal preparations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nasal steroids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>natural penicillins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>neuraminidase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>neuromuscular blocking agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>next generation cephalosporins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nicotinic acid derivatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nitrates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NNRTIs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>non-cardioselective beta blockers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>non-iodinated contrast media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>non-ionic iodinated contrast media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nonsteroidal anti-inflammatory agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>non-sulfonylureas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>norepinephrine-dopamine reuptake inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>norepinephrine reuptake inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nucleoside reverse transcriptase inhibitors (NRTIs)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nutraceutical products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>nutritional products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic anesthetics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic antihistamines and decongestants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic anti-inflammatory agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic diagnostic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic glaucoma agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic lubricants and irrigations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic preparations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic steroids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic steroids with anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ophthalmic surgical agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>oral nutritional supplements</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>otic anesthetics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>otic anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>otic preparations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>otic steroids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>otic steroids with anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>oxazolidinedione anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>parathyroid hormone and analogs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>penicillinase resistant penicillins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>penicillins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>peripherally acting antiobesity agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>peripheral opioid receptor antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>peripheral vasodilators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>phenothiazine antiemetics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>phenothiazine antipsychotics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>phenylpiperazine antidepressants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>plasma expanders</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>platelet aggregation inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>platelet-stimulating agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>polyenes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>potassium-sparing diuretics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>probiotics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>progesterone receptor modulators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>progestins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>prolactin inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>prostaglandin D2 antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>protease inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>proton pump inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>psoralens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>psychotherapeutic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>psychotherapeutic combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>purine nucleosides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>pyrrolidine anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>quinolones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>radiocontrast agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>radiologic adjuncts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>radiologic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>radiologic conjugating agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>radiopharmaceuticals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RANK ligand inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>recombinant human erythropoietins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>renin inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>respiratory agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>respiratory inhalant products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>rifamycin derivatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>salicylates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>sclerosing agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>second generation cephalosporins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>selective estrogen receptor modulators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>selective serotonin reuptake inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>serotoninergic neuroenteric modulators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>serotonin-norepinephrine reuptake inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>sex hormone combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>sex hormones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>skeletal muscle relaxant combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>skeletal muscle relaxants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>smoking cessation agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>somatostatin and somatostatin analogs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>spermicides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>statins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>sterile irrigating solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>streptomyces derivatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>succinimide anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>sulfonamides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>sulfonylureas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>synthetic ovulation stimulants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>tetracyclic antidepressants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>tetracyclines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>therapeutic radiopharmaceuticals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>thiazide diuretics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>thiazolidinediones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>thioxanthenes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>third generation cephalosporins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>thrombin inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>thrombolytics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>thyroid drugs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>tocolytic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical acne agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical anesthetics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical antibiotics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical antifungals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical antihistamines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical antipsoriatics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical antivirals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical astringents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical debriding agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical depigmenting agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical emollients</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical keratolytics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical steroids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topical steroids with anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>toxoids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>triazine anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>tricyclic antidepressants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>trifunctional monoclonal antibodies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>tumor necrosis factor (TNF) inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>tyrosine kinase inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ultrasound contrast media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>upper respiratory combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>urea anticonvulsants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>urinary anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>urinary antispasmodics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>urinary pH modifiers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>uterotonic agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>vaccine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>vaccine combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>vaginal anti-infectives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>vaginal preparations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Various</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>vasodilators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>vasopressin antagonists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>vasopressors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VEGF/VEGFR inhibitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>viral vaccines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>viscosupplementation agents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>vitamin and mineral combinations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>vitamins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cost_per_unit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Cost of medication per unit pack</description>
+        <externalId>false</externalId>
+        <label>Cost per unit</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>THIS WILL BE A RICH TEXT CONTROL WHEN SPRING 10 IS RELEASED</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>12</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Dose__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of the unit dose or strength (e.g. 100 mg)</description>
+        <externalId>false</externalId>
+        <label>Dose</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Form__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Form</label>
+        <picklist>
+            <picklistValues>
+                <fullName>aerosol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>capsule</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cream</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>powder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>powder for injection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>powder for reconstituion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>solution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>tablet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>tablet, extended release</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Last_Order_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date last order placed, only relevant when stock on order non zero</description>
+        <externalId>false</externalId>
+        <label>Last Order Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Low_Stock_Indicator__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>/*
+If the Stock on Hand is less than the reorder point then red flag
+If the Available Stock (incl pending prescriptions) is less than the reorder point then flag amber
+otherwise assume it&apos;s all green
+*/
+IMAGE(
+   IF(Stock_On_Hand__c &lt;= Reorder_Point__c, 
+       &quot;/img/samples/flag_red.gif&quot;, 
+       IF(  Stock_Available__c  &lt;= Reorder_Point__c,
+            &quot;/img/samples/flag_yellow.gif&quot;,
+            &quot;/img/samples/flag_green.gif&quot;
+       )
+    ),
+   &quot;Overdue Flag&quot;
+   )
+/* snip - former code with % warning based on a custom setting 
+IMAGE(
+   IF(Stock_On_Hand__c &lt;= Reorder_Point__c, 
+       &quot;/img/samples/flag_red.gif&quot;, 
+       IF( (Stock_On_Hand__c  /  Reorder_Point__c)  &lt;=  (1 +  $Setup.Defaults__c.Low_Stock_Warning__c/100 ),
+            &quot;/img/samples/flag_yellow.gif&quot;,
+            &quot;/img/samples/flag_green.gif&quot;
+       )
+    ),
+   &quot;Overdue Flag&quot;
+   )
+*/</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Low Stock Indicator</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32000</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>On_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This will be superseded with the Drug Ordering functionality.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity already on order, and awaiting delivery</inlineHelpText>
+        <label>On Order</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pack_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Packaging description</description>
+        <externalId>false</externalId>
+        <label>Pack Description</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Charge price per unit pack</description>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Reorder_Point__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Minimum stock level before reorder recommended</description>
+        <externalId>false</externalId>
+        <label>Reorder Point</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Route__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Route</label>
+        <picklist>
+            <picklistValues>
+                <fullName>compounding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>injected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>intravenously</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>orally</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>rectally</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>inhalation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>topically</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Stock_Allocated__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stock already allocated for prescriptions stil awaiting collection</description>
+        <externalId>false</externalId>
+        <label>Stock Allocated</label>
+        <summarizedField>Prescription__c.Quantity__c</summarizedField>
+        <summaryFilterItems>
+            <field>Prescription__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Approval Required, Prescribed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Prescription__c.Drug__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Stock_Available__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Stock_On_Hand__c -  Stock_Allocated__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Stock Available</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stock_On_Hand__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Stock On Hand</label>
+        <summarizedField>Stock__c.Current_Stock__c</summarizedField>
+        <summaryForeignKey>Stock__c.Drug__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Summary__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Dose__c  &amp; &quot; &quot; &amp; TEXT(Form__c)   &amp; &quot; &quot; &amp; TEXT(Route__c)  &amp; &quot; &quot; &amp; Pack_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Summary</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Drug</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Alternate_Name__c</columns>
+        <columns>Dose__c</columns>
+        <columns>Form__c</columns>
+        <columns>Price__c</columns>
+        <columns>Low_Stock_Indicator__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Approvals_Required</fullName>
+        <columns>NAME</columns>
+        <columns>Class__c</columns>
+        <columns>Alternate_Name__c</columns>
+        <columns>Pack_Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approval_Required__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Approvals Required</label>
+    </listViews>
+    <listViews>
+        <fullName>Drugs_in_Stock</fullName>
+        <columns>NAME</columns>
+        <columns>Alternate_Name__c</columns>
+        <columns>Stock_On_Hand__c</columns>
+        <columns>Stock_Allocated__c</columns>
+        <columns>Stock_Available__c</columns>
+        <columns>Low_Stock_Indicator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stock_Available__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>Drugs in Stock</label>
+    </listViews>
+    <listViews>
+        <fullName>Low_Stock_Warning</fullName>
+        <columns>NAME</columns>
+        <columns>Reorder_Point__c</columns>
+        <columns>On_Order__c</columns>
+        <columns>Last_Order_Date__c</columns>
+        <columns>Cost_per_unit__c</columns>
+        <columns>Low_Stock_Indicator__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Low Stock Warning</label>
+    </listViews>
+    <nameField>
+        <label>Drug Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Drugs</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Alternate_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Route__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Form__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Pack_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Low_Stock_Indicator__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Summary__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Low_Stock_Indicator__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Alternate_Name__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Alternate_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Summary__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Stock_Available__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

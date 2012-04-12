@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Drug and consumable stock orders. The batch number and expiry date of the stock is held in the system. When dispensing the pharmcist must select the correct stock item from which the prescription has been dispensed.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Batch_No__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Batch number for this stock item</description>
+        <externalId>true</externalId>
+        <label>Batch No</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Stock__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The quantity of stock that should be &apos;on the shelf&apos; ignoring any pending prescription collections. This is the figure that should be used to audit the current stock levels, not the Available Stock</description>
+        <externalId>false</externalId>
+        <formula>Quantity_Received__c -  Stock_Used__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Stock</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drug_Information__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Drug__r.Summary__c</formula>
+        <label>Drug Information</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drug__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Drug or consumable stock item to which this batch relates</description>
+        <externalId>false</externalId>
+        <label>Drug</label>
+        <referenceTo>Drug__c</referenceTo>
+        <relationshipLabel>Stock</relationshipLabel>
+        <relationshipName>Stock</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Expiry_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Expiry date for the stock batch. If multiple expiry dates for a collection of received stock then they should be entered in separate records (and they will have different batch numbers),</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the expiry date for the batch</inlineHelpText>
+        <label>Expiry Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Quantity_Received__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of units received for this batch number and expiry.</inlineHelpText>
+        <label>Quantity Received</label>
+        <precision>8</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stock_Used__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Stock Used</label>
+        <summarizedField>Stock_Transaction__c.Quantity__c</summarizedField>
+        <summaryFilterItems>
+            <field>Stock_Transaction__c.State__c</field>
+            <operation>equals</operation>
+            <value>Collected, Destroyed, Missing</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Stock_Transaction__c.Stock__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <label>Stock</label>
+    <nameField>
+        <displayFormat>S-{0000000000}</displayFormat>
+        <label>Stock Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <namedFilters>
+        <fullName>nf_01IA0000000Gb1iMAC_00NA0000001QN1PMAW</fullName>
+        <active>true</active>
+        <field>Prescription__c.Stock__c</field>
+        <filterItems>
+            <field>Stock__c.Current_Stock__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filterItems>
+        <filterItems>
+            <field>Stock__c.Drug__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Drug__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Prescription_Stock</name>
+        <sourceObject>Prescription__c</sourceObject>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01IA0000001J0cqMAC_00NA0000005wWbaMAE</fullName>
+        <active>true</active>
+        <field>Immunisation__c.Drug_Stock__c</field>
+        <filterItems>
+            <field>Stock__c.Drug__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Drug__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Stock__c.Current_Stock__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Immunisation_Drug Stock</name>
+        <sourceObject>Immunisation__c</sourceObject>
+    </namedFilters>
+    <pluralLabel>Stock</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Drug__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Batch_No__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Expiry_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Drug_Information__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Current_Stock__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

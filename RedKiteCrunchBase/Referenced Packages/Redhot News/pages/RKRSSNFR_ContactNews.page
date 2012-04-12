@@ -1,0 +1,178 @@
+<apex:page id="pg" standardController="Contact" extensions="Rknews.RKRSSNFR_ContactNewsController" tabStyle="Contact"> 
+
+	<apex:stylesheet value="{!URLFOR($Resource.Rknews__jQueryUI ,'css/cupertino/jquery-ui-1.8.12.custom.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.Rknews__RKNews ,'css/NewsFeedStyle.css')}" />
+	<apex:includeScript value="{!URLFOR($Resource.Rknews__RKNews ,'js/NewsFeedScript.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.Rknews__RKNews ,'js/NewsFeedChatter.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.Rknews__jQueryUI ,'js/jquery-1.5.1.min.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.Rknews__jQueryUI ,'js/jquery-ui-1.8.12.custom.min.js')}" />
+	
+	<script type="text/javascript">
+		j$=jQuery.noConflict();
+		jQuery(document).ready(function(){ 
+			// call the action function
+			initParams();
+			//Displays the jQuery dialog for posting the selected article on Chatter
+			//when 'Post to Chatter' is clicked for a particular news article
+			j$("#chatterDialog").dialog({ autoOpen: false, height: 193, modal: true, width: 400, resizable: false, title: 'Post To Chatter'});
+		});
+		
+		//Displays the jQuery accordion menu once the page is ready and the initialisation is complete
+		function showAccordion(){
+			j$( "#newsAccordion" ).accordion({ icons: false, header: '.accordion-header', collapsible: true, autoHeight:false, animated: 'easeInOutQuint'});
+			// show out vert tab afterwards
+			j$( ".vert-tab" ).show("slide", {direction: "right"}, "slow");
+		}
+		
+		function reportChatterStatus(){
+			j$("#pg\\:frm\\:chatterSuccess").each( function(){
+				if (this.value="true")	
+					alert("{!$Label.RKRSSNFR_ChatterPostSuccessful}");
+				else
+					alert("{!$Label.RKRSSNFR_ChatterPostFailiure}");
+			});
+		}
+
+		//to show the default favicon on error
+		function showDefaultIconOnError(source){			
+       		source.src = "{!URLFOR($Resource.RKNews, 'img/defaultFavicon/news2.png')}";
+       		source.onerror = "";
+       		return true;
+   		}
+	</script>
+	
+	<apex:outputPanel id="showError">
+		<apex:pageMessages />
+	</apex:outputPanel>
+	<apex:form id="frm">	
+		<apex:actionFunction name="postChatter" action="{!postOnChatter}" rerender="hiddenArea" onComplete="reportChatterStatus();">
+			<apex:param name="chatterBody" value="" assignTo="{!SelectedArticleBody}"/>
+			<apex:param name="chatterArticleIndex" value="" assignTo="{!SelectedArticleIndex}"/>
+		</apex:actionFunction>
+		
+		<apex:actionFunction name="initParams" action="{!init}" rerender="showError,pnlNews" oncomplete="showAccordion()" status="loading"/>
+		<apex:actionStatus id="loading" onstart="document.body.style.cursor='wait';return true;" onStop="document.body.style.cursor='default';return true;" styleclass="loading-status">
+			<apex:facet name="start" >                
+				<center><div class="loading-message-area" >
+					<img src="/img/loading.gif"/>&nbsp;&nbsp;<span class="loading-status">Loading...</span>
+				</div></center>                
+			</apex:facet> 
+		<apex:facet name="stop"/>
+	    </apex:actionStatus>
+	    
+		<div id="newsAccordion">
+		<apex:outputPanel id="pnlNews">
+			<apex:variable value="{!-1}" var="rowNum"/>
+			<apex:repeat value="{!articleList}" var="article" >
+				<apex:variable var="rowNum" value="{!rowNum + 1}"/>
+				
+				<div class="accordion-header" >
+					<div class="news-header">
+						<img class="sourceFavicon" src="http://{!article.Domain}/favicon.ico" onerror="showDefaultIconOnError(this)" width="32px" height="32px"/>
+						<div class="header-text">
+							<div class="article-title">{!article.Title}</div>
+							<span class="article-source">{!article.SourceName}</span>
+							<!-- 
+								<apex: outputLink value="{!article.link}" onclick="newReadMoreWindow('{!article.Link}')" styleclass="article-link">{!article.SourceName}</apex: outputLink>
+							 -->
+							<span class="publish-time">{!article.PublishedDateTime}</span>					
+						</div>
+					</div>
+				</div>
+				<div class="accordion-content" >
+					<div class="news-content">
+						<apex:image styleClass="news-image" url="{!article.ImageUrl}" rendered="{!AND(NOT(ISNULL(article.ImageUrl)), LEN(article.ImageUrl) > 0)}" />
+						<div class="content-area">
+							<div class="content-text-block">
+								<span class="content-text"><apex:outputText escape="false" value="{!article.Summary}"/></span>
+								<apex:outputLink styleClass="content-readmore" value="{!article.Link}" target="_top">Read more &raquo; </apex:outputLink>
+							</div> 
+							<apex:outputPanel >
+								<apex:outputLink styleClass="share-buttons" rendered="{!blnShareOnChatter}" value="#"
+									onmouseover="tooltip.show('Post To Chatter');" onmouseout="tooltip.hide();" 
+									onclick="return showChatterDialog('{!JSENCODE(article.Title)}', '{!JSENCODE(article.Link)}', '{!JSENCODE(article.Summary)}', '{!rowNum}')">
+									<apex:image url="{!URLFOR($Resource.Rknews__RKNews, 'img/chatter.png')}" width="16px" height="16px" />
+								</apex:outputLink>
+								<apex:outputLink styleClass="share-buttons" value="#"
+									onmouseover="tooltip.show('Save as Activity');" onmouseout="tooltip.hide();" 
+									onclick="return redirectParentWindow('{!$Label.rknews__RKRSSNFR_RedirectionActivityUrl}', '{!JSENCODE(article.Title)}', '{!JSENCODE(article.Summary)}', '{!JSENCODE(article.Link)}', 'activity', '{!contactID}', 'cont')" >
+									<apex:image url="{!URLFOR($Resource.Rknews__RKNews, 'img/salesforce.png')}" width="16px" height="16px"/>
+								</apex:outputLink>
+								<apex:outputLink styleClass="share-buttons" rendered="{!blnShareUsingSalesForceEmail}" value="#"
+									onmouseover="tooltip.show('Send an Email');" onmouseout="tooltip.hide();" 
+									onclick="return redirectParentWindow('{!$Label.rknews__RKRSSNFR_RedirectionEmailUrl}', '{!JSENCODE(article.Title)}', '{!JSENCODE(article.Summary)}', '{!JSENCODE(article.Link)}', 'email', '{!contactID}', 'cont')">
+									<apex:image url="{!URLFOR($Resource.Rknews__RKNews, 'img/email.png')}" width="16px" height="16px"/>
+								</apex:outputLink>								
+								<apex:outputLink styleClass="share-buttons" rendered="{!NOT(blnShareUsingSalesForceEmail)}" value="#"
+									onmouseover="tooltip.show('Send An Email');" onmouseout="tooltip.hide();" 
+									onclick="return sendMailClient('{!JSENCODE(article.Title)}', '{!JSENCODE(article.Link)}');" >
+									<apex:image url="{!URLFOR($Resource.Rknews__RKNews, 'img/email.png')}" width="16px" height="16px"/>
+								</apex:outputLink>
+								<apex:outputLink styleClass="share-buttons" rendered="{!blnShareOnFacebook}" value="#"
+									onmouseover="tooltip.show('Share on Facebook');" onmouseout="tooltip.hide();" 
+									onclick="return shareOnFacebook('{!$Label.rknews__RKRSSNFR_FacebookUrl}', '{!JSENCODE(article.Title)}', '{!JSENCODE(article.Link)}');return false;" >
+									<apex:image url="{!URLFOR($Resource.Rknews__RKNews, 'img/facebook.png')}" width="16px" height="16px" />
+								</apex:outputLink>
+								<apex:outputLink styleClass="share-buttons" rendered="{!blnShareOnTwitter}" value="#"
+									onmouseover="tooltip.show('Share on Twitter');" onmouseout="tooltip.hide();"
+									onclick="return shareOnTwitter('{!$Label.rknews__RKRSSNFR_TwitterUrl}', '{!JSENCODE(article.Title)}', '{!JSENCODE(article.Link)}');return false;">
+									<apex:image url="{!URLFOR($Resource.Rknews__RKNews, 'img/twitter.png')}" width="16px" height="16px" />
+								</apex:outputLink>
+								<apex:outputLink styleClass="share-buttons" rendered="{!blnShareOnLinkedIn}" value="#"
+									onmouseover="tooltip.show('Share on LinkedIn');" onmouseout="tooltip.hide();" 
+									onclick="return shareOnLinkedIn('{!$Label.rknews__RKRSSNFR_LinkedInUrl}', '{!JSENCODE(article.Link)}')" >
+									<apex:image url="{!URLFOR($Resource.Rknews__RKNews, 'img/linkedin.png')}" width="16px" height="16px" />
+								</apex:outputLink>								
+							</apex:outputPanel>
+						</div>
+					</div> 
+				</div>
+			</apex:repeat>
+			<apex:outputPanel rendered="{!blnResultsExist}" >
+			<div class="news-footer">
+				<div class="news-disclaimer">
+					{!$Label.RKRSSNFR_News_Source}
+				</div>
+			</div>
+			</apex:outputPanel>
+		</apex:outputPanel>
+		</div>
+		
+		<img class="top-drop-shadow" src="{!URLFOR($Resource.RKNews, 'img/top-shadow.png')}" />
+		<img class="bot-drop-shadow" src="{!URLFOR($Resource.RKNews, 'img/bottom-shadow.png')}" />
+		<a class="vert-tab" href="http://www.redkitetechnologies.com" target="_blank">
+			<img src="{!URLFOR($Resource.RKNews,'img/rk-tab-v02-vert.png')}"/>
+		</a>
+		
+		<div id="chatterDialog" class="chatter-hide">
+			<input id="chatterArticleIndex" type="hidden" value="" />
+			<div id="news" class="chatter-news">
+				<textarea id="chatterArticle" rows="4" Class="chatter-textarea"></textarea>
+			</div>
+			<table>
+				<tr>
+					<table> 
+						<tr>
+							<td width="18px">
+								<apex:image url="{!URLFOR($Resource.Rknews__RKNews, 'img/link.png')}" width="16px" height="16px"/>
+							</td>
+							<td>
+								<div id="link" class="chatter-link">
+									<apex:outputText value=""/>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</tr>			
+				<tr>
+					<td><apex:commandButton id="btnPostChatter" value="{!$Label.rknews__RKRSSNFR_Post}" onclick="postArticleOnChatter()" styleClass="chatter-content"/></td>
+					<td><apex:commandButton id="btnCancel" value="{!$Label.rknews__RKRSSNFR_Cancel}" onclick="closeChatterDialog()" styleClass="chatter-content"/></td>
+				</tr>
+			</table>
+		</div>
+		
+		<apex:outputPanel id="hiddenArea">
+			<apex:inputHidden id="chatterSuccess" value="{!IsChatterPostSuccess}" />
+		</apex:outputPanel>
+	</apex:form>
+</apex:page>

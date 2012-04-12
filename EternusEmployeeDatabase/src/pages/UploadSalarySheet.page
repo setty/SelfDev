@@ -1,0 +1,12 @@
+<apex:page standardController="contact" extensions="UploadSalarySheet" >
+ <apex:form >
+      <apex:sectionHeader title="Upload data from EXCEL file"/>
+      <apex:pagemessages />
+ 	<apex:pageBlock >
+ 	  <center>
+      	<apex:inputFile value="{!SalaryAttachment.body}" filename="{!FileName}" /> <apex:commandButton action="{!ReadFile}" value="Upload File" id="theButton" style="width:70px;"/>
+        <br/><br/> <font color="red"> <b>Note: Please use the standard template to upload SalarySheet. </b> </font>
+      </center>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

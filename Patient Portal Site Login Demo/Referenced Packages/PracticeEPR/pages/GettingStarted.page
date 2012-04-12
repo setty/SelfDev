@@ -1,0 +1,19 @@
+<apex:page controller="ecare.GettingStartedController">
+  <h1>{!$Label.Welcome}<font color="1686cc"> Practice</font><font color="961666">EPR</font>!</h1>
+  <p>
+  {!$Label.GettingStarted}
+  </p>
+  <apex:form >
+  <apex:pageBlock title="{!$Label.SetupStatus}">
+      <apex:dataTable value="{!SetupList}" var="setup" columns="4">
+          <apex:column headerValue="{!$Label.Step}" width="50" value="{!setup.stepNo}" />
+          <apex:column headerValue="{!$Label.Entity}" width="200" value="{!setup.objectName}" />
+          <apex:column headerValue="{!$Label.Status}" width="400" value="{!setup.objectStatus}" />
+          <apex:column headerValue="{!$Label.Setup}" width="100">
+              <apex:outputlink value="{!setup.setupLink}">Setup</apex:outputLink>
+          </apex:column>
+      </apex:dataTable>
+  </apex:pageBlock>
+  </apex:form>  
+
+</apex:page>

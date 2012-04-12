@@ -1,0 +1,50 @@
+<apex:page id="JqueryMenu">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<html>
+		  <script>
+		  	$(document).ready(function(){
+ 		  		$("#div-Config").hide();
+ 		  		// First Toggle function 
+				$("#img-Config").click(function () 
+				{
+					$("#div-ConfigScreen").hide();
+					$("#div-AdvancedScreen").hide();
+					$("#div-Config").toggle("slow");
+				});
+				
+				// Need Second Toggle function
+				$("#a-AdvancedSearch").click(function () {
+					$("#div-Config").hide();
+					$("#div-ConfigScreen").toggle("slow");
+					
+				});
+				
+				//Need Third Toggle function
+				$("#a-Configuration").click(function () {
+				$("#div-Config").hide();
+				$("#div-AdvancedScreen").toggle("slow");
+				});
+			});	 
+			</script>
+		  <style>
+				#div-Config{
+					float: right;
+					margin-right: 20px;
+				}
+		  </style>
+	
+	<body>
+			<img src="{!$Resource.Plus_Image}" id="img-Config" style="float:right;" ></img>
+			<div id="div-Config" style="display: none;">
+				<a href="#" id="a-AdvancedSearch">Advanced Search </a><br/>
+				<a href="#" id="a-Configuration">Configuration </a>
+			</div>
+			<div style="width: 100%;display: none;" id="div-ConfigScreen">
+				<h1>Configuration Screen</h1>
+			</div>
+			<div style="width: 100%;display: none;" id="div-AdvancedScreen">
+				<h1>Advanced Search</h1>
+			</div>
+	</body>
+	</html>
+</apex:page>

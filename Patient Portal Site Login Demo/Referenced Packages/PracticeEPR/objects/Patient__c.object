@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Electronic Patient Record</description>
+    <enableActivities>true</enableActivities>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Age_Years__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISNULL(Date_of_Birth__c)),
+     ROUND((TODAY()-Date_of_Birth__c) / 365.2425, 2),
+     0
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age (Years)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Age__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(
+    NOT(ISNULL(Date_of_Birth__c)),
+    IF(TODAY()-Date_of_Birth__c &lt; 365.2425,
+         IF(TODAY()-Date_of_Birth__c &lt; 31,
+              TEXT(TODAY()-Date_of_Birth__c) &amp; &quot;d&quot;,
+              TEXT(FLOOR((TODAY()-Date_of_Birth__c) / 30)) &amp; &quot;m&quot;),
+         TEXT(FLOOR((TODAY()-Date_of_Birth__c) / 365.2425)) &amp; &quot;y&quot;
+        ),
+    &apos;Unknown&apos;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_Payer2__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Bill Payer</label>
+        <referenceTo>Bill_Payer__c</referenceTo>
+        <relationshipLabel>Patients</relationshipLabel>
+        <relationshipName>Patients</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Blood_Group__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Blood Group</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A-</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AB-</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AB+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B-</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>O-</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>O+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DOB_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date of birth formatted for printing in DD/MM/YYYY format</description>
+        <externalId>false</externalId>
+        <formula>TEXT(DAY(Date_of_Birth__c)) &amp; &apos;/&apos; &amp;  LPAD(TEXT(MONTH(Date_of_Birth__c)), 2, &apos;0&apos;) &amp; &apos;/&apos; &amp; TEXT(YEAR(Date_of_Birth__c))</formula>
+        <label>DOB (DD/MM/YYYY)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_of_Birth__c</fullName>
+        <deprecated>false</deprecated>
+        <description>We may replace this field with some convenience fields for data entry due to the poor nature of the standard Force.Com Date picker.</description>
+        <externalId>false</externalId>
+        <label>Date of Birth</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ethinicity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Ethnicity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Any other Asian Background</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Any Other Black Background</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Any Other Ethnic Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Any other Mixed Background</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bangladeshi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Black - African</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Black Caribbean</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chinese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gypsy/Roma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pakistani</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>White</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>White and Asian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>White and Black African</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>White and Black Caribbean</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Gender__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Gender</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Male</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Female</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Height__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last height reading</description>
+        <externalId>false</externalId>
+        <label>Height (cm)</label>
+        <summarizedField>Vitals__c.Height_cm__c</summarizedField>
+        <summaryForeignKey>Vitals__c.Patient__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Ideal_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Ideal Weight for Men &amp; Women based on Devine Formula.</description>
+        <externalId>false</externalId>
+        <formula>IF (
+ISPICKVAL( Gender__c , &apos;Male&apos;),
+IF(Height__c &gt; 88, 50 + ( ( (  Height__c  - 152.4 ) * 0.3937008 ) * 2.3 ), 0) ,
+IF(Height__c &gt; 93, 45.5 + ( ( ( Height__c - 152.4 ) * 0.3937008 ) * 2.3 ), 0)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Ideal Weight for Men &amp; Women based on Devine Formula</inlineHelpText>
+        <label>Ideal Weight (kg)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>National_Patient_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>National patient registration identifier</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Please enter the Patients national medical records number</inlineHelpText>
+        <label>National Patient Id</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Of_Kin_Free_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Free text next of kin when not also registered as a Patient</inlineHelpText>
+        <label>Next Of Kin (Free Text)</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Next_of_Kin__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If the next of kin is a patient select them from the Patient Lookup, otherwise enter the Next of Kin details below.</inlineHelpText>
+        <label>Next of Kin</label>
+        <referenceTo>Patient__c</referenceTo>
+        <relationshipLabel>Next of Kin Relations</relationshipLabel>
+        <relationshipName>Next_of_Kin_Relations</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Patient_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the patient address, you can enter more lines than are visible and all will be displayed</inlineHelpText>
+        <label>Patient Address</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Patient_Email_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Patient Email Address</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unique patient identifier</description>
+        <displayFormat>{0000000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Patient ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Patient_Job_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Patient Job Title</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_Mobile__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Patient Mobile</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Patient_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Patient Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Patient_Photo__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Patient Photo</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Patient_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Patient Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Registered</fullName>
+                <color>#006600</color>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transferred</fullName>
+                <color>#FFCC33</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deceased</fullName>
+                <color>#CC0000</color>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of payment days from the Account, or if not set the default for the Org settings.</description>
+        <externalId>false</externalId>
+        <formula>BLANKVALUE(Bill_Payer2__r.Payment_Days__c ,  $Setup.Billing_Parameters__c.Payment_Days__c )</formula>
+        <label>Payment Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pays_Own_Bills__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pays Own Bills</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Photo__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IMAGE(  BLANKVALUE(Patient_Photo__c, &apos;servlet/servlet.ImageServer?id=015A0000000hyGB&amp;oid=00DA0000000JIXz&amp;lastMod=1272141986000&apos;),  Name + &quot; photo&quot;, 100, 100)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Photo</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Physician__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Primary Physician</label>
+        <referenceTo>Clinician__c</referenceTo>
+        <relationshipLabel>Patients</relationshipLabel>
+        <relationshipName>Patients</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Receive_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Whether the patient is happy to receive emails such as appointment reminders over Email. If set the email field must be populated.</description>
+        <externalId>false</externalId>
+        <label>Receive Email</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Receive_SMS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Whether the patient is happy to receive communication over mobile text message. If set a mobile number must be provided.</description>
+        <externalId>false</externalId>
+        <label>Receive SMS</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Religion__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Religion</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Agnostic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Atheist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Buddhist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Christian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hindu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jewish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Muslim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Age</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Silkh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Salutation__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Salutation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mrs.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ms.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Miss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rev.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prof.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <label>Patient</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Date_of_Birth__c</columns>
+        <columns>Gender__c</columns>
+        <columns>Ethinicity__c</columns>
+        <columns>Height__c</columns>
+        <columns>Patient_Email_Address__c</columns>
+        <columns>Patient_Mobile__c</columns>
+        <columns>Primary_Physician__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Patients</fullName>
+        <columns>NAME</columns>
+        <columns>Date_of_Birth__c</columns>
+        <columns>Gender__c</columns>
+        <columns>Patient_Mobile__c</columns>
+        <columns>Patient_Email_Address__c</columns>
+        <columns>Religion__c</columns>
+        <columns>Next_of_Kin__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Patients</label>
+    </listViews>
+    <nameField>
+        <label>Patient Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Patients</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Age__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Gender__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Patient_Phone__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Patient_Mobile__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Patient_Email_Address__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Gender__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_of_Birth__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Patient_Address__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Gender__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Age__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Patient_Email_Address__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Patient_Phone__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Patient_Mobile__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Book_Appointment</fullName>
+        <availability>online</availability>
+        <description>Book an appointment based on Clinician&apos;s availability.</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Book Appointment</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ecare__FindAppointments?patientId={!Patient__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Charts</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>768</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Charts</masterLabel>
+        <openType>newWindow</openType>
+        <page>PatientCharts</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <width>1024</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Print_Prescriptions</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Print Prescriptions</masterLabel>
+        <openType>newWindow</openType>
+        <page>PrescriptionPrint</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <width>800</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Upload_Photo</fullName>
+        <availability>online</availability>
+        <description>Upload a new Patient Photo</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Upload Photo</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>photoPop = window.open(&quot;/apex/ecare__PatientPhotoUpload?patientId={!Patient__c.Id}&amp;oid={!$Organization.Id}&quot;, &quot;new&quot;,&quot;width=400, height=300&quot;);
+photoPop.opener = parent.window;
+photoPop.moveTo(400,300);</url>
+    </webLinks>
+</CustomObject>

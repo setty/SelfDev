@@ -1,0 +1,31 @@
+<apex:page standardController="ecare__Lab_Test__c" extensions="ecare.LabResultsListController" recordSetVar="labResults" tabStyle="ecare__Lab_Result__c" sidebar="true" showHeader="true">
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="2">
+            <apex:outputField value="{!summary.name}"/>
+            <apex:outputField value="{!summary.Episode__r.ecare__Patient__c}"/>
+            <apex:outputField value="{!summary.Episode__r.name}"/>
+            <apex:outputField value="{!summary.Episode__r.ecare__Episode_Start_Date__c}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton value="{!$Label.Save}" action="{!save}"/>
+                <apex:commandButton value="{!$Label.Cancel}" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!labResultsList}" var="lab">
+                <apex:column value="{!lab.ecare__Test_Name__c}" width="150"/>
+                <apex:column headerValue="{!$ObjectType.ecare__Lab_Result__c.fields.ecare__Integer_Result__c.label}" width="50">
+                    <apex:inputField value="{!lab.ecare__Integer_Result__c}"/>
+                </apex:column>                    
+                <apex:column headerValue="{!$ObjectType.ecare__Lab_Result__c.fields.ecare__Pcnt_Result__c.label}" width="50">
+                    <apex:inputField value="{!lab.ecare__Pcnt_Result__c}"/>
+                </apex:column>
+                <apex:column headerValue="{!$ObjectType.ecare__Lab_Result__c.fields.ecare__Text_Result__c.label}" width="400">
+                    <apex:inputTextArea cols="50" rows="3" value="{!lab.ecare__Text_Result__c}" />
+                </apex:column>
+            </apex:pageBlockTable>      
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

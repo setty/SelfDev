@@ -1,0 +1,9 @@
+<apex:page id="thePage">
+	<apex:tabPanel switchType="client" selectedTab="name2" id="theTabPanel">
+		<apex:tab label="One" name="name1" id="tabOne">content for tab one</apex:tab>
+		<apex:tab label="Two" name="name2" id="tabTwo">content for tab two</apex:tab>
+		<apex:tab label="Three" name="Three" id="Three">content for tab Three</apex:tab>
+		<apex:tab label="Four" name="Four" id="Four">content for tab Four</apex:tab>
+		<apex:tab label="Five" name="Five" id="Five">content for tab Five</apex:tab>
+	</apex:tabPanel>
+</apex:page>

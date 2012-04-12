@@ -1,0 +1,6 @@
+<apex:page controller="NewVfCharting" title="Pie Chart">
+<!-- <apex:chart data="{!pieData}">
+<apex:pieSeries labelField="name"
+dataField="data1"/>
+</apex:chart> -->
+</apex:page>

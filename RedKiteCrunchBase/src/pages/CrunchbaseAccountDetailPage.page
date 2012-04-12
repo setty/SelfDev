@@ -1,0 +1,972 @@
+<!-- 
+*   The CrunchbaseAccountDetailPage utilises Id, Name and Permalink values from CrunchbaseAccountDetailCtl class to make an API 
+*	call to Crunchbase. The response is displayed on the Account detail page. When the permalink information exists a Show API 
+*	call is made to Crunchbase using javascript. When the permalink information is absent, CrunchbaseAccountDetailPage fetches 
+*	and displays all search results relevant to the Account Name and allows the user to select an approriate match.       
+*
+*   Revision History:
+*
+*   Version         Author          Date            Description
+*   1.0             Eternus			05/09/2011      Initial Draft
+*    
+-->
+
+<apex:page id="pgCBDetail" standardController="Account" extensions="CrunchbaseAccountDetailCtl" tabStyle="Account">
+	<apex:includeScript value="{!$Resource.BaseTargetScript}" />
+	<apex:stylesheet value="{!URLFOR($Resource.VerticalTabsAddin,'css/verticaltabs.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.JQueryUI ,'css/cupertino/jquery-ui-1.8.12.custom.css')}" />
+	
+	<apex:includeScript value="{!URLFOR($Resource.JQueryUI ,'js/jquery-1.5.1.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.JQueryUI ,'js/jquery-ui-1.8.12.custom.min.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.VerticalTabsAddin ,'js/verticaltabs.js')}" />	
+
+	<script type="text/javascript">
+		
+		var LISTITEM_BEGIN = '<div class="listItem">';
+		var LISTITEM_END = '</div>';
+		var LINE_BREAK = '<br/>';
+		var BOLD_BEGIN = '<b>';
+		var BOLD_END = '</b>';
+		var CB_COMPANY_URL = "http://www.crunchbase.com/company/";
+		var CHATTER_ICON = '<span class="chatter-icon"><a title="Share on Chatter" href="#" onclick="return false;"><img height="16" width="16" src="/s.gif"/></a></span>';
+		var SFDC_ICON = '<span class="sfdc-icon"><a title="Save to Salesforce" href="#" onclick="return false;"><img height="16" width="16" src="/s.gif"/></a></span>';
+		var SEARCH_RESULT_IMG_BEGIN = '<div class="search-result-icon">';
+		var SEARCH_RESULT_IMG_END = '</div>';
+		var SEARCH_PAGE_SIZE = 10;
+		var NBSP = "&nbsp;&nbsp;"; 
+		
+		var cb_ItemName = null;
+		var cbAccountId;			/* Id of the Account to be updated */
+		var currentPageNo;			/* Number of the current crunchbase Search Result page */ 
+		var totalSearchPagesCnt;	/* Total number of search pages for the query */
+		
+		j$=jQuery.noConflict();
+		
+		j$(document).ready(function(){
+			cbAccountId = '{!Account.Id}';	/* Assign the Id of the Account record to update */
+			fetchJSONResponse('{!Account.Name}','{!Account.Crunchbase_Permalink__c}');
+		});
+		
+		/* Initializes the vertical tab control once all the components have rendered */
+		function postLoadInit(){
+			j$("#verticalTabbedContent").verticaltabs({speed: 500, slideShow: false, activeIndex: 0});
+			j$( ".vert-tab" ).show("slide", {direction: "right"}, "slow");
+		}
+		
+		/* Fetches the JSON response from Crunchbase it the permalink exists else searches for the 
+		   relevant results on the basis of account name */
+		function fetchJSONResponse(pAccountName, pPermalink){
+			var cbPermalink = pPermalink;
+			
+			if(cbPermalink == null || cbPermalink == ''){
+				j$("#verticalTabbedContent").css("display","none");		//Hide the vertical tabs that display the Crunchbase Information
+				cbPermalink = searchCrunchbase(pAccountName, 1);
+			}
+			else{
+				j$("#valueCBSearchResults").hide();						//Hide the div displaying the Search Results
+				parseCrunchbaseResponse(cbPermalink);					//Parse and display the reponse from Crunchbase
+			}
+		}
+		
+		/* Make Search API calls to Crunchbase to find matches corresponding with the Name of the Account */
+		function searchCrunchbase(pAccountName, pSearchPageNum){
+			/* The callback appended at the end of the API call is mandatory to retreive the JSON response from Crunchbase. */
+			var searchUrl = "http://api.crunchbase.com/v/1/search.js?query=" + pAccountName + "&page=" + pSearchPageNum + "&callback=?";
+			j$.getJSON(
+				searchUrl,
+			 	function(cbResponse){
+					/* Check if the crunchbase search response contains results */
+					if(cbResponse.results != null && cbResponse.results != "")
+					{
+						var cbSearchList = "";
+						var cbPageInfoList = "";
+						var cbPagingList = "";
+						
+						/* Directly update the permalink value on Account if a single search result is returned in the Crunchbase response */
+						if(cbResponse.results.length == 1){
+							j$("#valueCBSearchResults").hide();	/* Hide the div displaying search results */
+							updatePermalink(cbResponse.results[0].namespace + "#" + cbResponse.results[0].permalink);
+						}
+						else
+						{
+							j$("#valueSearchResults").empty();   // Need to empty the Child elements from the Serach div
+							/* Stores the current search page number and the total number of search results returned by Crunchbase */
+							currentPageNo = cbResponse.page;
+							totalSearchPagesCnt = calcSearchPageCnt(cbResponse.total);
+							
+							/* Generates the hyperlinks for each page */
+							if(totalSearchPagesCnt > 0){
+								cbPageInfoList = '<div align=\"center\">' + 
+											 "<i>Showing Page " + currentPageNo + " of " + totalSearchPagesCnt + " </i>" +
+											 '</div>' + LINE_BREAK;
+								
+								cbPagingList = generateSearchPageLinks(cbPageInfoList);
+							}
+							
+							/* Iterate over the search results */
+							//for(cnt = 0; cnt < cbResponse.results.length; cnt++){
+							
+							for(cnt = 0; cnt < cbResponse.results.length; cnt++)
+							{
+								// Creating the UI part Dev with class list item.
+									cbSearchList = cbSearchList + LISTITEM_BEGIN; 
+									/* Append the Logo in search results if available */			   
+									if(cbResponse.results[cnt].image != null){
+								   		if(cbResponse.results[cnt].image.available_sizes.length > 0){
+								   			cbSearchList += SEARCH_RESULT_IMG_BEGIN +
+								   				generateImageHtml("http://www.crunchbase.com/" + cbResponse.results[cnt].image.available_sizes[1][1]) +
+								   				SEARCH_RESULT_IMG_END + LINE_BREAK;
+								   		}
+								   	}
+								   	
+								   	/* Append the name to the search results.
+								   	   Handle the scenario when Person first names and last names are returned in the search results */
+								   	if(cbResponse.results[cnt].first_name != null || cbResponse.results[cnt].last_name != null){
+								   		cbSearchList += generateHyperlinkHtml(cbResponse.results[cnt].crunchbase_url, 
+								   							cbResponse.results[cnt].first_name + ' ' + cbResponse.results[cnt].last_name, "_blank", "") + LINE_BREAK;
+		   							}
+								   	else{
+								   		if(cbResponse.results[cnt].name != null)
+							   			{ cbSearchList += generateHyperlinkHtml(cbResponse.results[cnt].crunchbase_url, cbResponse.results[cnt].name, "_blank", "") + LINE_BREAK; }
+								   	}
+									
+									/* Append the namespace to the search results */
+									cbSearchList = cbSearchList + cbResponse.results[cnt].namespace + LINE_BREAK;
+									
+									/* Append the overview if it exists in the Crunchbase response */			   
+									if(cbResponse.results[cnt].overview != null){
+										cbSearchList = cbSearchList + cbResponse.results[cnt].overview + LINE_BREAK;   
+									} 
+									
+									/* Append the parsed namespace and permalink values to the button Id which are used
+									   to construct a dynamic permanlink url which is then updated on the Account record */
+								    cbSearchList = cbSearchList + 
+								    			   generateButtonHtml("btn" + cbResponse.results[cnt].namespace + "#" + 
+								    			   					  cbResponse.results[cnt].permalink) + LISTITEM_END + LINE_BREAK;
+								    			   					  
+							}//for
+							
+							if(cbPagingList != null)
+							{
+								appendHtmlOnPage("SearchResults", "", cbPageInfoList + cbSearchList + cbPagingList);				//Display the Html string in a div	
+							}
+							else
+							{ 
+								appendHtmlOnPage("SearchResults", "", cbSearchList);
+							}
+						}//else
+					}
+					else
+					{
+						cb_ItemName = '{!Account.Name}';
+						/* Display an error message informing him that No Search results were returned by Crunchbase */
+						appendHtmlOnPage("SearchResults", "", "");
+					}
+			 	});//getJSON
+		}
+		
+		/* Make a Show API call to Crunchbase and parse the received JSON response */ 
+		function parseCrunchbaseResponse(pPermalink){
+			var crunchbaseUrl = pPermalink;
+			/* The callback appended at the end of the Show API call is mandatory to retreive the JSON response from Crunchbase. */
+			crunchbaseUrl = crunchbaseUrl.trim() + "?callback=?";
+			cb_ItemName = null;
+			
+			j$.getJSON(
+				crunchbaseUrl,
+			 	function(cbResponse){
+			 	cb_ItemName = cbResponse.name;
+			 	
+			   	/* Fetch the Logo Url if it exists on Crunchbase */
+			   	if(cbResponse.image != null){
+			   		if(cbResponse.image.available_sizes.length > 0){
+			   			//alert(cbResponse.image.available_sizes);
+			   			setHeaderData("Logo", "", generateImageHtml("http://www.crunchbase.com/" + cbResponse.image.available_sizes[1][1]));
+			   		}
+			   	}
+			   	else{
+			   		setHeaderData("Logo", "", "<h2>"+cbResponse.name+"</h2>");
+			   	}
+			   	
+				setHeaderData("CBUrl", "", generateHyperlinkHtml(cbResponse.crunchbase_url, 'View on Crunchbase', "_blank", ""));
+				setHeaderData("Category", "Category", cbResponse.category_code);
+			   	setHeaderData("Website", "Website", generateHyperlinkHtml(cbResponse.homepage_url, cbResponse.homepage_url, "_blank", ""));
+			   	
+			   	/* Fetch the Founded Date details if it exists on Crunchbase */
+			   	var foundYear = (cbResponse.founded_year != null) ? cbResponse.founded_year : "";
+			   	var foundMonth = (cbResponse.founded_month != null) ? getMonthName(cbResponse.founded_month) : "";
+			   	var foundDay = (cbResponse.founded_day != null) ? cbResponse.founded_day : "";
+			   	
+			   	if(foundDay != "" && foundMonth != "" && foundYear != ""){
+			   		setHeaderData("Founded", "Founded", foundMonth + foundDay + " " + foundYear);
+			   	}
+			   	else if(foundDay == "" && foundMonth != "" && foundYear != ""){
+			   		setHeaderData("Founded", "Founded", foundMonth + foundYear);
+			   	}
+			   	else if(foundDay == "" && foundMonth == "" && foundYear != ""){
+			   		setHeaderData("Founded", "Founded", foundYear);
+			   	}
+			   	else{
+			   		setHeaderData("Founded", "Founded", null);
+			   	}	
+				
+				setHeaderData("Blog", "Blog", generateHyperlinkHtml(cbResponse.blog_url, cbResponse.blog_url, "_blank", ""));
+		    	setHeaderData("EmployeeCount", "Employees", cbResponse.number_of_employees);
+		    	setHeaderData("Email", "Email", cbResponse.email_address);
+			    setHeaderData("Description", "Description", cbResponse.description);
+			    setHeaderData("Phone", "Phone", cbResponse.phone_number);
+			    
+		    	var twitterUsername = cbResponse.twitter_username;
+		    	setHeaderData("Twitter", "Twitter", generateHyperlinkHtml("http://twitter.com/#!/" + twitterUsername, cbResponse.twitter_username, "_blank", ""));
+
+				if (cbResponse.ipo!=null)
+					setHeaderData("IPO", "Ticker", cbResponse.ipo.stock_symbol);
+				else
+					setHeaderData("IPO", "Ticker", null);
+
+			    /* Fetch the Company Overview if it exists on Crunchbase */
+			    if(cbResponse.overview != null && cbResponse.overview != ""){
+			    	appendHtmlOnPage("Overview", "Overview", cbResponse.overview );
+			    }
+			    
+			 	/* Fetch the Product details that exist on Crunchbase */
+			 	if(cbResponse.products != null && cbResponse.products != ""){
+					var cbProductList="";
+					var cbProductBaseUrl = "http://www.crunchbase.com/product/";
+					
+					for(cnt = 0; cnt < cbResponse.products.length; cnt++){
+						cbProductList = cbProductList + LISTITEM_BEGIN + 
+							generateHyperlinkHtml(cbProductBaseUrl + cbResponse.products[cnt].permalink, 
+								cbResponse.products[cnt].name, "_blank", "") + LISTITEM_END;  
+					}//for
+					appendHtmlOnPage("Products", "Products", cbProductList);
+				}
+				else{
+					appendHtmlOnPage("Products", "Products", "");
+				}
+				
+				/* Fetch the People details that exist on Crunchbase */
+			 	if(cbResponse.relationships != null && cbResponse.relationships != ""){
+					
+					var cbPersonList=""; 
+					var cbPeopleBaseUrl = "http://www.crunchbase.com/person/"; 
+					var personName;
+					
+					for(cnt = 0; cnt < cbResponse.relationships.length; cnt++){
+						if(cbResponse.relationships[cnt].person.is_past) continue;
+					
+						personName = cbResponse.relationships[cnt].person.first_name + " " + 
+				   					 cbResponse.relationships[cnt].person.last_name;
+
+						cbPersonList = cbPersonList + LISTITEM_BEGIN + SFDC_ICON +
+							generateHyperlinkHtml(cbPeopleBaseUrl + cbResponse.relationships[cnt].person.permalink, personName, "_blank", "");
+
+						if(cbResponse.relationships[cnt].title != null && cbResponse.relationships[cnt].title != ""){
+								cbPersonList += "&nbsp;&nbsp;("  + cbResponse.relationships[cnt].title + ")";
+						}
+						cbPersonList += LISTITEM_END;
+					}//for
+					appendHtmlOnPage("People", "People", cbPersonList);
+				}
+				else{
+					appendHtmlOnPage("People", "People", "");
+				}
+				
+				/* Fetch the Milestone details from Crunchbase */
+			    if(cbResponse.milestones != null && cbResponse.milestones != ""){
+			    
+			    	var cbMilestoneList="";
+			   		cbResponse.milestones.sort(function(a,b){ return compareDates(a.stoned_year, a.stoned_month, a.stoned_day, b.stoned_year, b.stoned_month, b.stoned_day); });
+			   		
+			   		for(cnt = 0; cnt < cbResponse.milestones.length; cnt++){
+		   				cbMilestoneList = cbMilestoneList + LISTITEM_BEGIN + CHATTER_ICON +
+								cbResponse.milestones[cnt].description + " - " ;
+						
+						if (cbResponse.milestones[cnt].stoned_month!=null) cbMilestoneList+= cbResponse.milestones[cnt].stoned_month + "/" ;
+						if (cbResponse.milestones[cnt].stoned_day!=null)  cbMilestoneList+=	cbResponse.milestones[cnt].stoned_day + "/" ; 
+						cbMilestoneList+= cbResponse.milestones[cnt].stoned_year + " ... ";
+								
+		   				if(cbResponse.milestones[cnt].source_url != null && cbResponse.milestones[cnt].source_url != ""){
+							cbMilestoneList = cbMilestoneList +
+								generateHyperlinkHtml(cbResponse.milestones[cnt].source_url, " Read More &gt&gt", "_blank", "") + LISTITEM_END;}
+						else{
+							cbMilestoneList = cbMilestoneList + LISTITEM_END;}
+			   		}//for
+			   		appendHtmlOnPage("Milestones", "Milestones", cbMilestoneList);
+				}
+				else{
+					appendHtmlOnPage("Milestones", "Milestones", "");
+				}
+			   
+			   /* Fetch the Investment details from Crunchbase */
+			   if(cbResponse.investments != null && cbResponse.investments != ""){
+			    
+			    	var cbInvestmentList="";
+			   		cbResponse.investments.sort(function(a,b){ return compareDates(a.funding_round.funded_year, a.funding_round.funded_month, a.funding_round.funded_day, b.funding_round.funded_year, b.funding_round.funded_month, b.funding_round.funded_day); });
+			   		for(cnt = 0; cnt < cbResponse.investments.length; cnt++){
+
+			   			if(cbResponse.investments[cnt].funding_round.raised_amount != null && 
+			   					cbResponse.investments[cnt].funding_round.raised_amount != ""){
+			   					
+			   				cbInvestmentList += LISTITEM_BEGIN+ CHATTER_ICON + "Invests " + 
+									addCommas(cbResponse.investments[cnt].funding_round.raised_amount) + " " +  
+									cbResponse.investments[cnt].funding_round.raised_currency_code + " in " + 
+									cbResponse.investments[cnt].funding_round.company.name  + " - ";
+
+							if (cbResponse.investments[cnt].funding_round.funded_month!=null) cbInvestmentList+=cbResponse.investments[cnt].funding_round.funded_month + "/" ;
+							if (cbResponse.investments[cnt].funding_round.funded_day!=null)  cbInvestmentList+=cbResponse.investments[cnt].funding_round.funded_day + "/" ; 
+							cbInvestmentList+=cbResponse.investments[cnt].funding_round.funded_year + " ... ";
+									
+			   				if(cbResponse.investments[cnt].funding_round.source_url != null){
+								cbInvestmentList = cbInvestmentList + 
+									generateHyperlinkHtml(cbResponse.investments[cnt].funding_round.source_url, "Read More &raquo;", "_blank", "");
+							}
+							cbInvestmentList += LISTITEM_END;
+			   			}//if
+			   		}//for
+			   		appendHtmlOnPage("Investments", "Investments", cbInvestmentList);
+				}
+				else{
+					appendHtmlOnPage("Investments", "Investments", "");
+				}
+			   
+			   /* Fetch the Funding Round details from Crunchbase */
+			   if(cbResponse.funding_rounds != null && cbResponse.funding_rounds != ""){
+		   			var cbFundingRoundList="";
+		   			cbResponse.funding_rounds.sort(function(a,b){ return compareDates(a.funded_year, a.funded_month, a.funded_day, b.funded_year, b.funded_month, b.funded_day); });
+		   			
+		   			for(cnt = 0; cnt < cbResponse.funding_rounds.length; cnt++){
+		
+		   				cbFundingRoundList += LISTITEM_BEGIN+CHATTER_ICON +"Raises " + 
+								addCommas(cbResponse.funding_rounds[cnt].raised_amount) + " " +  
+								cbResponse.funding_rounds[cnt].raised_currency_code + " in funding - ";
+						if (cbResponse.funding_rounds[cnt].funded_month!=null) cbFundingRoundList+=cbResponse.funding_rounds[cnt].funded_month + "/" ;
+						if (cbResponse.funding_rounds[cnt].funded_day!=null)  cbFundingRoundList+=cbResponse.funding_rounds[cnt].funded_day + "/" ; 
+						cbFundingRoundList+=cbResponse.funding_rounds[cnt].funded_year + " ... ";
+								
+		   				if(cbResponse.funding_rounds[cnt].source_url != null){
+							cbFundingRoundList += generateHyperlinkHtml(cbResponse.funding_rounds[cnt].source_url, "Read More &raquo;", "_blank", ""); 
+						}
+						cbFundingRoundList += LISTITEM_END;
+		   			}//for
+		   			appendHtmlOnPage("FundingRounds", "Funding Rounds",cbFundingRoundList);
+				}
+				else{
+					appendHtmlOnPage("FundingRounds", "Funding Rounds", "");
+				}
+				
+			   /* Fetch the acquisitions details from Crunchbase */
+			   if(cbResponse.acquisitions != null && cbResponse.acquisitions != ""){
+		   			var cbAcquisitionsList="";
+		   			cbResponse.acquisitions.sort(function(a,b){ return compareDates(a.acquired_year, a.acquired_month, a.acquired_day, b.acquired_year, b.acquired_month, b.acquired_day); });
+		   			
+		   			for(cnt = 0; cnt < cbResponse.acquisitions.length; cnt++){
+		
+		   				cbAcquisitionsList += LISTITEM_BEGIN+CHATTER_ICON +"Acquires " + 
+								cbResponse.acquisitions[cnt].company.name ;
+						if (cbResponse.acquisitions[cnt].price_amount!=null && cbResponse.acquisitions[cnt].price_amount!=''){
+							cbAcquisitionsList += " for " + addCommas(cbResponse.acquisitions[cnt].price_amount) + " " +
+								cbResponse.acquisitions[cnt].price_currency_code + " ";
+						}
+						cbAcquisitionsList += ' - ';
+						if (cbResponse.acquisitions[cnt].acquired_month!=null) cbAcquisitionsList+=cbResponse.acquisitions[cnt].acquired_month + "/" ;
+						if (cbResponse.acquisitions[cnt].acquired_day!=null)  cbAcquisitionsList+=cbResponse.acquisitions[cnt].acquired_day + "/" ; 
+						cbAcquisitionsList+=cbResponse.acquisitions[cnt].acquired_year + " ... ";
+								
+		   				if(cbResponse.acquisitions[cnt].source_url != null){
+							cbAcquisitionsList += generateHyperlinkHtml(cbResponse.acquisitions[cnt].source_url, "Read More &raquo;", "_blank", ""); 
+						}
+
+						cbAcquisitionsList += LISTITEM_END;
+		   			}//for
+		   			appendHtmlOnPage("Acquisitions", "Acquisitions",cbAcquisitionsList);
+				}
+				else{
+					appendHtmlOnPage("Acquisitions", "Acquisitions", "");
+				}
+
+				/* Fetch the Competition Details if they exist on Crunchbase*/
+				if(cbResponse.competitions != null && cbResponse.competitions != ""){
+					var cbCompetitorList="";
+					
+					for(cnt = 0; cnt < cbResponse.competitions.length; cnt++){
+						if(cbResponse.competitions[cnt].competitor.name != null && cbResponse.competitions[cnt].competitor.name != ""){
+							if(cnt == 0){
+								if(cbResponse.competitions[cnt].competitor.permalink != null && cbResponse.competitions[cnt].competitor.permalink != ""){
+									cbCompetitorList = LISTITEM_BEGIN + SFDC_ICON +
+										generateHyperlinkHtml(CB_COMPANY_URL + cbResponse.competitions[cnt].competitor.permalink, cbResponse.competitions[cnt].competitor.name, "_blank", "") +
+										LISTITEM_END;
+								}
+								else{
+									cbCompetitorList = LISTITEM_BEGIN + cbResponse.competitions[cnt].competitor.name + LISTITEM_END; 
+								}
+							}
+							else{
+								if(cbResponse.competitions[cnt].competitor.permalink != null && cbResponse.competitions[cnt].competitor.permalink != ""){
+									cbCompetitorList = cbCompetitorList + LISTITEM_BEGIN + SFDC_ICON + 
+										generateHyperlinkHtml(CB_COMPANY_URL + cbResponse.competitions[cnt].competitor.permalink, 
+											cbResponse.competitions[cnt].competitor.name, "_blank", "") +
+										LISTITEM_END;
+								}
+								else{
+									cbCompetitorList = cbCompetitorList + LISTITEM_BEGIN + 
+													   cbResponse.competitions[cnt].competitor.name + LISTITEM_END; 
+								}
+							}
+						}
+					}//for
+					appendHtmlOnPage("Competitors", "Competitors", cbCompetitorList);
+				} 
+				else{
+					appendHtmlOnPage("Competitors", "Competitors", "");
+				}
+				
+				/* Fetch the Office Details if they exist on Crunchbase*/
+				if(cbResponse.offices != null && cbResponse.offices != ""){
+					var cbOfficeList="";
+					
+					for(cnt = 0; cnt < cbResponse.offices.length; cnt++){
+						//Office Description
+						cbOfficeList += LISTITEM_BEGIN + SFDC_ICON;
+						if(cbResponse.offices[cnt].description != null && cbResponse.offices[cnt].description != ""){
+							cbOfficeList = cbOfficeList + BOLD_BEGIN + cbResponse.offices[cnt].description + BOLD_END + LINE_BREAK; 
+						}
+						
+						//Office Address1 and Address2
+						if(cbResponse.offices[cnt].address1 != null && cbResponse.offices[cnt].address1 != ""){
+							cbOfficeList = cbOfficeList + cbResponse.offices[cnt].address1 + LINE_BREAK;
+						}
+						if(cbResponse.offices[cnt].address2 != null && cbResponse.offices[cnt].address2 != ""){ 
+							cbOfficeList = cbOfficeList + cbResponse.offices[cnt].address2 + LINE_BREAK;
+						}
+						
+						//City
+						if(cbResponse.offices[cnt].city != null && cbResponse.offices[cnt].city != ""){
+							cbOfficeList = cbOfficeList + cbResponse.offices[cnt].city + " ";
+						}
+						
+						//State
+						if(cbResponse.offices[cnt].state_code != null && cbResponse.offices[cnt].state_code != ""){
+							cbOfficeList = cbOfficeList + cbResponse.offices[cnt].state_code + " ";
+						}
+						
+						//Zip Code
+						if(cbResponse.offices[cnt].zip_code != null && cbResponse.offices[cnt].zip_code != ""){
+							cbOfficeList = cbOfficeList + cbResponse.offices[cnt].zip_code + LINE_BREAK;
+						}
+						
+						//Country Code
+						if(cbResponse.offices[cnt].country_code != null && cbResponse.offices[cnt].country_code != ""){
+							cbOfficeList = cbOfficeList + cbResponse.offices[cnt].country_code + LINE_BREAK;
+						}
+						cbOfficeList += LISTITEM_END;
+
+					}//for
+					appendHtmlOnPage("Offices", "Offices", cbOfficeList);
+				}
+				else{
+					appendHtmlOnPage("Offices", "Offices", "");
+				}
+				
+				postLoadInit();
+			});//getJSON
+		}
+		
+		/* Appends the display content to the mentioned div on the page */ 
+		function appendHtmlOnPage(pdivId, pLabel, pContentToAppend){
+			var labelArea = j$("#label"+pdivId);
+			if (labelArea!=null) labelArea.append(pLabel); 
+			
+			if (pContentToAppend==null || pContentToAppend=="") j$("#value"+pdivId).append('<i>Crunchbase does not have any '+pLabel+' data for '+cb_ItemName+'.</i>');
+			else j$("#value"+pdivId).append(pContentToAppend); 
+		}
+
+		function setContentDiv(pdivId, pLabel, pContentToAppend){
+			var labelArea = j$("#label"+pdivId);
+			if (labelArea!=null) labelArea.append(pLabel); 
+			j$("#value"+pdivId).append(pContentToAppend); 
+		}
+		
+		function setContentDivEmpty(pdivId, pLabel, pContentToAppend){
+			var labelArea = j$("#label"+pdivId);
+			if (labelArea!=null) labelArea.append(pLabel); 
+			j$("#value"+pdivId).append(pContentToAppend); 
+		}
+
+		function setHeaderData(pdivId, pLabel, pContentToAppend){
+			var labelArea = j$("#label"+pdivId);
+			var valueArea = j$("#value"+pdivId);
+			if (pContentToAppend!=null && pContentToAppend!= ''){
+				if (labelArea!=null) labelArea.append(pLabel); 
+				if (valueArea!=null) valueArea.append(pContentToAppend);
+			}
+			else{
+				if (labelArea!=null) labelArea.css('display', 'none');
+				if (valueArea!=null) valueArea.css('display', 'none');
+			} 
+		}
+		
+		/* Makes a call to the Controller's remoting method to update the permalink value on Account */
+		function updatePermalink(pButtonId){
+		
+			/* Check if # exists in the id of the button clicked by user */
+			if(pButtonId.indexOf('#',0) != -1){
+				var buttonIdList = pButtonId.split('#');	/* Split and fetch the namespace and permalink value from the button Id */
+				var permalinkUrl = 'http://api.crunchbase.com/v/1/' + buttonIdList[0] + '/' + buttonIdList[1] + '.js';
+
+				/* Update the permalink value on Account record when the user clicks an associated button */
+				CrunchbaseAccountDetailCtl.updateAccount(cbAccountId, permalinkUrl, function(result, event){
+	       		if(event.status){
+	      			alert("Account updated successfully !!");
+	      			j$("#valueSearchResults").hide();							//Hide the div displaying search results
+					parseCrunchbaseResponse(permalinkUrl);
+					j$("#verticalTabbedContent").css("display","inline");		//Display the vertical tabs displaying crunchbase details
+	       		}
+	       		else{
+	       			alert("An unexpected error occurred while updating the record for " + '{!Account.Name}');
+	       		}
+        	},{escape:false});}		
+		}
+		
+		/* Generates html to display a button with the given Url */
+		function generateButtonHtml(pButtonId){
+			if (pButtonId==null || pButtonId=='') return null;
+			return "<input id=\"" + pButtonId + "\" " + "type=\"button\" value=\"Remember Me\" onclick=\"updatePermalink(parsePermalinkFromId(this.id));\" />";
+		}
+		
+		/* Generates html to display a hyperlink with the given Url */
+		function generateHyperlinkHtml(pHyperlinkUrl, pTextToDisplay, pDisplayTarget, pOnClickMethodName){
+			if (pTextToDisplay == null || pTextToDisplay =='') return '';
+			return "<a id=\"lnk#" + pTextToDisplay + "\" href=\"" + pHyperlinkUrl + 
+				   "\" class=\"summary-link\" target=\"" + pDisplayTarget + "\"onclick=\"" + pOnClickMethodName + "\">" + 
+				   pTextToDisplay + " </a>";
+		}
+		
+		/* Generates html to display an image with the given Url */
+		function generateImageHtml(pImageUrl){
+			return "<img src=\"" + pImageUrl + "\" onload=\"javascript:scaleImage(this,70,250);\" />";
+		}
+		
+		/* Parses the permalink value from the id of the clicked button */
+		function parsePermalinkFromId(pButtonId){
+			return pButtonId.substr(3);		
+		}
+		
+		/* Retrieves the month name based on the equivalent month digit */
+		function getMonthName(pMonthDigit){
+			if(pMonthDigit == 1){return "Jan "};
+			if(pMonthDigit == 2){return "Feb "};
+			if(pMonthDigit == 3){return "Mar "};
+			if(pMonthDigit == 4){return "Apr "};
+			if(pMonthDigit == 5){return "May "};
+			if(pMonthDigit == 6){return "Jun "};
+			if(pMonthDigit == 7){return "Jul "};
+			if(pMonthDigit == 8){return "Aug "};
+			if(pMonthDigit == 9){return "Sep "};
+			if(pMonthDigit == 10){return "Oct "};
+			if(pMonthDigit == 11){return "Nov "};
+			if(pMonthDigit == 12){return "Dec "};
+		}
+
+		/* Formats numbers to include commas */		
+		function addCommas(nStr)
+		{
+			nStr += '';
+			x = nStr.split('.');
+			x1 = x[0];
+			x2 = x.length > 1 ? '.' + x[1] : '';
+			var rgx = /(\d+)(\d{3})/;
+			while (rgx.test(x1)) {
+				x1 = x1.replace(rgx, '$1' + ',' + '$2');
+			}
+			return x1 + x2;
+		}
+		
+		function compareDates(firstYear, firstMonth, firstDay, secondYear, secondMonth, secondDay){
+			// assume we at least have years
+			if (secondYear>firstYear){ return 1 ;}
+			if (secondYear<firstYear){ return -1 ;}
+
+			if (secondMonth==null || secondMonth==''){ return 1 ;}
+			if (firstMonth==null || firstMonth==''){ return -1 ;}
+			if (secondMonth > firstMonth ){ return 1 ;}
+			if (secondMonth < firstMonth ){ return -1 ;}
+			
+			if (secondDay==null || secondDay==''){ return 1 ;}
+			if (firstDay==null || firstDay==''){ return -1 ;}
+			if (secondDay > firstDay ){ return 1 ;}
+			if (secondDay < firstDay ){ return -1 ;}
+
+			return 0;			
+		}
+		
+		/* Calculates the number of search pages from the total search results returned by Crunchbase. 
+		   Each search page displays 10 search results. */
+		function calcSearchPageCnt(pTotalCBSearchResultCnt){
+			return Math.ceil(pTotalCBSearchResultCnt/SEARCH_PAGE_SIZE);
+		}
+		
+		/* Generates the hyperlinks for the Search Page numbers which would be displayed on the UI */
+		function generateSearchPageLinks(){
+			var searchResultsPagingHtml = "";	// Paging the links
+			var searchPageIndexes = new Array(); // Array will hold the number of pages
+			
+			/* Fetches a comma separated string of search page numbers to display */
+			searchPageIndexes = generateSearchPageIndexes().trim().split(",");
+			
+			/* Begin generating the html string for Paging Functionality */
+			searchResultsPagingHtml = '<div align=\"center\">' + generateHyperlinkHtml("#", "Previous", "_self", "searchCrunchbase('{!Account.Name}'," + (eval(searchPageIndexes[0])-1) + ")") + NBSP + NBSP; 
+			
+			for(cnt = 0; cnt < searchPageIndexes.length; cnt++)
+			{
+				if(searchPageIndexes[cnt] == 1)
+				{
+					searchResultsPagingHtml = '';
+					searchResultsPagingHtml += '<div align=\"center\">';
+				}
+				if(searchPageIndexes[cnt] == currentPageNo)
+				{ 
+					searchResultsPagingHtml += BOLD_BEGIN + searchPageIndexes[cnt] + BOLD_END + NBSP;
+					searchResultsPagingHtml = searchResultsPagingHtml.replace('NaN','');
+				}
+				else 
+				{ 
+					searchResultsPagingHtml += 
+						generateHyperlinkHtml("#",eval(searchPageIndexes[cnt]), "_self", "searchCrunchbase('{!Account.Name}'," + eval(searchPageIndexes[cnt])+ ")") + 
+						+ NBSP + NBSP;
+						
+					searchResultsPagingHtml = searchResultsPagingHtml.replace('NaN','');
+				}
+			}
+			var LastIndex = eval(searchPageIndexes[searchPageIndexes.length-1]);
+			if(currentPageNo != totalSearchPagesCnt && totalSearchPagesCnt != LastIndex)
+			{	
+				searchResultsPagingHtml += generateHyperlinkHtml("#", "Next", "_self", "searchCrunchbase('{!Account.Name}'," + (eval(searchPageIndexes[searchPageIndexes.length-1])+1) + ")") + '</div>';
+			}
+			else
+			{searchResultsPagingHtml +='</div>';}
+			/* Complete the html string for Paging Functionality */
+			return searchResultsPagingHtml;
+		}
+		
+		/* Determines whether the current search page is the first, last or any other page. It generates a commo separated string of
+		   the search page indexes. 
+		*/		
+		function generateSearchPageIndexes(){
+			
+			var searchPageIndexCSV = "";
+			
+			if(currentPageNo == 1)										/* Check whether the current search page is the First Page */
+			{ searchPageIndexCSV = generatePageIndexCSV('first');//+","+(totalSearchPagesCnt - 1)+ "," + totalSearchPagesCnt;
+			}
+			else if(currentPageNo == totalSearchPagesCnt)				/* Check whether the current search page = Last Page */
+			{ 
+				//searchPageIndexCSV = "1,2," +","+(totalSearchPagesCnt - 1)+ "," + generatePageIndexCSV('last');
+				searchPageIndexCSV = generatePageIndexCSV('last');
+			}
+			else
+			{ searchPageIndexCSV = generatePageIndexCSV('middle'); }		/* The current search page is any page other than First or Last Page */
+			
+			return searchPageIndexCSV;
+		}
+		
+		/* Generates a comma separated string containing the Search Page Numbers to be displayed on the UI */
+		function generatePageIndexCSV(PageStatus){
+		
+			var searchPageCSV = "";
+			var endPageIndex;
+			
+			//alert("generatePageIndexCSV totalSearchPagesCnt ===> " + totalSearchPagesCnt);
+			/* If the Max page index to display is greater than the total search page count then only show links for page 
+			   indexes til the max search result page count. */
+			
+			switch (PageStatus) {
+				   case 'first':
+				      	endPageIndex = eval(currentPageNo + 6) > totalSearchPagesCnt ? currentPageNo : eval(currentPageNo + 6);
+				      	searchPageCSV = CSVFormatParser(currentPageNo,endPageIndex);
+				      break
+				   case 'last':
+				      	endPageIndex = eval(totalSearchPagesCnt-6) ;
+				      	searchPageCSV = CSVFormatParser(endPageIndex,currentPageNo);
+				      break
+				   case 'middle':
+				   		endPageIndex = ((currentPageNo + 6) > totalSearchPagesCnt) ? ((totalSearchPagesCnt - currentPageNo)+currentPageNo) : (currentPageNo + 6);
+				   		searchPageCSV = CSVFormatParser(currentPageNo,endPageIndex);
+			   		 break
+			   	   default:
+				     	endPageIndex = eval(currentPageNo + 8) > totalSearchPagesCnt ? currentPageNo : eval(currentPageNo + 8);
+				     break
+			   		 }
+					return searchPageCSV.slice(0,-1); /* Remove the extra comma appended at the end */
+			
+		}
+		
+		function CSVFormatParser(currentPageNo,endPageIndex)
+		{
+			var searchPageCSV = "";
+			for(cnt = currentPageNo; cnt <= endPageIndex; cnt++)
+			{
+				searchPageCSV += cnt + ",";
+			}
+			return searchPageCSV;
+		}
+	</script>
+
+	<style>
+	p{
+		margin:0;padding:0;
+		-webkit-margin-before: 0;
+		-webkit-margin-after: 0;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+	}
+	.verticalslider{
+		height:300px;
+	}
+	.verticalslider-table{
+		height:100%;
+		margin-right:35px;
+	}
+	
+	.sideheader-cell{
+		width:auto;
+		vertical-align:top;
+	}
+	.logo-area{
+		width:auto;
+		margin:10px 0;
+	}
+	.headerData-area{
+		padding:5px;
+		background-color:white;
+		border: 1px solid #D4DADC;
+	}
+	.headerData-item{
+		white-space:nowrap;
+		margin:1px;
+	}
+	.sideheaderLabel{
+		font-weight:bold;
+		width:75px;
+		text-align:right;
+		display:inline-block;
+		white-space:nowrap;
+		vertical-align:bottom;
+	}
+	.sideheaderValue{
+		margin-left:5px;
+		display:inline-block;
+		overflow:hidden;
+		width:auto;
+		white-space:nowrap;
+		vertical-align:bottom;
+	}
+	#sideheader-buttons{
+		position: absolute;
+		margin-left:auto;
+		margin-right:auto;
+		bottom: 0;
+		width:auto;
+	}
+	.sfButton a{
+		color:#444;
+		font-size:.9em;
+		font-weight:bold;
+		white-space:nowrap;
+		text-decoration:none;
+		padding:4px 3px;
+		line-height:1.3em;
+		-moz-border-radius:5px;
+		border-radius:5px;
+		border:1px solid #888;	
+		display:inline-block;
+		zoom:1; // IE hack to trigger hasLayout
+		*display:inline; // IE hack to achieve inline-block behavior
+		background:#F4F4F4; /* for non-css3 browsers */
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FEFEFE', endColorstr='#E9E9E9'); /* for IE */
+		background:-webkit-gradient(linear, left top, left bottom, from(#FEFEFE), to(#E9E9E9)); /* for webkit browsers */
+		background:-moz-linear-gradient(top,  #FEFEFE,  #E9E9E9); /* for firefox 3.6+ */
+	}
+	.sfButton:hover a{
+		color:#444;
+		text-decoration:none;
+	}
+	.verticalslider_tabs-cell{
+		width:200px;
+		vertical-align:top;
+	}
+	.verticalslider_tabs{
+		margin-left:7px;
+		font-size:15px;
+	}
+	.verticalslider_tabs a:link, .verticalslider_tabs a:visited{
+		padding:12px;
+	}
+	.verticalslider .arrow {
+		background: url({!URLFOR($Resource.VerticalTabsAddin ,"images/arrow-42-darkblue.png")}); 
+		width: 18px; height: 42px; position: absolute; z-index: 1000; 
+		margin-left: 151px; margin-top: -42px;
+	}
+	.verticalslider_contents-cell{
+		width:100%;
+		vertical-align:top;
+		height:100%;
+	}
+	.verticalslider_contents{
+		height:100%;
+	}
+	.contentDiv{
+		height:282px;
+		padding:5px 15px 5px 0;
+		overflow-y: scroll !important;
+	}
+	.contentDiv p{
+		padding-bottom:10px;
+	}
+	.mixedContentSection-Divider{
+		margin: 10px 0 7px 20px;
+		padding-top:5px;
+		font-weight:bold;
+		border-top: 2px solid #8A9EBE;
+	}
+	.mixedContentSection-List{
+		margin-left:20px;
+	}
+	.multiSectionTopHeading{
+		margin: 10px 0 7px 0;
+		font-weight:bold;
+	}
+	.multiSectionDivider{
+		margin: 10px 0 7px 0;
+		padding-top:5px;
+		font-weight:bold;
+		border-top: 2px solid #8A9EBE;
+	}
+	.contentDiv .listItem{
+		padding:4px;
+		border-top: 1px solid white;
+		border-bottom: 1px solid #E0E0E0;
+	}
+	.contentDiv .listItem:first-child{
+		border-top: 0;
+	}
+	.contentDiv .listItem:last-child{
+		border-bottom: 0;
+	}
+	.contentDiv .listItem:hover{
+		background: white;
+	}
+	.vert-tab{
+		position:fixed;
+		right:0;
+		top:30px;
+		display:none;
+	}
+	.search-result-icon{
+		float:right;
+		margin-left:10px;
+	}
+	.chatter-icon{
+		float:right;
+		margin-left:10px;
+		background-image:url('{!URLFOR($Resource.VerticalTabsAddin, 'images/chatter.png')}');
+		background-repeat:no-repeat;
+	}
+	.sfdc-icon{
+		float:right;
+		margin-left:10px;
+		background-image:url('{!URLFOR($Resource.VerticalTabsAddin, 'images/salesforce.png')}');
+		background-repeat:no-repeat;
+	}
+	</style>
+	
+<!--  apex:form id="frm">
+	<apex:actionFunction name="initParams" action="{!init}" oncomplete="fetchJSONResponse('{!cbAccountName}','{!cbPermalink}')"/>
+</apex:form> -->
+
+<apex:outputField value="{!Account.Crunchbase_Permalink__c}" rendered="false"/>
+<apex:outputField value="{!Account.Name}" rendered="false"/>
+
+<div id="valueCBSearchResults">
+	<div id="valueSearchResults" class="contentDiv"></div>
+</div>
+
+<div id="verticalTabbedContent" class="verticalslider">
+	<table class="verticalslider-table">
+	<tr><td class="sideheader-cell">
+		<div id="sideheader" class="sideheader-area">
+			<div class="logo-area"><center><div id="valueLogo" ></div></center></div>
+			<div class="headerData-area">
+			<div class="headerData-item"><div id="labelCategory"		class="sideheaderLabel"></div> <div id="valueCategory"			class="sideheaderValue"></div></div> 
+			<div class="headerData-item"><div id="labelDescription"		class="sideheaderLabel"></div> <div id="valueDescription"		class="sideheaderValue"></div></div> 
+			<div class="headerData-item"><div id="labelFounded"			class="sideheaderLabel"></div> <div id="valueFounded"			class="sideheaderValue"></div></div> 
+			<div class="headerData-item"><div id="labelEmployeeCount"	class="sideheaderLabel"></div> <div id="valueEmployeeCount"		class="sideheaderValue"></div></div> 
+			<div class="headerData-item"><div id="labelIPO"				class="sideheaderLabel"></div> <div id="valueIPO"				class="sideheaderValue"></div></div> 
+			<div class="headerData-item"><div id="labelWebsite"			class="sideheaderLabel"></div> <div id="valueWebsite"			class="sideheaderValue"></div></div> 
+			<div class="headerData-item"><div id="labelPhone"			class="sideheaderLabel"></div> <div id="valuePhone"				class="sideheaderValue"></div></div> 
+			<div class="headerData-item"><div id="labelEmail"			class="sideheaderLabel"></div> <div id="valueEmail"				class="sideheaderValue"></div></div> 
+			<div class="headerData-item"><div id="labelBlog"			class="sideheaderLabel"></div> <div id="valueBlog"				class="sideheaderValue"></div></div> 
+			<div class="headerData-item"><div id="labelTwitter"			class="sideheaderLabel"></div> <div id="valueTwitter"			class="sideheaderValue"></div></div>
+			</div>
+			<div id="sideheader-buttons">
+				<span id="valueCBUrl" class="sfButton"></span>
+				<span id="valueSaveToSF" class="sfButton"><a href="#" onclick="return false;">Save to Salesforce</a></span>
+			</div>
+		</div>
+	</td><td class="verticalslider_tabs-cell">
+		<ul class="verticalslider_tabs">
+			<li><a href="#">Overview</a></li>
+			<li><a href="#">People</a></li>
+			<li><a href="#">Products</a></li>
+			<li><a href="#">Milestones</a></li>
+			<li><a href="#">Investments</a></li>
+			<li><a href="#">Funding</a></li>
+			<li><a href="#">Competitors</a></li>
+		</ul>
+	</td><td class="verticalslider_contents-cell">
+		<ul class="verticalslider_contents">
+			<li>
+				<h2><div id="nolabelOverview"></div></h2>
+				<div class="contentDiv">
+					<div id="valueOverview" ></div>
+					<div id="labelOffices" class="mixedContentSection-Divider"></div>
+					<div id="valueOffices" class="mixedContentSection-List"></div>
+				</div>
+			</li>
+			<li>
+				<h2><div id="nolabelPeople"></div></h2>
+				<div id="valuePeople" class="contentDiv"></div>
+			</li>
+			<li>
+				<h2><div id="nolabelProducts"></div></h2>
+				<div id="valueProducts" class="contentDiv"></div>
+			</li>
+			<li>
+				<h2><div id="nolabelMilestones" ></div></h2>
+				<div id="valueMilestones" class="contentDiv"></div>
+			</li>
+			<li>
+				<div class="contentDiv">
+					<div id="labelInvestments" class="multiSectionTopHeading"></div>
+					<div id="valueInvestments"></div>
+					<div id="labelAcquisitions" class="multiSectionDivider"></div>
+					<div id="valueAcquisitions" ></div>
+				</div>
+			</li>
+			<li>
+				<h2><div id="nolabelFundingRounds"></div></h2>
+				<div id="valueFundingRounds" class="contentDiv"></div>
+			</li>
+			<li>
+				<h2><div id="nolabelCompetitors"></div></h2>
+				<div id="valueCompetitors" class="contentDiv"></div>
+			</li>
+		</ul>
+	</td></tr>
+	</table>
+</div>	
+<a class="vert-tab" href="http://www.redkitetechnologies.com" target="_blank">
+	<img src="{!URLFOR($Resource.VerticalTabsAddin,'images/rk-tab-v02-vert.png')}"/>
+</a>
+	
+</apex:page>

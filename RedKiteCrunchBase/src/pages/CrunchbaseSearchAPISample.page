@@ -1,0 +1,79 @@
+<apex:page controller="CrunchbaseSearchAPICtl" tabstyle="Account">
+	
+	<apex:stylesheet value="{!URLFOR($Resource.JQueryUI ,'css/cupertino/jquery-ui-1.8.12.custom.css')}" />
+	<apex:includeScript value="{!URLFOR($Resource.JQueryUI ,'js/jquery-1.5.1.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.JQueryUI ,'js/jquery-ui-1.8.12.custom.min.js')}" />	
+	
+	<script type="text/javascript">
+		j$ = jQuery.noConflict();
+		
+		/*j$(document).ready(function(){
+			searchCrunchbase('{!selectedPermalink}');
+		});*/
+	
+		function searchCrunchbase(pPermalink){
+			var permalink = pPermalink;
+			var accountPermalinkArray = new Array();
+			var crunchbaseSearchBaseUrl = "http://api.crunchbase.com/v/1/search.js?query=";
+			var crunchbaseUrl;   
+			
+			/* Check whether # exists in the selelcted permalink string */			
+			if(permalink.indexOf("#") != -1){
+				accountPermalinkArray = permalink.split("#");
+			}
+			//alert(accountPermalinkArray[1]);
+			crunchbaseUrl = crunchbaseSearchBaseUrl + accountPermalinkArray[0].trim().toLowerCase();
+
+			j$.getJSON(
+				crunchbaseUrl,
+				function(cbResponse){
+					for(cnt = 0; cnt < cbResponse.results.length; cnt++)
+					{ alert(cbResponse.results[cnt].name); }
+				});
+		}
+	
+		/* Generates html to display a hyperlink with the given Url */
+		function generateHyperlinkHtml(pHyperlinkUrl, pTextToDisplay){
+			if (pTextToDisplay != null || pTextToDisplay != '')
+			return "<a href=\"" + pHyperlinkUrl + "\" class=\"summary-link\" target=\"_blank\">" + pTextToDisplay + " </a>";
+		}
+		
+		/* Generates html to display an image with the given Url */
+		function generateImageHtml(pImageUrl){
+			return "<img src=\"" + pImageUrl + "\" onload=\"javascript:scaleImage(this,70,250);\" />";
+		}
+	
+	</script>
+	
+	<apex:pageBlock title="Crunchbase Details">
+		
+		<p><apex:form >
+			<apex:outputLabel value="Select Account" for="accountNames"/>&nbsp;&nbsp;
+			
+			<apex:selectList id="accountNames" value="{!selectedPermalink}" multiselect="false" size="1">
+				<apex:Selectoptions value="{!accountNameList}"/>
+			</apex:selectList>&nbsp;&nbsp;
+			
+			<apex:commandButton value="Go"
+								oncomplete="searchCrunchbase('{!selectedPermalink}');return false;" 
+								status="loading"/>&nbsp;
+								
+			<apex:actionStatus id="loading" 
+							   onstart="document.body.style.cursor='wait';return true;" 
+							   onStop="document.body.style.cursor='default';return true;" 
+							   styleclass="loading-status">
+		      <apex:facet name="start" >                
+		          <img src="/img/loading.gif"/>&nbsp;&nbsp;<span>Loading...</span>               
+		      </apex:facet> 
+		      <apex:facet name="stop"/>
+		    </apex:actionStatus>
+		    
+		</apex:form></p>
+		
+		<apex:outputPanel id="pnlSearchResults">
+			<div id="searchResults"></div> 
+		</apex:outputPanel>
+		
+	</apex:pageBlock>
+	
+</apex:page>

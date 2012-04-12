@@ -1,0 +1,16 @@
+<apex:page controller="JavaScriptRemoting">
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <apex:PageMessages id="PgMessage"></apex:PageMessages>
+ <script type="text/javascript">
+  j$=jQuery.noConflict();
+  JavaScriptRemoting.getAccountByName("sForce", function(result, event){
+   if (event.status &amp;amp;&amp;amp; result){
+    j$.each(result, function(){
+     j$("#targetId").append(this.Id+", "+this.Name+"<br/>");
+    })
+   }
+  }, {escape:true});
+ </script>
+
+ <div id="targetId"></div>
+</apex:page>

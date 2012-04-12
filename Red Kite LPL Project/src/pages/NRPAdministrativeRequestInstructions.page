@@ -1,0 +1,35 @@
+<apex:page >
+  <B>
+<Font size="4" Color="Red">
+<Center>
+Support Request And/or Questions Instructions
+</center>
+</Font>
+</B>
+<P>
+<br>
+Instructions:
+</br>Please fill out all of the fields and provide as much information as possible. Once you save this form a Case will automatically be submitted to Salesforce.com Premier Support or to NRP based on your responses. As a reminder, only users with the Delegated Administrator profile are authorized to make change requests. If you do not have this profile, the user within your member firm with the Delegated Administrator profile will need to authorize your request.
+<P>
+</br>
+In the event that you get stuck or are unsure on how to proceed, please feel free to contact Salesforce.com Premier Support by calling (866) 614-7375 and entering passcode 1016340. Following the submission of this request, you will be able to track this case through the Salesforce.com Help and Training Customer Portal (<a href="https://na5.salesforce.com/help/doc/user_ed.jsp?loc=support" target="_blank">Click Here to view your Cases</a>).
+<P>
+</br>
+<center>
+<Font size = "5">
+<a href ="https://na5.salesforce.com/a0U/e?retURL=%2Fa0U%2Fo&RecordType=01270000000Q3s5&ent=01I70000000Q2Bh">Click HERE to Create a New Administrative Request</A>
+</font>
+<P>
+<Font size = "5">
+<a href ="https://na5.salesforce.com/a0U/e?retURL=%2Fa0U%2Fo&RecordType=01270000000Q4Ht&ent=01I70000000Q2Bh">Click HERE to Create a New General User Question</A>
+</font>
+<P>
+<P>
+<br>
+<b>What is the difference between an Administrative Request and a General Question?</b></Br>
+<P>
+</Center>
+<font color="Blue">Administrative Request:</font> This type of request is asking Premier Support to <i>DO</i> something for you</BR>
+<br><font color="Blue">General User Question:</font> This type of request is asking Premier Support <i>HOW</i> to do something for you</BR>
+</center>
+</apex:page>

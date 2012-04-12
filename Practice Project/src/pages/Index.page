@@ -1,0 +1,4 @@
+<apex:page Controller="IndexController" action="{!Init}">
+	<apex:sectionHeader title="Welcome to the Web Site" subtitle="Something Exciting !"/>
+	<apex:PageMessages id="msg"></apex:PageMessages>
+</apex:page>

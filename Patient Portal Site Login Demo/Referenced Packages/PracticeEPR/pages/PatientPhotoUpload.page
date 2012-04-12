@@ -1,0 +1,35 @@
+<apex:page controller="ecare.FileUploadController" sidebar="false" showHeader="false">
+    <script language="javascript" type="text/javascript">
+        if("{!JSENCODE($Request.success)}" == 1) {
+            parent.window.opener.location.href = "/{!URLENCODE($Request.id)}";          
+            parent.window.close();          
+        }
+        
+    </script>
+  <apex:sectionHeader title="{!$Label.Patient_Photo_Upload_Title}" subtitle="{!$Label.FileUpload}"/>
+ 
+  <apex:form enctype="multipart/form-data">
+    <apex:pageMessages />
+    <apex:pageBlock title="{!$Label.Select_Photo}">
+ 
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!upload}" value="{!$Label.Save}"/>
+      </apex:pageBlockButtons>
+ 
+      <apex:pageBlockSection showHeader="false" columns="1" id="block1">
+ 
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="{!$Label.Description}" for="fileName"/>
+          <apex:inputText value="{!document.name}" id="fileName"/>
+        </apex:pageBlockSectionItem>
+ 
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="{!$Label.File}" for="file"/>
+          <apex:inputFile value="{!document.body}" filename="{!document.name}" id="file"/>
+        </apex:pageBlockSectionItem>
+ 
+      </apex:pageBlockSection>
+ 
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

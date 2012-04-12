@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Language_Support</fullName>
+        <categories>Instructional Text.</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Language_Support</shortDescription>
+        <value>Hi this custom label is for testing purpose.</value>
+    </labels>
+    <labels>
+        <fullName>lblUserAdminName</fullName>
+        <categories>501</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>lblUserAdminName</shortDescription>
+        <value>Niket Chandane.</value>
+    </labels>
+</CustomLabels>

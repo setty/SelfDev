@@ -1,0 +1,43 @@
+<apex:page id="VFJSON" sidebar="false" showheader="false" controller="IndexController" action="{!Init}">
+	<apex:PageMessages id="msg"></apex:PageMessages>
+	
+<!-- <html> -->
+<!-- <head> -->
+<!--     <style> span { color:red; }</style> -->
+<!--     <script src="{!$Resource.JSON}"></script> -->
+<!-- </head> -->
+<!-- <body> -->
+<!--   <div id="images" border='1'></div> -->
+<!--   <h2 class='fade'>click</h2> -->
+<!-- <script> -->
+<!--     $("h1").click(function () { -->
+<!--       $("div").slideToggle("slow"); -->
+<!--     }); -->
+<!-- </script> -->
+<!-- Toggle Effects test Code starts flickr.com http://photobucket.com/findstuff/love -->
+<!-- <script> -->
+<!--     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", -->
+<!--     {tags: "Rose",tagmode: "any",format:"json"}, -->
+<!--   function(data)  -->
+<!--   { -->
+<!--     $.each(data.items, function(i,item) -->
+<!--     { -->
+<!--       $("<img/>").attr("src", item.media.m).appendTo("#images"); -->
+<!--       if ( i == 1000 ) return false; -->
+<!--     }); -->
+<!--   }); -->
+<!-- </script> -->
+<!-- </body> -->
+<!-- </html> -->
+	
+	<apex:Form >
+		<apex:pageBlock title="My Content" mode="edit">
+			<apex:Inputfield value="{!objPortalUser.Name}" id="txtName"/>
+			<apex:inputSecret value="{!objPortalUser.Password__c}" id="txtPass"/>
+			<apex:commandButton action="{!login}" value="login" id="btnLogin" rerender="msg,pbTable"/>
+			<apex:PageBlockTable value="{!lstPatient}" var="Patient" id="pbTable">
+				<apex:column value="{!Patient.name}"/>
+			</apex:PageBlockTable>
+		</apex:PageBlock>
+	</apex:Form>
+</apex:page>

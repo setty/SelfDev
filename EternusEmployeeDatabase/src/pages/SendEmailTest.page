@@ -1,0 +1,18 @@
+<apex:page controller="SendEmailCtl">
+  
+  <apex:form >
+  	  <br/><br/>
+	  <apex:pageBlock title="SFDC Default Send An Email RnD">
+	  	<apex:pageBlockButtons location="Bottom">
+	  		<apex:commandButton value="Send An Email" action="{!redirectToSendEmail}" />
+	  		<apex:commandButton value="Save as Activity" action="{!redirectToNewTask}" />
+	  		<script src="http://platform.linkedin.com/in.js" type="text/javascript"/>
+  			<script type="IN/Share"/></script>
+	  	</apex:pageBlockButtons>
+	  	<p><i>Send An Email:</i> This page redirects you to the standard Salesforce Email page and passes custom parameter values for Subject and Email Body fields.</p>
+	  	<p><i>LinkedIn:</i> Pops up a LinkedIn window which allows you to login and post on LinkedIn</p>
+	  </apex:pageBlock>
+  </apex:form>
+  
+  		
+</apex:page>

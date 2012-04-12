@@ -1,0 +1,35 @@
+<apex:page id="apextoolbar">
+	<apex:form id="theForm">
+	<!-- A simple example of a toolbar -->
+	<apex:toolbar id="theToolbar">
+		<apex:outputText value="Sample Toolbar" />
+		<apex:toolbarGroup itemSeparator="line" id="toobarGroupLinks">
+			<apex:outputLink value="http://www.salesforce.com">	salesforce </apex:outputLink>
+			<apex:outputLink value="http://developer.salesforce.com">
+apex developer network
+</apex:outputLink>
+		</apex:toolbarGroup>
+		<apex:toolbarGroup itemSeparator="line" location="right"
+			id="toobarGroupForm">
+			
+				<apex:inputText id="theInputText">Enter Text</apex:inputText>
+				<apex:commandLink value="search" id="theCommandLink" />
+			
+		</apex:toolbarGroup>
+	</apex:toolbar>
+
+	<apex:toolbar onclick="alert('You clicked the mouse button on a component in the toolbar.')"
+		onkeydown="alert('You pressed a keyboard key in a component in the toolbar.')"
+		onitemclick="alert('You clicked the mouse button on a component that is ' +
+'not in a toolbarGroup.')"
+		onitemkeydown="alert('You pressed a keyboard key in a component that is ' +
+348
+Standard Component Reference apex:toolbar
+'not in a toolbarGroup.')">
+		<apex:inputText />
+Click outside of a toolbargroup
+<apex:toolbarGroup >
+			<apex:inputText />Click in a toolbarGroup</apex:toolbarGroup>
+	</apex:toolbar>
+	</apex:form>
+</apex:page>

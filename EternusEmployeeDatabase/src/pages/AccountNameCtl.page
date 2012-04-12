@@ -1,0 +1,5 @@
+<apex:page standardController="Account" extensions="AccountNameCtlExtn">
+	Actual Name:  <apex:outputLabel value="{!AccountName}" /><br/>
+	Cleaned Name: <apex:outputLabel value="{!CleanedAccountName}" />
+		
+</apex:page>

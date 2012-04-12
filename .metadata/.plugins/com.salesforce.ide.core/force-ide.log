@@ -1,0 +1,274 @@
+ WARN [2012-04-09 16:11:08,649] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,652] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\remoteSiteSettings' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,654] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'RemoteSiteSetting 'in|force Connector by Redkite/remoteSiteSettings/LinkedIn_API_HTTPS.remoteSite' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/remoteSiteSettings' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/remoteSiteSettings' does not exist.
+ WARN [2012-04-09 16:11:08,657] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,659] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\staticresources' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,662] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'StaticResource 'in|force Connector by Redkite/staticresources/LinkedInConnectorCookieLib_js.resource' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist.
+ WARN [2012-04-09 16:11:08,672] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,675] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\staticresources' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,677] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'StaticResource 'in|force Connector by Redkite/staticresources/LinkedInConnectorCookieLib_js.resource-meta.xml' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist.
+ WARN [2012-04-09 16:11:08,680] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,683] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\staticresources' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,685] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'StaticResource 'in|force Connector by Redkite/staticresources/LinkedInConnectorResources.resource' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist.
+ WARN [2012-04-09 16:11:08,688] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,691] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\staticresources' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,694] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'StaticResource 'in|force Connector by Redkite/staticresources/LinkedInConnectorResources.resource-meta.xml' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist.
+ WARN [2012-04-09 16:11:08,696] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,699] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\staticresources' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,702] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'StaticResource 'in|force Connector by Redkite/staticresources/RequiredFieldRed.resource' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist.
+ WARN [2012-04-09 16:11:08,705] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,707] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\staticresources' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,710] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'StaticResource 'in|force Connector by Redkite/staticresources/RequiredFieldRed.resource-meta.xml' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist.
+ WARN [2012-04-09 16:11:08,712] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,715] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\staticresources' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,717] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'StaticResource 'in|force Connector by Redkite/staticresources/jquery_loadmask_min_js.resource' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist.
+ WARN [2012-04-09 16:11:08,720] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,722] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\staticresources' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,726] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'StaticResource 'in|force Connector by Redkite/staticresources/jquery_loadmask_min_js.resource-meta.xml' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/staticresources' does not exist.
+ WARN [2012-04-09 16:11:08,728] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,735] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\tabs' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,738] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'CustomTab 'in|force Connector by Redkite/tabs/LinkedIn_Connector.tab' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/tabs' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/tabs' does not exist.
+ WARN [2012-04-09 16:11:08,740] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite' folder: | is an invalid character in resource name 'in|force Connector by Redkite'. Cause:
+ (1) | is an invalid character in resource name 'in|force Connector by Redkite'.
+ WARN [2012-04-09 16:11:08,743] (ComponentResource.java:createFolder:452) - Unable to create '\Practice Project\Referenced Packages\in|force Connector by Redkite\weblinks' folder: Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite' does not exist.
+ WARN [2012-04-09 16:11:08,745] (ProjectPackageList.java:saveResources:1185) - Unable to save component 'CustomPageWebLink 'in|force Connector by Redkite/weblinks/LinkedIn_Connector.weblink' [in|force Connector by Redkite]' to Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/weblinks' does not exist. Cause:
+ (1) Resource '/Practice Project/Referenced Packages/in|force Connector by Redkite/weblinks' does not exist.
+ WARN [2012-04-09 16:12:15,150] (Component.java:getTemplate:624) - Not templates found
+ WARN [2012-04-09 16:12:37,700] (ComponentFactory.java:getCompositeComponentFromComponent:1090) - Unable to load existing 'pages/Ramrod.page-meta.xml' from project - associated component's file resource is null.  Assuming new.
+ WARN [2012-04-09 16:16:19,393] (ComponentFactory.java:getCompositeComponentFromComponent:1090) - Unable to load existing 'classes/RamrodController.cls-meta.xml' from project - associated component's file resource is null.  Assuming new.
+ WARN [2012-04-09 16:28:52,011] (ComponentFactory.java:getCompositeComponentFromComponent:1090) - Unable to load existing 'pages/JavaScriptPattern.page-meta.xml' from project - associated component's file resource is null.  Assuming new.
+ WARN [2012-04-09 18:20:39,679] (ProjectService.java:handleDeployResult:1909) - Save failed!
+ WARN [2012-04-09 18:20:39,689] (ProjectService.java:handleRetrieveResult:2083) - Nothing to save to project - retrieve result is empty
+ WARN [2012-04-09 20:34:19,357] (ConnectionFactory.java:clearCache:212) - Clearing the following cached connections
+ WARN [2012-04-09 20:34:19,360] (DescribeObjectRegistry.java:clearCache:657) - Clearing cached describes
+ WARN [2012-04-09 20:34:19,362] (MetadataFactory.java:clearCache:134) - Clearing the following cached metadata stubs
+ WARN [2012-04-10 14:27:00,506] (ComponentFactory.java:getCompositeComponentFromComponent:1090) - Unable to load existing 'pages/JavaScriptModularProgramming.page-meta.xml' from project - associated component's file resource is null.  Assuming new.
+ WARN [2012-04-10 14:31:39,743] (ProjectService.java:handleDeployResult:1909) - Save failed!
+ WARN [2012-04-10 14:31:39,769] (ProjectService.java:handleRetrieveResult:2083) - Nothing to save to project - retrieve result is empty
+ WARN [2012-04-10 14:32:00,747] (ProjectService.java:handleDeployResult:1909) - Save failed!
+ WARN [2012-04-10 14:32:00,758] (ProjectService.java:handleRetrieveResult:2083) - Nothing to save to project - retrieve result is empty
+ WARN [2012-04-10 14:32:48,095] (ProjectService.java:handleDeployResult:1909) - Save failed!
+ WARN [2012-04-10 14:32:48,105] (ProjectService.java:handleRetrieveResult:2083) - Nothing to save to project - retrieve result is empty
+ WARN [2012-04-10 14:33:39,390] (ProjectService.java:handleDeployResult:1909) - Save failed!
+ WARN [2012-04-10 14:33:39,401] (ProjectService.java:handleRetrieveResult:2083) - Nothing to save to project - retrieve result is empty
+ WARN [2012-04-10 16:23:31,792] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/.classpath', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,834] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/.classpath', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,849] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/AndroidManifest.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,853] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/AndroidManifest.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,864] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/SalesforceOAuthPlugin.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,867] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/SalesforceOAuthPlugin.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,872] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/bootconfig.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,876] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/bootconfig.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,883] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/bootstrap.html', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,886] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/bootstrap.html', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,890] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/forcetk.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,893] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/forcetk.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,901] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/index.html', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,904] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/index.html', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,910] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/inline.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,913] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/inline.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,919] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/jquery', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,922] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/jquery', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,927] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/phonegap-1.2.0.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,930] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/assets/www/phonegap-1.2.0.js', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,935] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/build.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,941] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/build.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,947] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/libs/SalesforceSDK.jar', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,952] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/libs/SalesforceSDK.jar', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,966] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/libs/phonegap-1.2.0.jar', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,970] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/libs/phonegap-1.2.0.jar', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,975] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/proguard.cfg', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:31,996] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/proguard.cfg', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,001] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/project.properties', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,005] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/project.properties', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,013] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-hdpi/edit_icon.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,016] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-hdpi/edit_icon.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,020] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-hdpi/ic_launcher.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,025] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-hdpi/ic_launcher.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,029] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-hdpi/icon.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,031] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-hdpi/icon.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,037] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-ldpi/ic_launcher.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,039] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-ldpi/ic_launcher.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,044] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-ldpi/icon.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,047] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-ldpi/icon.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,052] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-mdpi/ic_launcher.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,055] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-mdpi/ic_launcher.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,059] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-mdpi/icon.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,062] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/drawable-mdpi/icon.png', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,066] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/custom_server_url.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,070] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/custom_server_url.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,083] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/login.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,086] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/login.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,091] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/login_header.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,096] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/login_header.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,100] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/main.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,103] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/main.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,107] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/passcode.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,110] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/passcode.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,115] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/server_picker.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,117] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/layout/server_picker.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,121] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/menu/clear_custom_url.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,124] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/menu/clear_custom_url.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,128] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/values/rest.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,131] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/values/rest.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,135] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/values/sdk.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,138] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/values/sdk.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,145] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/values/strings.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,150] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/values/strings.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,154] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/xml/authenticator.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,157] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/xml/authenticator.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,161] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/xml/plugins.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,164] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/res/xml/plugins.xml', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,169] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/src/com/salesforce/samples/contactexplorer/ContactExplorerApp.java', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,172] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/src/com/salesforce/samples/contactexplorer/ContactExplorerApp.java', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,179] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/src/com/salesforce/samples/contactexplorer/SalesforceRImpl.java', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:32,186] (ComponentFactory.java:getComponentByFilePath:610) - No id found for filepath 'ContactExplorer/src/com/salesforce/samples/contactexplorer/SalesforceRImpl.java', tagging as component of type 'Unknown'
+ WARN [2012-04-10 16:23:41,732] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) ContactExplorer/.classpath: Invalid directory 'ContactExplorer'
+ (2) ContactExplorer/AndroidManifest.xml: Invalid directory 'ContactExplorer'
+ (3) ContactExplorer/assets/www/SalesforceOAuthPlugin.js: Invalid directory 'ContactExplorer'
+ (4) ContactExplorer/assets/www/bootconfig.js: Invalid directory 'ContactExplorer'
+ (5) ContactExplorer/assets/www/bootstrap.html: Invalid directory 'ContactExplorer'
+ (6) ContactExplorer/assets/www/forcetk.js: Invalid directory 'ContactExplorer'
+ (7) ContactExplorer/assets/www/index.html: Invalid directory 'ContactExplorer'
+ (8) ContactExplorer/assets/www/inline.js: Invalid directory 'ContactExplorer'
+ (9) ContactExplorer/assets/www/jquery: Invalid directory 'ContactExplorer'
+ (10) ContactExplorer/assets/www/phonegap-1.2.0.js: Invalid directory 'ContactExplorer'
+ (11) ContactExplorer/build.xml: Invalid directory 'ContactExplorer'
+ (12) ContactExplorer/libs/SalesforceSDK.jar: Invalid directory 'ContactExplorer'
+ (13) ContactExplorer/libs/phonegap-1.2.0.jar: Invalid directory 'ContactExplorer'
+ (14) ContactExplorer/proguard.cfg: Invalid directory 'ContactExplorer'
+ (15) ContactExplorer/project.properties: Invalid directory 'ContactExplorer'
+ (16) ContactExplorer/res/drawable-hdpi/edit_icon.png: Invalid directory 'ContactExplorer'
+ (17) ContactExplorer/res/drawable-hdpi/ic_launcher.png: Invalid directory 'ContactExplorer'
+ (18) ContactExplorer/res/drawable-hdpi/icon.png: Invalid directory 'ContactExplorer'
+ (19) ContactExplorer/res/drawable-ldpi/ic_launcher.png: Invalid directory 'ContactExplorer'
+ (20) ContactExplorer/res/drawable-ldpi/icon.png: Invalid directory 'ContactExplorer'
+ (21) ContactExplorer/res/drawable-mdpi/ic_launcher.png: Invalid directory 'ContactExplorer'
+ (22) ContactExplorer/res/drawable-mdpi/icon.png: Invalid directory 'ContactExplorer'
+ (23) ContactExplorer/res/layout/custom_server_url.xml: Invalid directory 'ContactExplorer'
+ (24) ContactExplorer/res/layout/login.xml: Invalid directory 'ContactExplorer'
+ (25) ContactExplorer/res/layout/login_header.xml: Invalid directory 'ContactExplorer'
+ (26) ContactExplorer/res/layout/main.xml: Invalid directory 'ContactExplorer'
+ (27) ContactExplorer/res/layout/passcode.xml: Invalid directory 'ContactExplorer'
+ (28) ContactExplorer/res/layout/server_picker.xml: Invalid directory 'ContactExplorer'
+ (29) ContactExplorer/res/menu/clear_custom_url.xml: Invalid directory 'ContactExplorer'
+ (30) ContactExplorer/res/values/rest.xml: Invalid directory 'ContactExplorer'
+ (31) ContactExplorer/res/values/sdk.xml: Invalid directory 'ContactExplorer'
+ (32) ContactExplorer/res/values/strings.xml: Invalid directory 'ContactExplorer'
+ (33) ContactExplorer/res/xml/authenticator.xml: Invalid directory 'ContactExplorer'
+ (34) ContactExplorer/res/xml/plugins.xml: Invalid directory 'ContactExplorer'
+ (35) ContactExplorer/src/com/salesforce/samples/contactexplorer/ContactExplorerApp.java: Invalid directory 'ContactExplorer'
+ (36) ContactExplorer/src/com/salesforce/samples/contactexplorer/SalesforceRImpl.java: Invalid directory 'ContactExplorer'
+ WARN [2012-04-10 16:23:41,738] (BuilderPayload.java:filterComponentsInConflict:268) - Remote retrieve result count [4] does not equal request count [40].
+ WARN [2012-04-10 16:23:41,766] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/.classpath'
+ WARN [2012-04-10 16:23:41,768] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/.classpath' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,773] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/AndroidManifest.xml'
+ WARN [2012-04-10 16:23:41,776] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/AndroidManifest.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,778] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/assets/www/SalesforceOAuthPlugin.js'
+ WARN [2012-04-10 16:23:41,781] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/assets/www/SalesforceOAuthPlugin.js' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,783] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/assets/www/bootconfig.js'
+ WARN [2012-04-10 16:23:41,786] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/assets/www/bootconfig.js' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,788] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/assets/www/bootstrap.html'
+ WARN [2012-04-10 16:23:41,800] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/assets/www/bootstrap.html' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,803] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/assets/www/forcetk.js'
+ WARN [2012-04-10 16:23:41,806] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/assets/www/forcetk.js' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,808] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/assets/www/index.html'
+ WARN [2012-04-10 16:23:41,810] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/assets/www/index.html' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,812] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/assets/www/inline.js'
+ WARN [2012-04-10 16:23:41,815] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/assets/www/inline.js' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,817] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/assets/www/jquery'
+ WARN [2012-04-10 16:23:41,819] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/assets/www/jquery' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,821] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/assets/www/phonegap-1.2.0.js'
+ WARN [2012-04-10 16:23:41,824] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/assets/www/phonegap-1.2.0.js' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,826] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/build.xml'
+ WARN [2012-04-10 16:23:41,828] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/build.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,831] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/libs/SalesforceSDK.jar'
+ WARN [2012-04-10 16:23:41,833] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/libs/SalesforceSDK.jar' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,836] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/libs/phonegap-1.2.0.jar'
+ WARN [2012-04-10 16:23:41,838] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/libs/phonegap-1.2.0.jar' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,841] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/proguard.cfg'
+ WARN [2012-04-10 16:23:41,843] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/proguard.cfg' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,846] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/project.properties'
+ WARN [2012-04-10 16:23:41,849] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/project.properties' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,851] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/drawable-hdpi/edit_icon.png'
+ WARN [2012-04-10 16:23:41,854] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/drawable-hdpi/edit_icon.png' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,856] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/drawable-hdpi/ic_launcher.png'
+ WARN [2012-04-10 16:23:41,859] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/drawable-hdpi/ic_launcher.png' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,861] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/drawable-hdpi/icon.png'
+ WARN [2012-04-10 16:23:41,863] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/drawable-hdpi/icon.png' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,865] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/drawable-ldpi/ic_launcher.png'
+ WARN [2012-04-10 16:23:41,867] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/drawable-ldpi/ic_launcher.png' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,869] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/drawable-ldpi/icon.png'
+ WARN [2012-04-10 16:23:41,872] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/drawable-ldpi/icon.png' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,874] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/drawable-mdpi/ic_launcher.png'
+ WARN [2012-04-10 16:23:41,876] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/drawable-mdpi/ic_launcher.png' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,879] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/drawable-mdpi/icon.png'
+ WARN [2012-04-10 16:23:41,881] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/drawable-mdpi/icon.png' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,883] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/layout/custom_server_url.xml'
+ WARN [2012-04-10 16:23:41,885] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/layout/custom_server_url.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,888] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/layout/login.xml'
+ WARN [2012-04-10 16:23:41,891] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/layout/login.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,894] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/layout/login_header.xml'
+ WARN [2012-04-10 16:23:41,896] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/layout/login_header.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,898] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/layout/main.xml'
+ WARN [2012-04-10 16:23:41,901] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/layout/main.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,903] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/layout/passcode.xml'
+ WARN [2012-04-10 16:23:41,905] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/layout/passcode.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,907] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/layout/server_picker.xml'
+ WARN [2012-04-10 16:23:41,909] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/layout/server_picker.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,911] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/menu/clear_custom_url.xml'
+ WARN [2012-04-10 16:23:41,914] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/menu/clear_custom_url.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,916] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/values/rest.xml'
+ WARN [2012-04-10 16:23:41,918] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/values/rest.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,920] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/values/sdk.xml'
+ WARN [2012-04-10 16:23:41,923] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/values/sdk.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,925] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/values/strings.xml'
+ WARN [2012-04-10 16:23:41,927] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/values/strings.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,929] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/xml/authenticator.xml'
+ WARN [2012-04-10 16:23:41,931] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/xml/authenticator.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,934] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/res/xml/plugins.xml'
+ WARN [2012-04-10 16:23:41,936] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/res/xml/plugins.xml' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,938] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/src/com/salesforce/samples/contactexplorer/ContactExplorerApp.java'
+ WARN [2012-04-10 16:23:41,941] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/src/com/salesforce/samples/contactexplorer/ContactExplorerApp.java' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,943] (ProjectPackageList.java:getComponentByFilePath:735) - Did not find component for 'ContactExplorer/src/com/salesforce/samples/contactexplorer/SalesforceRImpl.java'
+ WARN [2012-04-10 16:23:41,945] (BuilderPayload.java:conflictCheck:309) - Unknown [Unknown] 'ContactExplorer/src/com/salesforce/samples/contactexplorer/SalesforceRImpl.java' [unpackaged] not found in remote project package list.  Assuming no conflict.
+ WARN [2012-04-10 16:23:41,947] (Component.java:hasRemoteChanged:939) - Conflict found! Attribute compare of local and remote ApexPage 'pages/JavaScriptModularProgramming.page-meta.xml' [unpackaged] are NOT equal
+ WARN [2012-04-10 16:23:41,965] (BuilderPayload.java:handleConflict:377) - Conflict found while preparing to save 'JavaScriptModularProgramming.page-meta.xml' to server.  Remote instance has been updated since last save or sync.  Use the Synchronize Perspective to resolve the conflict.
+ WARN [2012-04-10 16:23:41,968] (Component.java:hasRemoteChanged:939) - Conflict found! Attribute compare of local and remote ApexPage 'pages/JavaScriptModularProgramming.page' [unpackaged] are NOT equal
+ WARN [2012-04-10 16:23:41,970] (BuilderPayload.java:handleConflict:377) - Conflict found while preparing to save 'JavaScriptModularProgramming.page' to server.  Remote instance has been updated since last save or sync.  Use the Synchronize Perspective to resolve the conflict.
+ WARN [2012-04-10 16:23:41,973] (Component.java:hasRemoteChanged:939) - Conflict found! Attribute compare of local and remote ApexPage 'pages/JavaScriptPattern.page-meta.xml' [unpackaged] are NOT equal
+ WARN [2012-04-10 16:23:41,975] (BuilderPayload.java:handleConflict:377) - Conflict found while preparing to save 'JavaScriptPattern.page-meta.xml' to server.  Remote instance has been updated since last save or sync.  Use the Synchronize Perspective to resolve the conflict.
+ WARN [2012-04-10 16:23:41,977] (Component.java:hasRemoteChanged:939) - Conflict found! Attribute compare of local and remote ApexPage 'pages/JavaScriptPattern.page' [unpackaged] are NOT equal
+ WARN [2012-04-10 16:23:41,981] (BuilderPayload.java:handleConflict:377) - Conflict found while preparing to save 'JavaScriptPattern.page' to server.  Remote instance has been updated since last save or sync.  Use the Synchronize Perspective to resolve the conflict.

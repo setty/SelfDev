@@ -1,0 +1,59 @@
+<apex:page sidebar="false" showHeader="false" title="SnapIt Metadata Xplorer Help">
+
+	<apex:stylesheet value="{!URLFOR($Resource.SnapItMetadataXplorerResources, '/SnapItMetadataXplorerResources/css/SnapItMetadataXplorerStyle.css')}"/>
+
+	<div class="generalBold">
+	 <table cellspacing="0" cellpadding="0" border="0">
+	 	<tr>
+	 		<td><apex:image value="{!URLFOR($Resource.SnapItMetadataXplorerResources, '/SnapItMetadataXplorerResources/img/Help.jpg')}"/></td>
+	 		<td><apex:sectionHeader id="header" title="Usage Guidelines for SnapIt Metadata Xplorer"/></td>
+	 	</tr>
+	 </table>
+	</div>
+	
+	<apex:pageBlock >
+		<div align="left">
+			<b>Overview:</b><br><br/>
+			SnapIt Metadata Xplorer allows you to view metadata details on screen. Snapshots of objects including field types, picklist details, 
+			and other metadata are made available. It also allows the retreived metadata to be exported to Excel and PDF formats.
+			<p>
+			<p><b>Step by Step Usage Summary:</b></p>
+			<ol>
+				<li>Select 1, multiple or all Sobjects in the list to view their Metadata details. Use Ctrl + A to select all Sobjects 
+		 			in the list or select specific Sobjects using Ctrl + Mouse Click.</li><br/>
+				<li>Select the field category to view the fields for the selected Sobjects from the available options - <i>All Fields</i>, <i>Standard Fields</i>, <i>Custom Fields</i>. </li><br/>
+				<ul>
+					<li><b><i>All Fields:</i></b> Select this option to view all the fields that exist for the selected Sobjects.</li><br/>
+					<li><b><i>Standard Fields:</i></b> Select this option to view all the Standard fields that exist for the selected Sobjects.</li><br/>
+					<li><b><i>Custom Fields:</i></b> Select this option to view all the Custom fields that exist for the selected Sobjects.</li><br/>
+				</ul>
+				<li>Click <b>Show Metadata</b> to display the metadata details for the selected Sobjects on screen.</li><br/>
+				<li>Click <b>First</b>, <b>Next</b>, <b>Prev</b>, <b>Last</b> to navigate through the batches of retreived metadata details.</li><br/>
+				<li>Click <b>Export to Excel</b> to export the metadata currently displayed on screen, to an Excel spreadsheet.</li><br/>
+				<li>Click <b>Export to PDF</b> to export the metadata currently displayed on screen, to a PDF.</li>
+			</ol> 
+		</div>
+		
+		<div align="left">
+			<table cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td><apex:image value="{!URLFOR($Resource.SnapItMetadataXplorerResources, '/SnapItMetadataXplorerResources/img/Warning.jpg')}"/></td>
+					<td><b>Points to Remember !!</b></td>
+				</tr>
+			</table>
+			
+			<p>The selected Sobject list's metadata is extracted in batches, to avoid hitting the Salesforce Governor Limits.The application may take time to display 
+			   the metadata details, depending upon the number of Sobjects selected.<br/> 
+			Data is displayed in multiple pages with options to export to Excel or PDF. Each page needs to be exported separately.</p>
+		</div>	
+	</apex:pageBlock> 
+	
+	<div align="center" class="statusStyle" cellspacing="0" cellpadding="0" border="0">
+	  <table>
+	  	<tr>
+	  		<td>Copyright ©2011 Eternus Solutions Private Limited. Visit <a href="http://www.eternussolutions.com">www.eternussolutions.com</a> for further information.</td>
+	  	</tr>
+	  </table>
+  	</div>
+	
+</apex:page>

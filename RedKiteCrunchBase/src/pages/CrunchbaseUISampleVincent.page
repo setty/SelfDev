@@ -1,0 +1,90 @@
+<apex:page id="pg" standardController="Account" showHeader="false" sidebar="false">
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+
+<apex:stylesheet value="{!URLFOR($Resource.VerticalTabsAddin,'css/verticaltabs.css')}" />
+<apex:includeScript value="{!URLFOR($Resource.JQueryUI ,'js/jquery-1.5.1.min.js')}" />
+<!--  apex:includeScript value="{!URLFOR($Resource.JQueryUI ,'js/jquery-ui-1.8.12.custom.min.js')}" /  -->
+<!--  apex:includeScript value="{!URLFOR($Resource.VerticalTabsAddin ,'js/jquery-1.4.2.min.js')}" /  -->
+<!--  apex:includeScript value="{!URLFOR($Resource.VerticalTabsAddin ,'js/verticaltabs.pack.js')}" /  -->
+<apex:includeScript value="{!URLFOR($Resource.VerticalTabsAddin ,'js/verticaltabs.js')}" />
+
+<style>
+	.content-area{
+		width:100%
+	}
+	.logoValue{
+		width:250px;
+	}
+	.sideheader-area{
+		width:250px;
+		float:left;
+		margin:5px;
+	}
+	.verticalslider{
+		height:100%;
+	}
+</style>
+
+<script type="text/javascript">
+	j$=jQuery.noConflict();
+	
+	j$(document).ready(function() {
+		//Initialize the jQuery vertical tab plugin
+		j$("#verticalTabbedContent").verticaltabs({speed: 200, slideShow: false, activeIndex: 0});
+	});
+</script>
+
+<div data-role="page">
+	<div data-role="content" class="content-area">
+		<div id="sideheader" class="sideheader-area">
+			<div><span id="valueLogo" class="logoValue"><apex:image id="theImage" value="http://www.crunchbase.com/assets/images/resized/0002/1370/21370v1-max-250x250.png"/></span></div>
+			<div><span class="sideheaderLabel">Category <span id="valueCategory" class="sideheaderValue"></span></div> 
+			<div><span class="sideheaderLabel">Description <span id="valueDescription" class="sideheaderValue"></span></div> 
+			<div><span class="sideheaderLabel">Founded</span> <span id="valueFounded" class="sideheaderValue"></span></div> 
+			<div><span class="sideheaderLabel">Employees <span id="valueEmployees" class="sideheaderValue"></span></div> 
+			<div><span class="sideheaderLabel">Ticker <span id="valueTicker" class="sideheaderValue"></span></div> 
+			<div><span class="sideheaderLabel">Website <span id="valueWebsite" class="sideheaderValue"></span></div> 
+			<div><span class="sideheaderLabel">Phone <span id="valuePhone" class="sideheaderValue"></span></div> 
+			<div><span class="sideheaderLabel">Email <span id="valueEmail" class="sideheaderValue"></span></div> 
+			<div><span class="sideheaderLabel">Blog <span id="valueBlog" class="sideheaderValue"></span></div> 
+			<div><span class="sideheaderLabel">Twitter <span id="valueTwitter" class="sideheaderValue"></span></div>
+			view in Crunchbase &gt;<br/>
+			hide section<br/>
+		</div>
+		<div id="verticalTabbedContent" class="verticalslider">
+			<ul class="verticalslider_tabs">
+				<li><a href="#">Overview</a></li>
+				<li><a href="#">People</a></li>
+				<li><a href="#">Tech Crunch Feed</a></li>
+				<li><a href="#">Milestones</a></li>
+				<li><a href="#">Funding</a></li>
+			</ul>
+			<ul class="verticalslider_contents">
+				<li>
+					<h2>Overview</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan placerat bibendum.</p>
+				</li>
+				<li>
+					<h2>People</h2>
+					<p>Praesent pulvinar, lorem nec ullamcorper semper, ipsum erat vestibulum lacus, in sodales lorem mi in leo.</p>
+				</li>
+				<li>
+					<h2>Tech Crunch Feed</h2>
+					<p>Nunc adipiscing purus id orci rutrum placerat.</p>
+				</li>
+				<li>
+					<h2>Milestones</h2>
+					<p>Praesent dapibus metus vitae velit blandit tempor.</p>
+				</li>
+				<li>
+					<h2>Funding</h2>
+					<p>Praesent dapibus metus vitae velit blandit tempor.</p>
+				</li>
+			</ul>
+		</div>	
+	</div>	
+</div>
+</apex:page>

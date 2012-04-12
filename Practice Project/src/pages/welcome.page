@@ -1,0 +1,18 @@
+<apex:page controller="WelcomeController">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script src="{!$Resource.JSON}"></script>
+ <script type="text/javascript">
+  j$=jQuery.noConflict();
+  alert('helo');
+  WelcomeController.getAccountsByName("IBM", function(result, event)
+  {
+  	if (event.status &amp;amp;amp;amp;&amp;amp;amp;amp; result){
+    j$.each(result, function(){
+     j$("#targetId").append(this.Id+", "+this.Name+"<br/>");
+    })
+   }
+  }, {escape:true});
+ </script>
+        
+ <div id="targetId"></div>
+</apex:page>

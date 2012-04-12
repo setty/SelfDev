@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Appointment_Summary</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Appointment Summary</shortDescription>
+        <value>Appointment Summary</value>
+    </labels>
+    <labels>
+        <fullName>BPAndPulsox</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>BPAndPulsox</shortDescription>
+        <value>BP and Pulsox vs Prescriptions</value>
+    </labels>
+    <labels>
+        <fullName>Book</fullName>
+        <categories>button</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Book</shortDescription>
+        <value>Book</value>
+    </labels>
+    <labels>
+        <fullName>BookingFrom</fullName>
+        <categories>Label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>BookingFrom</shortDescription>
+        <value>Booking From</value>
+    </labels>
+    <labels>
+        <fullName>Cancel</fullName>
+        <categories>Button</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Clinician</fullName>
+        <categories>Field</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Clinician</shortDescription>
+        <value>Clinician</value>
+    </labels>
+    <labels>
+        <fullName>Complete_Appointment</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Complete Appointment</shortDescription>
+        <value>Complete Appointment</value>
+    </labels>
+    <labels>
+        <fullName>Create_Appointment</fullName>
+        <categories>heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Create Appointment</shortDescription>
+        <value>Create Appointment</value>
+    </labels>
+    <labels>
+        <fullName>Create_New_Episode</fullName>
+        <categories>Label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Create New Episode</shortDescription>
+        <value>Create New Episode?</value>
+    </labels>
+    <labels>
+        <fullName>Description</fullName>
+        <categories>field</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>Dispense_Prescription_Title</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Dispense Prescription Title</shortDescription>
+        <value>Please select the batch number to dispense from</value>
+    </labels>
+    <labels>
+        <fullName>Entity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Entity</shortDescription>
+        <value>Entity</value>
+    </labels>
+    <labels>
+        <fullName>File</fullName>
+        <categories>Field</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>File</shortDescription>
+        <value>File</value>
+    </labels>
+    <labels>
+        <fullName>FileUpload</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>File Upload</shortDescription>
+        <value>File Upload</value>
+    </labels>
+    <labels>
+        <fullName>Free_Appointments</fullName>
+        <categories>heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Free Appointments</shortDescription>
+        <value>Free Appointments Starting From</value>
+    </labels>
+    <labels>
+        <fullName>Free_Time</fullName>
+        <categories>column, heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Free Time</shortDescription>
+        <value>Free Time (mins)</value>
+    </labels>
+    <labels>
+        <fullName>GettingStarted</fullName>
+        <categories>Help</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>GettingStarted</shortDescription>
+        <value>To help you get up and running as quickly as possible follow the steps below to ensure you have configured your application to deliver the ultimate experience in telemedicine.</value>
+    </labels>
+    <labels>
+        <fullName>HeightWeightChart</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HeightWeightChart</shortDescription>
+        <value>Height/Weight Chart</value>
+    </labels>
+    <labels>
+        <fullName>HeightWeightVsEpisodes</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HeightWeightVsEpisodes</shortDescription>
+        <value>Height/Weight vs Episodes</value>
+    </labels>
+    <labels>
+        <fullName>Issue_Date_Label</fullName>
+        <categories>field, label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Issue Date Label</shortDescription>
+        <value>Issue Date</value>
+    </labels>
+    <labels>
+        <fullName>Issued</fullName>
+        <categories>label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Issued</shortDescription>
+        <value>Issued</value>
+    </labels>
+    <labels>
+        <fullName>Issued_By</fullName>
+        <categories>label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Issued By</shortDescription>
+        <value>Issued By</value>
+    </labels>
+    <labels>
+        <fullName>NoVitals</fullName>
+        <categories>Page Message</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoVitals</shortDescription>
+        <value>Enter patient vitals data before charting</value>
+    </labels>
+    <labels>
+        <fullName>Patient_Appointment</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Patient Appointment</shortDescription>
+        <value>Patient Appointment</value>
+    </labels>
+    <labels>
+        <fullName>Patient_Photo_Upload_Title</fullName>
+        <categories>title</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Patient Photo Upload Title</shortDescription>
+        <value>Patient Photo Upload</value>
+    </labels>
+    <labels>
+        <fullName>Prescription_Print_Title</fullName>
+        <categories>title, pdf, prescription</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Prescription Print Title</shortDescription>
+        <value>Prescription</value>
+    </labels>
+    <labels>
+        <fullName>Referral_Print_Title</fullName>
+        <categories>title, pdf</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Referral Print Title</shortDescription>
+        <value>Patient Referral</value>
+    </labels>
+    <labels>
+        <fullName>Remarks</fullName>
+        <categories>label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Remarks</shortDescription>
+        <value>Remarks</value>
+    </labels>
+    <labels>
+        <fullName>Save</fullName>
+        <categories>button</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Search</fullName>
+        <categories>button</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>SelClinician</fullName>
+        <categories>Label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SelClinician</shortDescription>
+        <value>Select Clinician:</value>
+    </labels>
+    <labels>
+        <fullName>SelectClinician</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SelectClinician</shortDescription>
+        <value>Select Clinician and search date</value>
+    </labels>
+    <labels>
+        <fullName>Select_Activity</fullName>
+        <categories>Label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Activity</shortDescription>
+        <value>Select Activity</value>
+    </labels>
+    <labels>
+        <fullName>Select_Batch</fullName>
+        <categories>button</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Batch</shortDescription>
+        <value>Select Batch</value>
+    </labels>
+    <labels>
+        <fullName>Select_Existing_Episode</fullName>
+        <categories>Label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Existing Episode</shortDescription>
+        <value>or Select Existing Episode?</value>
+    </labels>
+    <labels>
+        <fullName>Select_Photo</fullName>
+        <categories>title</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Photo</shortDescription>
+        <value>Select photo to upload</value>
+    </labels>
+    <labels>
+        <fullName>Setup</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Setup</shortDescription>
+        <value>Setup</value>
+    </labels>
+    <labels>
+        <fullName>SetupStatus</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SetupStatus</shortDescription>
+        <value>Setup Status</value>
+    </labels>
+    <labels>
+        <fullName>Status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>Step</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Step</shortDescription>
+        <value>Step</value>
+    </labels>
+    <labels>
+        <fullName>Stock</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Stock</shortDescription>
+        <value>Stock</value>
+    </labels>
+    <labels>
+        <fullName>TreatmentSummary</fullName>
+        <categories>Heading</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TreatmentSummary</shortDescription>
+        <value>Treatment Summary</value>
+    </labels>
+    <labels>
+        <fullName>View_Clinician_Diaries</fullName>
+        <categories>text</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>View Clinician Diaries</shortDescription>
+        <value>View Clinician Diaries</value>
+    </labels>
+    <labels>
+        <fullName>Welcome</fullName>
+        <categories>Help</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Welcome</shortDescription>
+        <value>Welcome to</value>
+    </labels>
+</CustomLabels>

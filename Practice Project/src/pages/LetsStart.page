@@ -1,0 +1,10 @@
+<apex:page controller="LetsStart">
+	<apex:Pageblock >
+		<apex:PageMessages ></apex:PageMessages>
+		<apex:PageBlockSection >
+			<apex:PageBlockSectionItem >
+				<!-- <apex:OutputLabel value="Lets Start Coding"></apex:OutputLabel>  -->
+			</apex:PageBlockSectionItem>
+		</apex:PageBlockSection>
+	</apex:Pageblock>
+</apex:page>

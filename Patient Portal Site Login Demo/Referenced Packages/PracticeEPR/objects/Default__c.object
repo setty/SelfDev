@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Default PracticeForce Org settings such as appointment duration, stock warning limits, patient reminder settings</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Appointment_Duration__c</fullName>
+        <defaultValue>30</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The number of minutes for a default patient appointment. This can be amended when the appointment is booked.</description>
+        <externalId>false</externalId>
+        <label>Appointment Duration</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_To_SMS_Provider__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email address of Email to SMS provider</description>
+        <externalId>false</externalId>
+        <label>Email To SMS Provider</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Low_Stock_Warning__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This controls the amber low stock flag</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the percentage threshold within the stock reorder point to flag low stock levels</inlineHelpText>
+        <label>Low Stock Warning %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_Email_Reminder_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of days before an appointment to send patients an email reminder</description>
+        <externalId>false</externalId>
+        <label>Patient Email Reminder Days</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_SMS_Reminder_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of days before an appointment to send patients an SMS reminder</description>
+        <externalId>false</externalId>
+        <label>Patient SMS Reminder Days</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Default</label>
+</CustomObject>

@@ -1,0 +1,37 @@
+<apex:page id="pgCBDetail" standardController="Account" extensions="RemotingSampleCtl" tabStyle="Account">
+
+    <apex:includeScript value="{!$Resource.BaseTargetScript}" />
+    <apex:stylesheet value="{!URLFOR($Resource.JQueryUI ,'css/cupertino/jquery-ui-1.8.12.custom.css')}" />
+    
+    <apex:includeScript value="{!URLFOR($Resource.JQueryUI ,'js/jquery-1.5.1.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.JQueryUI ,'js/jquery-ui-1.8.12.custom.min.js')}" />
+
+    <script type="text/javascript">
+        function updatePermalink(pAccountID){
+        
+        	//var permalink = "http://api.crunchbase.com/v/1/company/remotingsample.js";
+        	
+        	/* Call to the Apex Controller Remoting method to update the Permalink */
+        	RemotingSampleCtl.updateAccount(pAccountID, "http://api.crunchbase.com/v/1/company/remotingsample.js", function(result, event){
+        		if(event.status){
+       				document.getElementById("errMsg").innerHTML = "Account updated successfully !!";
+        		}
+        		else{
+        			document.getElementById("errMsg").innerHTML = event.message;
+        		}
+        	
+        	},{escape:false});
+        }
+    </script>
+    
+
+    <apex:pageBlock title="Update Permalink using Remoting">
+        <apex:outputField value="{!Account.Crunchbase_Permalink__c}" rendered="false"/>
+        <apex:form >
+            <div align="center"><input type="button" value="Update Permalink" onclick="updatePermalink('{!accountId}');return false;" /></div>
+        </apex:form>
+    </apex:pageBlock>
+    
+   	<div id="errMsg"></div>
+   	
+</apex:page>
